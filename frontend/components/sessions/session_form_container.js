@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
       dispatch(login(user));
     } else {
       dispatch(signup(user));
+      dispatch(login(user));
     }
   }
 });

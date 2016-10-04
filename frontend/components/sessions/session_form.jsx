@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -16,7 +16,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let user;
-    debugger
     if(this.props.formType === "login") {
       user = {
         user: { username: this.state.username, password: this.state.password }
@@ -38,6 +37,12 @@ class SessionForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  componentDidUpdate() {
+    if (this.props.loggedIn) {
+      hashHistory.push("/test");
+    }
   }
 
   render() {
@@ -99,12 +104,12 @@ class SessionForm extends React.Component {
     );
 
     const logo = (
-      <div className="logo">LOGO</div>
+      <div className="logo">TAPSY</div>
     );
 
     if(this.props.formType === "login") {
       return(
-        <section>
+        <section className="session">
           {logo}
           <h1>LOGIN</h1>
           {signInForm}
@@ -114,7 +119,7 @@ class SessionForm extends React.Component {
       );
     } else {
       return(
-        <section>
+        <section className="form">
           {logo}
           <h1>SIGN UP</h1>
           {signUpForm}
