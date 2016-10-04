@@ -119,7 +119,7 @@ class SessionForm extends React.Component {
       );
     } else {
       return(
-        <section className="form">
+        <section className="session">
           {logo}
           <h1>SIGN UP</h1>
           {signUpForm}
