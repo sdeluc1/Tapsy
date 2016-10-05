@@ -21,16 +21,16 @@ export default ({ getState, dispatch }) => next => action => {
       beerAPI.fetchBeers(successBeers);
       break;
     case REQUEST_BEER:
-      beerAPI.fetchOneBeer(successBeer);
+      beerAPI.fetchOneBeer(action.beerId, successBeer);
       break;
     case REMOVE_BEER:
-      beerAPI.removeBeer(successBeers);
+      beerAPI.removeBeer(action.beerId, next(action));
       break;
     case UPDATE_BEER:
-      beerAPI.updateBeer(successBeers);
+      beerAPI.updateBeer(action.beerId, action.newBeer, successBeers);
       break;
     case CREATE_BEER:
-      beerAPI.createBeer(successBeer);
+      beerAPI.createBeer(action.beer, successBeer);
       break;
     default:
       return next(action);

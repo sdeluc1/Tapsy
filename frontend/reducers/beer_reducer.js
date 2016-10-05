@@ -11,18 +11,22 @@ const BeerReducer = (state = {}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BEERS:
-      return action.beers;
+      newState = {};
+      action.beers.forEach((beer) => {
+        newState[beer.id] = beer;
+      });
+      return newState;
 
     case RECEIVE_BEER:
       const addBeer = {[action.beer.id]: action.beer};
       newState = merge({}, state, addBeer);
       return newState;
 
-    // case REMOVE_BEER:
-    //   newState = merge({}, state);
-    //   delete newState[action.beerId];
-    //   return newState;
-    //
+    case REMOVE_BEER:
+      newState = merge({}, state);
+      delete newState[action.beerId];
+      return newState;
+
     // case UPDATE_BEER:
     //   newState = merge({}, state);
     //   newState[beerId] = newBeer;

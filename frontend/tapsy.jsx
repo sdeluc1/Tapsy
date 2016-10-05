@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { login, logout, signup } from './util/session_api_util';
-import { fetchBeers, createBeer, fetchOneBeer, updateBeer, removeBeer } from './util/beer_api_util';
-import { fetchBreweries, createBrewery, fetchOneBrewery, updateBrewery, removeBrewery } from './util/brewery_api_util';
+import { requestBeers, requestBeer, createBeer, removeBeer, updateBeer } from './actions/beer_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -26,16 +25,11 @@ window.login = login;
 window.logout = logout;
 window.signup = signup;
 
-window.fetchBeers = fetchBeers;
+window.store = configureStore();
+window.requestBeers = requestBeers;
+window.requestBeer = requestBeer;
 window.createBeer = createBeer;
-window.fetchOneBeer = fetchOneBeer;
-window.updateBeer = updateBeer;
 window.removeBeer = removeBeer;
-
-window.fetchBreweries = fetchBreweries;
-window.createBrewery = createBrewery;
-window.fetchOneBrewery = fetchOneBrewery;
-window.updateBrewery = updateBrewery;
-window.removeBrewery = removeBrewery;
+window.updateBeer = updateBeer;
 
 window.success = (data) => console.log(data);
