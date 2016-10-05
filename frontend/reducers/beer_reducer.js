@@ -27,15 +27,6 @@ const BeerReducer = (state = {}, action) => {
       delete newState[action.beerId];
       return newState;
 
-    // case UPDATE_BEER:
-    //   newState = merge({}, state);
-    //   newState[beerId] = newBeer;
-    //   return newState;
-    //
-    // case CREATE_BEER:
-    //   newState = merge({}, state, {});
-
-
     default:
       return state;
   }
