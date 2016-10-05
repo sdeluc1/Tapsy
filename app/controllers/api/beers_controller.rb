@@ -5,6 +5,11 @@ class Api::BeersController < ApplicationController
     render json: @beers
   end
 
+  def show
+    @beer = Beer.find(params[:id])
+    render json: @beer
+  end
+
   def create
     @beer = Beer.new(beer_params)
     if @beer.save

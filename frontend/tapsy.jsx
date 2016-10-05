@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { login, logout, signup } from './util/session_api_util';
+import { fetchBeers, createBeer, fetchOneBeer, updateBeer, removeBeer } from './util/beer_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -23,5 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 window.login = login;
 window.logout = logout;
 window.signup = signup;
+
+window.fetchBeers = fetchBeers;
+window.createBeer = createBeer;
+window.fetchOneBeer = fetchOneBeer;
+window.updateBeer = updateBeer;
+window.removeBeer = removeBeer;
 
 window.success = (data) => console.log(data);
