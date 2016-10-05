@@ -25,11 +25,4 @@ window.login = login;
 window.logout = logout;
 window.signup = signup;
 
-window.store = configureStore();
-window.requestBreweries = requestBreweries;
-window.requestBrewery = requestBrewery;
-window.createBrewery = createBrewery;
-window.removeBrewery = removeBrewery;
-window.updateBrewery = updateBrewery;
-
 window.success = (data) => console.log(data);

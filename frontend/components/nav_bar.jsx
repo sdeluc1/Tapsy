@@ -11,8 +11,8 @@ const NavBar = () => (
       </a>
       <ul>
         <a href="#"><li>The Brews</li></a>
-        <a href="#"><li>Add Beer</li></a>
-        <a href="#"><li>Add Brewery</li></a>
+        <a href="#/add-beer"><li>Add Beer</li></a>
+        <a href="#/add-brewery"><li>Add Brewery</li></a>
       </ul>
 
       <form>

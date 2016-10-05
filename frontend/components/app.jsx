@@ -1,9 +1,10 @@
 import React from 'react';
-import SessionFormContainer from './sessions/session_form_container';
+import NavBar from './nav_bar';
 import { Link } from 'react-router';
 
 const App = ({ children }) => (
   <div>
+    <NavBar />
     {children}
   </div>
 );
