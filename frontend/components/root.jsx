@@ -4,13 +4,14 @@ import { Router, Route, IndexRedirect, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import SessionFormContainer from './sessions/session_form_container';
 import Test from './test';
+import HomeContainer from './home/home_container';
 
 const Root = ({ store }) => {
 
   const _redirectIfLoggedIn = (nextState, replace) => {
     const currentUser = store.getState().session.currentUser;
     if (currentUser) {
-      replace('/test');
+      replace('/home');
     }
   };
 
@@ -28,7 +29,7 @@ const Root = ({ store }) => {
           <IndexRedirect to="/login" />
           <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
-          <Route path="/test" component={Test} onEnter={_ensureLoggedIn} />
+          <Route path="/home" component={HomeContainer} onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
     </Provider>

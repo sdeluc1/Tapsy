@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
 
   componentDidUpdate() {
     if (this.props.loggedIn) {
-      hashHistory.push("/test");
+      hashHistory.push("/home");
     }
   }
 

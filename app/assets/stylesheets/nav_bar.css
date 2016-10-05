@@ -1,0 +1,57 @@
+/*.group {
+  content: "";
+  display: block;
+  clear: both;
+}*/
+
+.nav-bar-main {
+  background-color: #ffcc00;
+  color: #fff;
+  height: 52px;
+  padding: 0 12px;
+}
+
+.nav-bar {
+  max-width: 1048px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  float: left;
+  position: relative;
+  width: 100px;
+}
+
+.nav-logo-main {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.nav-logo-sub {
+  font-size: 9px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 35px;
+  left: 10px;
+}
+
+.nav-bar ul {
+  float: left;
+  padding: 12px 30px;
+}
+
+.nav-bar ul li {
+  float: left;
+  padding-right: 30px;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+.nav-search {
+  float: right;
+  margin-top: 8px;
+  width: 240px;
+  border-radius: 4px;
+  padding: 7px;
+  font-size: 15px;
+}

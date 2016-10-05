@@ -19,11 +19,11 @@ section.session {
   padding: 24px 16px;
 }
 
-form {
+.session form {
   padding: 20px 40px 40px 40px;
 }
 
-form input {
+.session form input {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 8px;
@@ -32,7 +32,7 @@ form input {
   font-size: 14px;
 }
 
-.logo {
+.session .logo {
   margin: auto;
   display: block;
   position: relative;
