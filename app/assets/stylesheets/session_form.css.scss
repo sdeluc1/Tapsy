@@ -1,0 +1,79 @@
+body {
+  font-family: "ProximaNova", Helvetica Neue, Helvetica;
+  background-image: image-url("beer_login.jpg");
+  background-size: cover;
+  background-size: 1000px 750px;
+  padding: 100px;
+}
+
+section.session {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 24px 16px;
+}
+
+form {
+  padding: 20px 40px 40px 40px;
+}
+
+form input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: 300px;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+.logo {
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+
+.logoTap {
+  color: #ffcc00;
+  font-size: 60px;
+  font-weight: bold;
+
+}
+
+.logoSub {
+  color: #ffcc00;
+  font-size: 15px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  left: 140px;
+  top: -5px;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  width: 320px;
+  background-color: #ffcc00;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 2px;
+  padding: 6px 30px;
+  font-weight: bold;
+}
+
+.session .foot-link {
+  border-top: 1px solid #ccc;
+  width: 320px;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.foot-link h3 {
+  font-weight: bold;
+  padding-bottom: 5px;
+
+}

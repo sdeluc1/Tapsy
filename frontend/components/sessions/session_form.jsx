@@ -63,68 +63,50 @@ class SessionForm extends React.Component {
 
     const signInForm = (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          <h3>Username</h3>
-        </label>
-        <input type="text" onChange={this.update("username")} />
-
-        <label>
-          <h3>Password</h3>
-        </label>
-        <input type="text" onChange={this.update("password")} />
-
-        <button>Sign In</button>
+        <input type="text" onChange={this.update("username")} placeholder="Username"/>
+        <input type="password" onChange={this.update("password")} placeholder="Password" />
+        <button className="button">Sign In</button>
       </form>
     );
 
     const signUpForm = (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          <h3>Username</h3>
-        </label>
-        <input type="text" onChange={this.update("username")} />
+        <input type="text" onChange={this.update("username")} placeholder="Username" />
+        <input type="password" onChange={this.update("password")} placeholder="Password" />
+        <input type="text" onChange={this.update("email")} placeholder="Email" />
+        <input type="text" onChange={this.update("name")} placeholder="Full Name" />
 
-        <label>
-          <h3>Password</h3>
-        </label>
-        <input type="text" onChange={this.update("password")} />
-
-        <label>
-          <h3>Email</h3>
-        </label>
-        <input type="text" onChange={this.update("email")} />
-
-        <label>
-          <h3>Full Name</h3>
-        </label>
-        <input type="text" onChange={this.update("name")} />
-
-        <button>Sign Up</button>
+        <button className="button">Sign Up</button>
       </form>
     );
 
     const logo = (
-      <div className="logo">TAPSY</div>
+      <div className="logo">
+        <strong className="logoSub">LET'S GET</strong>
+        <strong className="logoTap">TAPSY</strong>
+      </div>
     );
 
     if(this.props.formType === "login") {
       return(
         <section className="session">
           {logo}
-          <h1>LOGIN</h1>
           {signInForm}
-          <h3>Not Registered?</h3>
-          <Link to="/signup">Sign Up</Link>
+          <footer className="foot-link">
+            <h3>Not Registered?</h3>
+            <Link to="/signup">Sign Up</Link>
+          </footer>
         </section>
       );
     } else {
       return(
         <section className="session">
           {logo}
-          <h1>SIGN UP</h1>
           {signUpForm}
-          <h3>Already Registered?</h3>
-          <Link to="/login">Sign In</Link>
+          <footer className="foot-link">
+            <h3>Already Registered?</h3>
+            <Link to="/login">Sign In</Link>
+          </footer>
         </section>
       );
     }
