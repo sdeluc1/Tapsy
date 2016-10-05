@@ -89,25 +89,29 @@ class SessionForm extends React.Component {
 
     if(this.props.formType === "login") {
       return(
-        <section className="session">
-          {logo}
-          {signInForm}
-          <footer className="foot-link">
-            <h3>Not Registered?</h3>
-            <Link to="/signup">Sign Up</Link>
-          </footer>
-        </section>
+        <main className="session-background">
+          <section className="session">
+            {logo}
+            {signInForm}
+            <footer className="foot-link">
+              <h3>Not Registered?</h3>
+              <Link to="/signup">Sign Up</Link>
+            </footer>
+          </section>
+        </main>
       );
     } else {
       return(
-        <section className="session">
-          {logo}
-          {signUpForm}
-          <footer className="foot-link">
-            <h3>Already Registered?</h3>
-            <Link to="/login">Sign In</Link>
-          </footer>
-        </section>
+        <main className="session-background">
+          <section className="session">
+            {logo}
+            {signUpForm}
+            <footer className="foot-link">
+              <h3>Already Registered?</h3>
+              <Link to="/login">Sign In</Link>
+            </footer>
+          </section>
+        </main>
       );
     }
   }

@@ -1,9 +1,13 @@
 body {
   font-family: "ProximaNova", Helvetica Neue, Helvetica;
-  background-image: image-url("beer_login.jpg");
+}
+
+.session-background {
   background-size: cover;
-  background-size: 1000px 750px;
-  padding: 100px;
+  background-image: image-url("beer_login.jpg");
+  height: 100vh;
+  width: 100vw;
+  padding-top: 150px;
 }
 
 section.session {
@@ -63,6 +67,7 @@ form input {
   letter-spacing: 2px;
   padding: 6px 30px;
   font-weight: bold;
+  border-radius: 4px;
 }
 
 .session .foot-link {
