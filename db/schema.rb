@@ -11,10 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004150756) do
+ActiveRecord::Schema.define(version: 20161005153131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beers", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.integer  "brewery_id",  null: false
+    t.string   "style"
+    t.float    "abv"
+    t.integer  "ibu"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "beers", ["brewery_id"], name: "index_beers_on_brewery_id", using: :btree
+  add_index "beers", ["name"], name: "index_beers_on_name", using: :btree
+
+  create_table "breweries", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.string   "location",    null: false
+    t.string   "type"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "breweries", ["name"], name: "index_breweries_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
