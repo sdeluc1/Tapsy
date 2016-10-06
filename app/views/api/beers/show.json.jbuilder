@@ -1,4 +1,2 @@
-json.extract! @beer, :id, :name, :brewery_id, :style, :abv, :ibu, :description
-json.brewery do
-  @beer.brewery
-end
+json.extract! @beer, :id, :name, :style, :abv, :ibu, :description
+json.brewery @beer.brewery
