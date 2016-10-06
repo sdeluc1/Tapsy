@@ -86,7 +86,7 @@ class AddForm extends React.Component {
         <button>Submit Brewery</button>
       </form>
     );
-    debugger
+    
     if(this.props.formType === 'beer'){
       return(
         <div className="main-add-form">

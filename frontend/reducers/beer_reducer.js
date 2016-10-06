@@ -8,7 +8,7 @@ import {
 } from '../actions/beer_actions';
 import merge from 'lodash/merge';
 
-const BeerReducer = (state = {}, action) => {
+const BeerReducer = (state = {loading: true}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BEERS:
@@ -19,8 +19,7 @@ const BeerReducer = (state = {}, action) => {
       return newState;
 
     case RECEIVE_BEER:
-      const addBeer = {[action.beer.id]: action.beer};
-      newState = merge({}, state, addBeer);
+      newState = merge({}, state, {showBeer: action.beer, loading: false});
       return newState;
 
     case BEER_ERRORS:

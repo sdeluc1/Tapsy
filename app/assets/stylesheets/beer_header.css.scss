@@ -1,0 +1,47 @@
+.main-show-beer {
+  width: 1048px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.beer-header {
+  width: 700px;
+  border: 1px solid #eee;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.beer-header .beer-icon {
+  width: 90px;
+  height: 90px;
+  background-image: image-url("mug_icon.png");
+  background-size: cover;
+  float: left;
+  margin-right: 8px;
+}
+
+.beer-header .info-list {
+  display: inline-block;
+}
+
+.beer-header .num-reviews {
+  float: right;
+}
+
+.beer-header .info-bar {
+}
+
+.beer-header #beer-name {
+  font-size: 2em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.beer-header .brewery-name {
+  display: block;
+  vertical-align: baseline;
+}
+
+.beer-header .beer-style {
+  display: block;
+}
