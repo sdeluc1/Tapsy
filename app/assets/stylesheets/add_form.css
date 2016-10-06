@@ -1,10 +1,10 @@
 .main-add-form {
   display: block;
   border: 2px solid #ccc;
+  border-radius: 10px;
   width: 400px;
-  min-height: 400px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 75px;
   text-align: center;
   background-color: #fff;
 }
@@ -18,12 +18,71 @@
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 2px;
+  text-shadow: 1px 1px 3px #000;
 }
 
-.add-form input {
+.add-form input, .add-form textarea, .add-form select {
   background-color: #eee;
 }
 
+.add-form input {
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px;
+}
+
 .add-form .name {
-  width: 300px;
+  width: 250px;
+  margin: 20px;
+}
+
+.add-form select {
+  margin: 20px;
+  margin-top: 10px;
+  margin-right: 0;
+}
+
+.add-brewery-link {
+  font-size: 13px;
+  border: 1px solid #ccc;
+  padding: 5px 20px;
+  background-color: #ffcc00;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  text-shadow: 0 0 3px #000;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.add-form .short-input {
+  margin: 20px;
+  margin-top: 10px;
+  width: 50px;
+  font-size: 12px;
+}
+
+.add-form textarea {
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+  width: 320px;
+  height: 70px;
+}
+
+.add-form button {
+  width: 250px;
+  margin: 20px;
+  color: #fff;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border-radius: 4px;
+  text-shadow: 0 1px 3px #000;
+  font-weight: bold;
+}
+
+.add-form .loc-type {
+  margin: 0 10px 20px 10px;
 }

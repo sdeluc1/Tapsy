@@ -92,6 +92,7 @@ class SessionForm extends React.Component {
         <main className="session-background">
           <section className="session">
             {logo}
+            {errorList}
             {signInForm}
             <footer className="foot-link">
               <h3>Not Registered?</h3>
@@ -105,6 +106,7 @@ class SessionForm extends React.Component {
         <main className="session-background">
           <section className="session">
             {logo}
+            {errorList}
             {signUpForm}
             <footer className="foot-link">
               <h3>Already Registered?</h3>

@@ -1,38 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router';
+import merge from 'lodash/merge';
 
 class AddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beer: {
-        // name: "",
-        // brewery_id: "",
-        // style: "",
-        // abv: "",
-        // ibu: "",
-        // description: ""
-      },
-      brewery: {
-        // name: "",
-        // location: "",
-        // brewery_type: "",
-        // description: ""
-      }
+      beer: {},
+      brewery: {}
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    console.log(this.state);
-    return e => this.setState({
-      [this.props.formType]: {[field]: e.currentTarget.value}
-    });
+    return e => {
+      const newState = merge(this.state[this.props.formType], { [field]: e.currentTarget.value });
+      this.setState({
+        [this.props.formType]: newState
+      });
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if(this.props.formType === 'beer') {
+      this.props.processForm({ beer: this.state.beer }, "beer");
+    } else {
+      this.props.processForm({ brewery: this.state.brewery }, "brewery");
+    }
   }
 
   render(){
 
     const addBeerForm = (
-      <form className="add-form">
+      <form className="add-form" onSubmit={this.handleSubmit}>
         <strong className="form-title">ADD BEER</strong>
         <input className="name" type="text" onChange={this.update("name")} placeholder="Beer Name"/>
         <select onChange={this.update("brewery_id")}>
@@ -43,21 +45,41 @@ class AddForm extends React.Component {
             })
           }
         </select>
-        <Link to="/add-brewery">Add Brewery</Link>
-        <input type="text" onChange={this.update("style")} placeholder="Beer Style"/>
-        <input type="text" onChange={this.update("abv")} placeholder="ABV"/>
-        <input type="text" onChange={this.update("ibu")} placeholder="IBU"/>
-        <textarea onChange={this.update("description")}>Description</textarea>
+        <Link className="add-brewery-link" to="/add-brewery">Add Brewery</Link>
+        <input className="short-input" type="text" onChange={this.update("style")} placeholder="Style"/>
+        <input className="short-input" type="text" onChange={this.update("abv")} placeholder="ABV"/>
+        <input className="short-input" type="text" onChange={this.update("ibu")} placeholder="IBU"/>
+        <textarea onChange={this.update("description")} placeholder="Description"></textarea>
 
         <button>Submit Beer</button>
       </form>
     );
 
-    return(
-      <div className="main-add-form">
-        {addBeerForm}
-      </div>
+    const addBreweryForm = (
+      <form className="add-form" onSubmit={this.handleSubmit}>
+        <strong className="form-title">ADD BREWERY</strong>
+        <input className="name" type="text" onChange={this.update("name")} placeholder="Brewery Name"/>
+        <input className="loc-type" type="text" onChange={this.update("location")} placeholder="Location"/>
+        <input className="loc-type" type="text" onChange={this.update("brewery_type")} placeholder="Type of Brewery"/>
+        <textarea onChange={this.update("description")} placeholder="Description" ></textarea>
+
+        <button>Submit Brewery</button>
+      </form>
     );
+
+    if(this.props.formType === 'beer'){
+      return(
+        <div className="main-add-form">
+          {addBeerForm}
+        </div>
+      );
+    } else {
+      return(
+        <div className="main-add-form">
+          {addBreweryForm}
+        </div>
+      );
+    }
 
   }
 }

@@ -5,6 +5,7 @@ export const RECEIVE_BREWERY = "RECEIVE BREWERY";
 export const REMOVE_BREWERY = "REMOVE_BREWERY";
 export const UPDATE_BREWERY = "UPDATE_BREWERY";
 export const CREATE_BREWERY = "CREATE_BREWERY";
+export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const requestBreweries = () => ({
   type: REQUEST_BREWERIES
@@ -39,4 +40,9 @@ export const updateBrewery = (breweryId, newBrewery) => ({
 export const createBrewery = (brewery) => ({
   type: CREATE_BREWERY,
   brewery
+});
+
+export const receiveErrors = (errors) => ({
+  type: RECEIVE_ERRORS,
+  errors
 });
