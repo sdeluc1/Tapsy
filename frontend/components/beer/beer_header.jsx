@@ -9,7 +9,16 @@ const BeerHeader = (props) => {
         <a href="#"><strong id="brewery-name">{props.beer.brewery.name}</strong></a>
         <strong id="beer-style">{props.beer.style}</strong>
       </div>
-      <div className="num-reviews">REVIEW COUNTS</div>
+      <div className="num-reviews">
+        <p id="total-box">
+          <strong id="total">TOTAL</strong>
+          <strong id="total-beer-reviews">47</strong>
+        </p>
+        <p id="you-box">
+          <strong id="you">YOU</strong>
+          <strong id="user-beer-reviews">12</strong>
+        </p>
+      </div>
       <div className="info-bar">
         <strong id="abv" className="beer-bar-item">{props.beer.abv}% ABV</strong>
         <strong id="ibu"className="beer-bar-item">{props.beer.ibu} IBU</strong>

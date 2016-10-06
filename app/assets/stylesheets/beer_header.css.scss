@@ -26,6 +26,7 @@
 
 .beer-header .num-reviews {
   float: right;
+  border: 1px solid #e9e9e9;
 }
 
 .beer-header .info-bar {
@@ -46,6 +47,7 @@
   display: block;
   font-size: 1.25em;
   color: #cc6600;
+  margin-bottom: 6px;
 }
 
 .beer-header #beer-style {
@@ -87,4 +89,33 @@
 .beer-header .beer-description {
   font-size: 1em;
   color: #999;
+}
+
+.beer-header .num-reviews p {
+  float: left;
+}
+
+.beer-header .num-reviews #total-box,
+.beer-header .num-reviews #you-box {
+  color: #999999;
+  padding: 6px;
+}
+
+.beer-header .num-reviews #total,
+.beer-header .num-reviews #you,
+.beer-header .num-reviews #total-beer-reviews,
+.beer-header .num-reviews #user-beer-reviews {
+  display: block;
+}
+
+.beer-header .num-reviews #total-beer-reviews,
+.beer-header .num-reviews #user-beer-reviews {
+  font-size: 1.4em;
+}
+
+
+.beer-header .num-reviews #total,
+.beer-header .num-reviews #you {
+  margin-bottom: 2px;
+  font-size: 0.7em;
 }
