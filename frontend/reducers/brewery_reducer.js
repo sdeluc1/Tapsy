@@ -3,7 +3,8 @@ import {
   RECEIVE_BREWERY,
   REMOVE_BREWERY,
   UPDATE_BREWERY,
-  CREATE_BREWERY
+  CREATE_BREWERY,
+  BREWERY_ERRORS
 } from '../actions/brewery_actions';
 import merge from 'lodash/merge';
 
@@ -20,6 +21,11 @@ const BreweryReducer = (state = {}, action) => {
     case RECEIVE_BREWERY:
       const addBrewery = {[action.brewery.id]: action.brewery};
       newState = merge({}, state, addBrewery);
+      return newState;
+
+    case BREWERY_ERRORS:
+      newState = merge({}, state);
+      newState.errors = action.errors;
       return newState;
 
     case REMOVE_BREWERY:

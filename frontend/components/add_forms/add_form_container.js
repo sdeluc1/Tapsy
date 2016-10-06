@@ -4,7 +4,8 @@ import { createBrewery, requestBreweries } from '../../actions/brewery_actions';
 import AddForm from './add_form';
 
 const mapStateToProps = (state) => ({
-  breweries: state.breweries
+  breweries: state.breweries,
+  errors: state.errors
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

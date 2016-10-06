@@ -6,8 +6,14 @@ class AddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beer: {},
-      brewery: {}
+      beer: {
+        name: "",
+        brewery_id: ""
+      },
+      brewery: {
+        name: "",
+        location: ""
+      }
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,6 +38,20 @@ class AddForm extends React.Component {
   }
 
   render(){
+    let errors = this.props.errors;
+    if (typeof errors === 'undefined'){
+      errors = [];
+    }
+
+    const errorList = (
+      <ul>
+        {
+          errors.map((error, idx) => {
+            return <li key={idx}>{error}</li>;
+          }
+        )}
+      </ul>
+    );
 
     const addBeerForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
@@ -66,10 +86,11 @@ class AddForm extends React.Component {
         <button>Submit Brewery</button>
       </form>
     );
-
+    debugger
     if(this.props.formType === 'beer'){
       return(
         <div className="main-add-form">
+          {errorList}
           {addBeerForm}
         </div>
       );

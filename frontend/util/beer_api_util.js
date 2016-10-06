@@ -1,41 +1,46 @@
-export const fetchBeers = (success) => {
+export const fetchBeers = (success, error) => {
   $.ajax({
     url: 'api/beers',
     method: 'GET',
-    success
+    success,
+    error
   });
 };
 
-export const fetchOneBeer = (beerId, success) => {
+export const fetchOneBeer = (beerId, success, error) => {
   $.ajax({
     url: `api/beers/${beerId}`,
     method: 'GET',
-    success
+    success,
+    error
   });
 };
 
-export const createBeer = (beer, success) => {
+export const createBeer = (beer, success, error) => {
   $.ajax({
     url: 'api/beers',
     method: 'POST',
     data: beer,
-    success
+    success,
+    error
   });
 };
 
-export const updateBeer = (beerId, newBeer, success) => {
+export const updateBeer = (beerId, newBeer, success, error) => {
   $.ajax({
     url: `api/beers/${beerId}`,
     method: 'PATCH',
     data: newBeer,
-    success
+    success,
+    error
   });
 };
 
-export const removeBeer = (beerId, success) => {
+export const removeBeer = (beerId, success, error) => {
   $.ajax({
     url: `api/beers/${beerId}`,
     method: 'DELETE',
-    success
+    success,
+    error
   });
 };
