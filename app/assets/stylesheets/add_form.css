@@ -1,0 +1,29 @@
+.main-add-form {
+  display: block;
+  border: 2px solid #ccc;
+  width: 400px;
+  min-height: 400px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.form-title {
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  background-color: #ffcc00;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.add-form input {
+  background-color: #eee;
+}
+
+.add-form .name {
+  width: 300px;
+}

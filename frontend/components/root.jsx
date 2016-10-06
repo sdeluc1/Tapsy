@@ -23,10 +23,11 @@ const Root = ({ store }) => {
     }
   };
 
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
+        <Route path="/" component={App} >
           <IndexRedirect to="/login" />
           <Route path="/home" component={HomeContainer} onEnter={_ensureLoggedIn} />
           <Route path="/add-beer" component={AddFormContainer} onEnter={() => store.dispatch(requestBreweries())} />
