@@ -4,7 +4,8 @@ import HomeIndex from './home_index';
 const mapStateToProps = (state, ownProps) => ({
     feedType: ownProps.route.feedType,
     reviews: state.reviews,
-    loading: state.reviews.loading
+    loading: state.reviews.loading,
+    user: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -28,10 +28,6 @@ const Root = ({ store }) => {
     return true;
   };
 
-  // const requestBeerOnEnter = (nextState) => {
-	// 	store.dispatch(requestBeer(nextState.params.beerId));
-	// };
-
   const homeOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestReviews());
