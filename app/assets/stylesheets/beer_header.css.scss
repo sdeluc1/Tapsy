@@ -26,7 +26,8 @@
 
 .beer-header .num-reviews {
   float: right;
-  border: 1px solid #e9e9e9;
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
 }
 
 .beer-header .info-bar {
@@ -89,6 +90,8 @@
 .beer-header .beer-description {
   font-size: 1em;
   color: #999;
+  width: 480px;
+  display: inline-block;
 }
 
 .beer-header .num-reviews p {
@@ -106,6 +109,7 @@
 .beer-header .num-reviews #total-beer-reviews,
 .beer-header .num-reviews #user-beer-reviews {
   display: block;
+  text-align: center;
 }
 
 .beer-header .num-reviews #total-beer-reviews,
@@ -119,3 +123,37 @@
   margin-bottom: 2px;
   font-size: 0.7em;
 }
+
+.beer-header .num-reviews #total-box {
+  border-right: 1px solid #e9e9e9;
+}
+
+.beer-header .checkin-box, .beer-header .wishlist-box {
+  width: 55px;
+  float: right;
+  background-color: #ffcc00;
+  font-size: 35px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  margin-left: 10px;
+}
+
+.beer-header .wishlist-box {
+  font-size: 38px;
+  padding-top: 2px;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// .tap-line-pic {
+//   width: 740px;
+//   height: 130px;
+//   margin: 20px 0;
+//   background-image: image-url("taps.jpg");
+//   background-size: cover;
+// }

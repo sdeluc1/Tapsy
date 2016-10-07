@@ -1,5 +1,13 @@
+#beer-form {
+  visibility: hidden;
+}
+
+#brewery-form {
+  z-index: 20;
+}
+
 .main-add-form {
-  display: block;
+  display: none;
   border: 2px solid #ccc;
   border-radius: 10px;
   width: 400px;

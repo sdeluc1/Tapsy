@@ -11,6 +11,7 @@ const BeerShow = (props) => {
       return(
         <div className="main-show-beer">
           <BeerHeader beer={props.showBeer} />
+        
         </div>
       );
     }
