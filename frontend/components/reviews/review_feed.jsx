@@ -14,17 +14,22 @@ class ReviewFeed extends React.Component {
       this.props.reviews.forEach( (review) => {
         switch(this.props.feedType) {
           case "home":
-            //reviews of people followed by currentUser
+            //change to reviews of people followed by currentUser
             selectedReviews.push(review);
             break;
+
           case "user":
-            //reviews by specific user
+            if(review.user.id === this.props.userId) {
+              selectedReviews.push(review);
+            }
             break;
+
           case "beer":
             if(review.beer.id === this.props.beerId) {
               selectedReviews.push(review);
             }
             break;
+
           case "brewery":
             //reviews of all beers by specific brewery
             break;

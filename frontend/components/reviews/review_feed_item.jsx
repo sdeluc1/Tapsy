@@ -23,7 +23,7 @@ const ReviewFeedItem = (props) => {
           <strong id="review-item-rating">Rating Here</strong>
         </div>
         <footer className="review-item-time-detail">
-          <strong id="created-at">{props.review.created_at}</strong>
+          <strong id="created-at">{props.review.created_at} ago</strong>
           <a href="#"><strong id="detail-link">View Detailed Check-in</strong></a>
         </footer>
       </section>
