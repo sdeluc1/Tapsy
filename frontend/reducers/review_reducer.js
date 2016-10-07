@@ -10,11 +10,11 @@ const ReviewReducer = (state = {loading: true}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_REVIEWS:
-      newState = {};
-      action.reviews.forEach((review) => {
-        newState[review.id] = review;
-      });
-      return newState;
+      // newState = {};
+      // action.reviews.forEach((review) => {
+      //   newState[review.id] = review;
+      // });
+      return action.reviews;
 
     case RECEIVE_REVIEW:
       newState = merge({}, state, {showReview: action.review, loading: false});
