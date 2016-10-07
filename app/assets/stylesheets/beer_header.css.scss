@@ -9,6 +9,7 @@
   border: 1px solid #eee;
   padding: 20px;
   background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .beer-header .beer-icon {
@@ -150,10 +151,10 @@
   clear: both;
 }
 
-// .tap-line-pic {
-//   width: 740px;
-//   height: 130px;
-//   margin: 20px 0;
-//   background-image: image-url("taps.jpg");
-//   background-size: cover;
-// }
+.tap-line-pic {
+  width: 740px;
+  height: 130px;
+  margin: 20px 0;
+  background-image: image-url("taps.jpg");
+  background-size: cover;
+}

@@ -28,13 +28,20 @@ const Root = ({ store }) => {
     return true;
   };
 
-  const requestBeerOnEnter = (nextState) => {
-		store.dispatch(requestBeer(nextState.params.beerId));
-	};
+  // const requestBeerOnEnter = (nextState) => {
+	// 	store.dispatch(requestBeer(nextState.params.beerId));
+	// };
 
   const homeOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestReviews());
+    }
+  }
+
+  const beerOnEnter = (nextState, replace) => {
+    if(_ensureLoggedIn(nextState, replace)) {
+      store.dispatch(requestReviews());
+      store.dispatch(requestBeer(nextState.params.beerId));
     }
   }
 
@@ -46,7 +53,7 @@ const Root = ({ store }) => {
           <Route path="/home" component={HomeContainer} onEnter={homeOnEnter} feedType="home"/>
           <Route path="/add-beer" component={AddFormContainer} onEnter={() => store.dispatch(requestBreweries())} />
           <Route path="/add-brewery" component={AddFormContainer} />
-          <Route path="/beer/:beerId" component={BeerContainer} onEnter={requestBeerOnEnter} feedType="beer"/>
+          <Route path="/beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer"/>
         </Route>
         <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>

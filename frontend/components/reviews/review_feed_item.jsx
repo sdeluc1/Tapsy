@@ -10,7 +10,7 @@ const ReviewFeedItem = (props) => {
             <strong>{props.review.author.name}</strong>
           </a>
           <strong> is drinking a </strong>
-          <a href="#">
+          <a href={`#/beer/${props.review.beer.id}`}>
             <strong id="is-drinking">{props.review.beer.name}</strong>
           </a>
           <strong> by </strong>

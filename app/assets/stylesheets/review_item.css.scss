@@ -21,8 +21,9 @@
   height: 50px;
   margin-right: 14px;
   float: left;
-  background-color: #ccc;
   display: inline-block;
+  background-image: image-url("temp_avatar.png");
+  background-size: cover;
 }
 
 .review-item-info {
@@ -33,6 +34,7 @@
 #review-item-rating {
   color: #ffcc00;
   display: block;
+  margin-top: 8px;
 }
 
 .main-review-item {

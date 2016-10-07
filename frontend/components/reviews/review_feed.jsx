@@ -7,26 +7,33 @@ class ReviewFeed extends React.Component {
   }
 
   filterFeed(){
-    if(this.props.formType === "brews") {
+    let selectedReviews = [];
+    if(this.props.feedType === "brews") {
       return this.props.reviews;
     } else {
-      const selectedReviews = this.props.reviews.map( (review) => {
-        switch(this.props.formType) {
+      this.props.reviews.forEach( (review) => {
+        switch(this.props.feedType) {
           case "home":
-          //reviews of people followed by currentUser
-          break;
+            //reviews of people followed by currentUser
+            selectedReviews.push(review);
+            break;
           case "user":
-          //reviews by specific user
-          break;
+            //reviews by specific user
+            break;
           case "beer":
-          //reviews of specific beer
-          break;
+            if(review.beer.id === this.props.beerId) {
+              selectedReviews.push(review);
+            }
+            break;
           case "brewery":
-          //reviews of all beers by specific brewery
-          break;
+            //reviews of all beers by specific brewery
+            break;
+          default:
+            break;
         }
       });
     }
+    return selectedReviews;
   }
 
   render() {
@@ -35,7 +42,7 @@ class ReviewFeed extends React.Component {
         <header id="review-feed-header">Recent Activity</header>
         <ul className="review-feed-list">
           {
-            this.props.reviews.map( (review, idx) => {
+            this.filterFeed().map( (review, idx) => {
               return <ReviewFeedItem key={idx} review={review} />;
             })
           }

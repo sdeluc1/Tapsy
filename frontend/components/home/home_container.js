@@ -1,13 +1,11 @@
 import { connect } from 'react-redux';
 import HomeIndex from './home_index';
 
-const mapStateToProps = (state, ownProps) => {
-  return {
+const mapStateToProps = (state, ownProps) => ({
     feedType: ownProps.route.feedType,
     reviews: state.reviews,
     loading: state.reviews.loading
-  };
-};
+});
 
 const mapDispatchToProps = (dispatch) => ({
 
