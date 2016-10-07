@@ -15,7 +15,7 @@ export default ({ getState, dispatch }) => next => action => {
   const successReviews = data => dispatch(receiveReviews(data));
   const successReview = data => dispatch(receiveReview(data));
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
-
+  
   switch(action.type) {
     case REQUEST_REVIEWS:
       reviewAPI.fetchReviews(successReviews, errorCallback);

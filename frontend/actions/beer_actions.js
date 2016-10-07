@@ -1,7 +1,7 @@
-export const REQUEST_BEERS = "REQUEST BEERS";
-export const REQUEST_BEER = "REQUEST BEER";
-export const RECEIVE_BEERS = "RECEIVE BEERS";
-export const RECEIVE_BEER = "RECEIVE BEER";
+export const REQUEST_BEERS = "REQUEST_BEERS";
+export const REQUEST_BEER = "REQUEST_BEER";
+export const RECEIVE_BEERS = "RECEIVE_BEERS";
+export const RECEIVE_BEER = "RECEIVE_BEER";
 export const REMOVE_BEER = "REMOVE_BEER";
 export const UPDATE_BEER = "UPDATE_BEER";
 export const CREATE_BEER = "CREATE_BEER";
