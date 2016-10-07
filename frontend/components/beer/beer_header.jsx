@@ -2,7 +2,7 @@ import React from 'react';
 
 const BeerHeader = (props) => {
   return(
-    <header className="beer-header">
+    <header className="group beer-header">
       <div className="beer-icon"></div>
       <div className="info-list">
         <strong id="beer-name">{props.beer.name}</strong>
@@ -27,6 +27,14 @@ const BeerHeader = (props) => {
         <strong id="date-added" className="beer-bar-item">Added 10/6/16</strong>
       </div>
       <div className="beer-description">{props.beer.description}</div>
+      <div className="beer-check-boxes">
+        <div className="wishlist-box">
+          <strong id="plus-sign">+</strong>
+        </div>
+        <div className="checkin-box">
+          <strong id="checkmark">&#10004;</strong>
+        </div>
+      </div>
     </header>
   );
 

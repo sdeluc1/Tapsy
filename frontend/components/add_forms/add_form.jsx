@@ -35,9 +35,11 @@ class AddForm extends React.Component {
     } else {
       this.props.processForm({ brewery: this.state.brewery }, "brewery");
     }
+    this.errors = this.getErrors();
+    this.forceUpdate();
   }
 
-  render(){
+  getErrors(){
     let errors = this.props.errors;
     if (typeof errors === 'undefined'){
       errors = [];
@@ -52,10 +54,16 @@ class AddForm extends React.Component {
         )}
       </ul>
     );
+    return errorList;
+  }
+
+  render(){
+    this.errors = this.errors || "";
 
     const addBeerForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
         <strong className="form-title">ADD BEER</strong>
+        {this.errors}
         <input className="name" type="text" onChange={this.update("name")} placeholder="Beer Name"/>
         <select onChange={this.update("brewery_id")}>
           <option selected disabled>Choose Brewery</option>
@@ -86,12 +94,12 @@ class AddForm extends React.Component {
         <button>Submit Brewery</button>
       </form>
     );
-    
+
     if(this.props.formType === 'beer'){
       return(
         <div className="main-add-form">
-          {errorList}
           {addBeerForm}
+          {this.errors}
         </div>
       );
     } else {
