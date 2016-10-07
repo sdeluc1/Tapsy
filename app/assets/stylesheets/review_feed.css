@@ -1,0 +1,14 @@
+.review-feed {
+  width: 650px;
+  border: 1px solid #eee;
+  padding: 24px;
+  background-color: #fff;
+}
+
+.review-feed #review-feed-header {
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.4em;
+  border-bottom: 1px solid #e5e5e5;
+}

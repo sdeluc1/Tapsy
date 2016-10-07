@@ -1,0 +1,49 @@
+.review-item-is-drinking {
+  margin-bottom: 16px;
+}
+
+.review-item-info a {
+  color: #cc6600;
+}
+
+.review-item-body {
+  /*width: 90%;*/
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.main-review-item #review-user-pic {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  margin-right: 14px;
+  float: left;
+  background-color: #ccc;
+  display: inline-block;
+}
+
+.review-item-info {
+  display: inline-block;
+  width: 520px;
+}
+
+#review-item-rating {
+  color: #ffcc00;
+  display: block;
+}
+
+.main-review-item {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.review-item-time-detail #created-at,
+.review-item-time-detail #detail-link {
+  display: inline-block;
+  margin: 0 12px 16px 0;
+  font-size: 0.8em;
+}
