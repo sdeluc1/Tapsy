@@ -22,4 +22,6 @@ class Beer < ActiveRecord::Base
     foreign_key: :brewery_id,
     primary_key: :id
 
+  has_many :reviews 
+
 end

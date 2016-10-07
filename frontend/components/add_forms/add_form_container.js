@@ -8,9 +8,8 @@ const mapStateToProps = (state) => ({
   errors: state.errors
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  debugger
-  return {formType: ownProps.formType === 'beer' ? 'beer' : 'brewery',
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  formType: ownProps.location.pathname === '/add-beer' ? 'beer' : 'brewery',
   processForm: (data, formType) => {
     if (formType === 'beer') {
       dispatch(createBeer(data));
@@ -18,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(createBrewery(data));
     }
   }
-}};
+});
 
 export default connect(
   mapStateToProps,

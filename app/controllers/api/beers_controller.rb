@@ -31,7 +31,7 @@ class Api::BeersController < ApplicationController
     @beer = Beer.find(params[:id])
     if @beer
       @beer.destroy
-      render json: @beer
+      render :show
     else
       render json: ["Beer not found"], status: 404
     end

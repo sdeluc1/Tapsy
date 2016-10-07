@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  has_many :reviews,
+    class_name: "Review",
+    foreign_key: :author_id,
+    primary_key: :id 
+
   def self.find_by_credentials(username, password)
    user = User.find_by(username: username)
    return nil if user.nil?
