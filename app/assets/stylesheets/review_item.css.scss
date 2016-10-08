@@ -7,7 +7,6 @@
 }
 
 .review-item-body {
-  /*width: 90%;*/
   background-color: #ffffff;
   border: 1px solid #eee;
   border-radius: 4px;
@@ -22,7 +21,7 @@
   margin-right: 14px;
   float: left;
   display: inline-block;
-  background-image: image-url("temp_avatar.png");
+  background-image: image-url("default_avatar.png");
   background-size: cover;
 }
 

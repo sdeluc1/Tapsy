@@ -3,12 +3,15 @@ import React from 'react';
 const UserStats = (props) => {
 
   return(
-    <div className="user-stats-box">
-      <div id="stats-user-pic"></div>
-      <div className="stats-names">
-        <strong id="stats-fullname">{props.user.name}</strong>
-        <strong id="stats-username">{props.user.username}</strong>
+    <div className="group user-stats-box">
+      <div className="group user-stats-top">
+        <div id="stats-user-pic"></div>
+        <div className="group stats-names">
+          <span id="stats-fullname">{props.user.name}</span>
+          <span id="stats-username">{props.user.username}</span>
+        </div>
       </div>
+
       <div className="stats-count-box">
         <p id="stats-total-box">
           <strong id="count-total">25</strong>

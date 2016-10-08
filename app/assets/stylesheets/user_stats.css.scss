@@ -1,0 +1,50 @@
+.user-stats-box {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 250px;
+}
+
+
+.user-stats-box #stats-user-pic {
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  // float: left;
+  display: inline-block;
+  background-image: image-url("default_avatar.png");
+  background-size: cover;
+}
+
+
+.user-stats-box .stats-names {
+  padding-left: 8px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.user-stats-box .stats-names #stats-fullname {
+  font-size: 1.3em;
+  font-weight: 500;
+  display: block;
+}
+
+
+.user-stats-box .stats-count-box {
+  display: block;
+}
+
+.stats-names #stats-username {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+  background: image-url("small_user_icon.png") left center no-repeat;
+  padding-left: 12px;
+  line-height: 1.1em;
+  margin-right: 18px;
+
+}
+
+.user-stats-box .user-stats-top {
+  position: relative;
+}

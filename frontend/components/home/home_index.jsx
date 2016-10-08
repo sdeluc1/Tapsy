@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../nav_bar';
 import ReviewFeed from '../reviews/review_feed';
+import UserStats from '../stats/user_stats';
 
 const HomeIndex = (props) => {
   if(props.loading) {
@@ -10,6 +11,9 @@ const HomeIndex = (props) => {
       <main className="home-index">
         <div className="home-review-feed">
           <ReviewFeed feedType={props.feedType} reviews={props.reviews}/>
+        </div>
+        <div className="home-user-stats">
+          <UserStats reviews={props.reviews} user={props.user} />
         </div>
       </main>
     );

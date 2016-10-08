@@ -3,3 +3,11 @@
   margin: 0 auto;
   margin-top: 30px;
 }
+
+.home-user-stats {
+  float: right;
+}
+
+.home-review-feed {
+  float: left;
+}

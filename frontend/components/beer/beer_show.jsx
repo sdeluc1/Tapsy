@@ -3,7 +3,7 @@ import BeerHeader from './beer_header';
 import ReviewFeed from '../reviews/review_feed';
 
 const BeerShow = (props) => {
-    if (props.loading) {
+    if (props.loadingBeer || props.loadingReview) {
       return(
         <div></div>
       );

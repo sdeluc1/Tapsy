@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import BeerShow from './beer_show';
 
 const mapStateToProps = (state, ownProps) => ({
-  loading: state.beer.loading,
+  loadingBeer: state.beer.loading,
+  loadingReview: state.reviews.loading, 
   showBeer: state.beer.showBeer,
   feedType: ownProps.route.feedType,
   reviews: state.reviews
