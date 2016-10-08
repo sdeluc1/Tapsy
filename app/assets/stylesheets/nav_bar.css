@@ -1,9 +1,15 @@
+#root {
+  padding-top: 52px;
+}
 
 .nav-bar-main {
   background-color: #ffcc00;
   color: #fff;
-  height: 52px;
-  padding: 0 12px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .nav-bar {
@@ -11,6 +17,8 @@
   margin: 0 auto;
   padding: 0 12px;
   width: 100%;
+  height: 52px;
+  position: relative;
 }
 
 .nav-logo {
