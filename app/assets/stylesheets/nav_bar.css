@@ -7,8 +7,10 @@
 }
 
 .nav-bar {
-  max-width: 1048px;
+  max-width: 1024px;
   margin: 0 auto;
+  padding: 0 12px;
+  width: 100%;
 }
 
 .nav-logo {

@@ -12,9 +12,9 @@ const UserStats = (props) => {
         </div>
       </div>
 
-      <div className="stats-count-box">
+      <div className="group stats-count-box">
         <p id="stats-total-box">
-          <strong id="count-total">25</strong>
+          <strong id="count-total">{props.user.rev_count}</strong>
           <strong id="word-total">TOTAL</strong>
         </p>
         <p id="stats-friends-box">

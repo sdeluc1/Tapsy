@@ -6,7 +6,7 @@ const ReviewFeedItem = (props) => {
       <div id="review-user-pic"></div>
       <section className="review-item-info">
         <p className="review-item-is-drinking">
-          <a href="#">
+          <a href={`#/user/${props.review.author.id}`}>
             <strong>{props.review.author.name}</strong>
           </a>
           <strong> is drinking a </strong>

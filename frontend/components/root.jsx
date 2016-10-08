@@ -8,7 +8,9 @@ import AddFormContainer from './add_forms/add_form_container';
 import { requestBreweries } from '../actions/brewery_actions';
 import { requestBeer } from '../actions/beer_actions';
 import { requestReviews } from '../actions/review_actions';
+import { requestUser } from '../actions/user_actions';
 import BeerContainer from './beer/beer_container';
+import UserContainer from './user/user_container';
 
 const Root = ({ store }) => {
 
@@ -36,8 +38,15 @@ const Root = ({ store }) => {
 
   const beerOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
-      store.dispatch(requestReviews());
       store.dispatch(requestBeer(nextState.params.beerId));
+      store.dispatch(requestReviews());
+    }
+  }
+
+  const userOnEnter = (nextState, replace) => {
+    if(_ensureLoggedIn(nextState, replace)) {
+      store.dispatch(requestUser(nextState.params.userId));
+      store.dispatch(requestReviews());
     }
   }
 
@@ -50,6 +59,7 @@ const Root = ({ store }) => {
           <Route path="/add-beer" component={AddFormContainer} onEnter={() => store.dispatch(requestBreweries())} />
           <Route path="/add-brewery" component={AddFormContainer} />
           <Route path="/beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer"/>
+          <Route path="/user/:userId" component={UserContainer} onEnter={userOnEnter} feedType="user" />
         </Route>
         <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>

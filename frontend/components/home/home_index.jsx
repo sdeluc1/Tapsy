@@ -8,7 +8,7 @@ const HomeIndex = (props) => {
     return <div></div>;
   } else {
     return (
-      <main className="home-index">
+      <main className="group home-index">
         <div className="home-review-feed">
           <ReviewFeed feedType={props.feedType} reviews={props.reviews}/>
         </div>
