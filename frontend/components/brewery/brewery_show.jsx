@@ -4,7 +4,7 @@ import ReviewFeed from '../reviews/review_feed';
 
 const BreweryShow = (props) => {
   debugger
-    if (props.loadingBrewery || typeof props.loadingBrewery === "undefined") {
+    if (props.loadingBrewery) {
       debugger
       return(
         <div></div>
