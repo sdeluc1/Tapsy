@@ -31,7 +31,9 @@ class ReviewFeed extends React.Component {
             break;
 
           case "brewery":
-            //reviews of all beers by specific brewery
+            if(review.brewery.id === this.props.breweryId) {
+              selectedReviews.push(review);
+            }
             break;
           default:
             break;

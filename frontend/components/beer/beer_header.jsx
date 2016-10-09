@@ -6,7 +6,9 @@ const BeerHeader = (props) => {
       <div className="beer-icon"></div>
       <div className="info-list">
         <strong id="beer-name">{props.beer.name}</strong>
-        <a href="#"><strong id="brewery-name">{props.beer.brewery.name}</strong></a>
+        <a href={`#/brewery/${props.beer.brewery.id}`}>
+          <strong id="brewery-name">{props.beer.brewery.name}</strong>
+        </a>
         <strong id="beer-style">{props.beer.style}</strong>
       </div>
       <div className="num-reviews">

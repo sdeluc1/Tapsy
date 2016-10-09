@@ -19,9 +19,7 @@ const BreweryReducer = (state = {}, action) => {
       return newState;
 
     case RECEIVE_BREWERY:
-      const addBrewery = {[action.brewery.id]: action.brewery};
-      newState = merge({}, state, addBrewery);
-      return newState;
+      return merge({}, state, {showBrewery: action.brewery, loading: false});
 
     case BREWERY_ERRORS:
       newState = merge({}, state);

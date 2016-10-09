@@ -1,0 +1,133 @@
+.main-show-brewery {
+  width: 1024px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.brewery-header {
+  width: 668px;
+  border: 1px solid #eee;
+  padding: 16px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.brewery-header .brewery-icon {
+  width: 90px;
+  height: 90px;
+  background-image: image-url("mug_icon.png");
+  background-size: cover;
+  float: left;
+  margin-right: 8px;
+}
+
+.brewery-header .info-list {
+  display: inline-block;
+}
+
+.brewery-header .num-reviews {
+  float: right;
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.brewery-header .info-bar {
+  display: block;
+  border-top: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.brewery-header #brewery-name {
+  font-size: 2em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.brewery-header #brewery-name {
+  display: block;
+  font-size: 1.25em;
+  color: #cc6600;
+  margin-bottom: 6px;
+}
+
+.brewery-header #brewery-style {
+  display: block;
+  color: #888;
+  font-size: 1em;
+}
+
+.brewery-header .brewery-bar-item {
+  display: inline-block;
+  border-right: 1px solid #e9e9e9;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 1em;
+  color: #999;
+  box-sizing: border-box;
+}
+
+.brewery-header #num-ratings {
+  width: 25%;
+}
+
+.brewery-header #num-beers {
+  width: 23%;
+}
+
+.brewery-header #rating {
+  width: 32%;
+}
+
+.brewery-header #date-added {
+  width: 20%;
+}
+
+.brewery-header .brewery-description {
+  font-size: 1em;
+  color: #999;
+  width: 480px;
+  display: inline-block;
+}
+
+.brewery-header .num-reviews p {
+  float: left;
+}
+
+.brewery-header .num-reviews #total-box,
+.brewery-header .num-reviews #you-box {
+  color: #999999;
+  padding: 6px;
+}
+
+.brewery-header .num-reviews #total,
+.brewery-header .num-reviews #you,
+.brewery-header .num-reviews #total-brewery-reviews,
+.brewery-header .num-reviews #user-brewery-reviews {
+  display: block;
+  text-align: center;
+}
+
+.brewery-header .num-reviews #total-brewery-reviews,
+.brewery-header .num-reviews #user-brewery-reviews {
+  font-size: 1.4em;
+}
+
+
+.brewery-header .num-reviews #total,
+.brewery-header .num-reviews #you {
+  margin-bottom: 2px;
+  font-size: 0.7em;
+}
+
+.brewery-header .num-reviews #total-box {
+  border-right: 1px solid #e9e9e9;
+}
+
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}

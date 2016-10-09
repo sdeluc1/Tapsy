@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewFeedItem = (props) => {
-  debugger
+
   return(
     <li className="main-review-item">
       <div id="review-user-pic"></div>
@@ -15,7 +15,7 @@ const ReviewFeedItem = (props) => {
             <strong id="is-drinking">{props.review.beer_name}</strong>
           </a>
           <strong> by </strong>
-          <a href="#">
+          <a href={`#/brewery/${props.review.brewery.id}`}>
             <strong>{props.review.brewery.name}</strong>
           </a>
         </p>
