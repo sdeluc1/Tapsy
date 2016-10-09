@@ -19,13 +19,13 @@ class ReviewFeed extends React.Component {
             break;
 
           case "user":
-            if(review.user.id === this.props.userId) {
+            if(review.author_id === this.props.userId) {
               selectedReviews.push(review);
             }
             break;
 
           case "beer":
-            if(review.beer.id === this.props.beerId) {
+            if(review.beer_id === this.props.beerId) {
               selectedReviews.push(review);
             }
             break;

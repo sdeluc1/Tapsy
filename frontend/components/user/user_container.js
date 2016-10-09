@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
 
-const mapStateToProps = ({ user }) => ({
-  user
+const mapStateToProps = (state) => ({
+  user: state.user,
+  currUser: state.session.currentUser
 });
 
 

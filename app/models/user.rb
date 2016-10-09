@@ -24,7 +24,19 @@ class User < ActiveRecord::Base
   has_many :reviews,
     class_name: "Review",
     foreign_key: :author_id,
-    primary_key: :id 
+    primary_key: :id
+
+  def num_unique_reviews
+    result = []
+    ids = []
+    self.reviews.each do |review|
+      unless ids.include?(review.beer_id)
+        ids << review.beer_id
+        result << review
+      end
+    end
+    result.length
+  end
 
   def self.find_by_credentials(username, password)
    user = User.find_by(username: username)

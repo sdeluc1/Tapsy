@@ -11,7 +11,11 @@ const BeerShow = (props) => {
       return(
         <div className="main-show-beer">
           <BeerHeader beer={props.showBeer} />
-          <ReviewFeed feedType={props.feedType} reviews={props.reviews} beerId={props.showBeer.id}/>
+          <ReviewFeed
+            feedType={props.feedType}
+            reviews={props.reviews}
+            beerId={props.showBeer.id}
+          />
         </div>
       );
     }
