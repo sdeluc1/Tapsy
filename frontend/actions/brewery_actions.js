@@ -12,7 +12,6 @@ export const requestBreweries = () => ({
 });
 
 export const requestBrewery = (breweryId) => {
-  debugger 
   return {
     type: REQUEST_BREWERY,
     breweryId

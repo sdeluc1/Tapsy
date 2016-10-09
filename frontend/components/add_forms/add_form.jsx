@@ -59,11 +59,13 @@ class AddForm extends React.Component {
     return errorList;
   }
 
+
   render(){
     this.errors = this.errors || "";
-    debugger
+
     const addBeerForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
+        <p id="close-modal" onClick={this.props.close}></p>
         <strong className="form-title">ADD BEER</strong>
         {this.errors}
         <input className="name" type="text" onChange={this.update("name")} placeholder="Beer Name"/>
@@ -87,6 +89,7 @@ class AddForm extends React.Component {
 
     const addBreweryForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
+        <p id="close-modal" onClick={this.props.close}></p>
         <strong className="form-title">ADD BREWERY</strong>
         <input className="name" type="text" onChange={this.update("name")} placeholder="Brewery Name"/>
         <input className="loc-type" type="text" onChange={this.update("location")} placeholder="Location"/>

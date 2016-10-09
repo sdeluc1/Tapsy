@@ -12,14 +12,13 @@ const BreweryReducer = (state = {loading: true}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BREWERIES:
-      newState = {};
+      newState = {loading: true};
       action.breweries.forEach((brewery) => {
         newState[brewery.id] = brewery;
       });
       return newState;
 
     case RECEIVE_BREWERY:
-      debugger
       return merge({}, state, {showBrewery: action.brewery, loading: false});
 
     case BREWERY_ERRORS:

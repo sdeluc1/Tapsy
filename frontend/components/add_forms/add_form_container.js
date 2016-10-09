@@ -3,14 +3,14 @@ import { createBeer } from '../../actions/beer_actions';
 import { createBrewery, requestBreweries } from '../../actions/brewery_actions';
 import AddForm from './add_form';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   breweries: state.breweries,
   errors: state.errors,
-  open: state.modal.open 
+  close: ownProps.close
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  formType: ownProps.location.pathname === '/add-beer' ? 'beer' : 'brewery',
+  formType: ownProps.formType,
   processForm: (data, formType) => {
     if (formType === 'beer') {
       dispatch(createBeer(data));

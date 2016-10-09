@@ -1,9 +1,10 @@
-#beer-form {
-  visibility: hidden;
-}
 
-#brewery-form {
-  z-index: 20;
+.add-beer-modal {
+  z-index: 300;
+  top: 180px;
+  left: 50%;
+  margin-left: -200px;
+  position: fixed;
 }
 
 .main-add-form {
@@ -12,7 +13,6 @@
   border-radius: 10px;
   width: 400px;
   margin: auto;
-  margin-top: 75px;
   text-align: center;
   background-color: #fff;
 }

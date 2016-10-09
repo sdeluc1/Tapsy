@@ -3,9 +3,8 @@ import BreweryHeader from './brewery_header';
 import ReviewFeed from '../reviews/review_feed';
 
 const BreweryShow = (props) => {
-  debugger
+    debugger 
     if (props.loadingBrewery) {
-      debugger
       return(
         <div></div>
       );

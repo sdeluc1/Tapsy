@@ -34,6 +34,7 @@ const Root = ({ store }) => {
   const homeOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestReviews());
+      store.dispatch(requestBreweries());
     }
   }
 
@@ -52,7 +53,6 @@ const Root = ({ store }) => {
   }
 
   const breweryOnEnter = (nextState, replace) => {
-    debugger 
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestBrewery(nextState.params.breweryId));
       store.dispatch(requestReviews());

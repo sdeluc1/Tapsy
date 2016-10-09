@@ -8,7 +8,6 @@ export const fetchBreweries = (success, error) => {
 };
 
 export const fetchOneBrewery = (breweryId, success, error) => {
-  debugger 
   $.ajax({
     url: `api/breweries/${breweryId}`,
     method: 'GET',

@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import BreweryShow from './brewery_show';
 
 const mapStateToProps = (state, ownProps) => {
-debugger 
-return{
+  debugger
+  return {
   loadingBrewery: state.breweries.loading,
   showBrewery: state.breweries.showBrewery,
   feedType: ownProps.route.feedType,
