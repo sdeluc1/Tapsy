@@ -3,7 +3,9 @@ import BreweryHeader from './brewery_header';
 import ReviewFeed from '../reviews/review_feed';
 
 const BreweryShow = (props) => {
-    if (props.loadingBrewery || props.loadingReview) {
+  debugger
+    if (props.loadingBrewery || typeof props.loadingBrewery === "undefined") {
+      debugger
       return(
         <div></div>
       );

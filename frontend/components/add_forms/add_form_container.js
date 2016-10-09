@@ -5,7 +5,8 @@ import AddForm from './add_form';
 
 const mapStateToProps = (state) => ({
   breweries: state.breweries,
-  errors: state.errors
+  errors: state.errors,
+  open: state.modal.open 
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

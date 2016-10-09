@@ -11,10 +11,13 @@ export const requestBreweries = () => ({
   type: REQUEST_BREWERIES
 });
 
-export const requestBrewery = (breweryId) => ({
-  type: REQUEST_BREWERY,
-  breweryId
-});
+export const requestBrewery = (breweryId) => {
+  debugger 
+  return {
+    type: REQUEST_BREWERY,
+    breweryId
+  };
+};
 
 export const receiveBreweries = (breweries) => ({
   type: RECEIVE_BREWERIES,

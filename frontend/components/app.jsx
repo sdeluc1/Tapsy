@@ -4,9 +4,11 @@ import AddForm from './add_forms/add_form_container';
 import { Link } from 'react-router';
 
 const App = ({ children }) => (
-  <div>
+  <div className="app-body">
     <NavBar />
-    {children}
+    <div className="app-children">
+      {children}
+    </div>
   </div>
 );
 

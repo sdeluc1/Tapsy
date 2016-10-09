@@ -23,6 +23,7 @@ export default ({ getState, dispatch }) => next => action => {
       breweryAPI.fetchBreweries(successBreweries, errorCallback);
       break;
     case REQUEST_BREWERY:
+      debugger 
       breweryAPI.fetchOneBrewery(action.breweryId, successBrewery, errorCallback);
       break;
     case REMOVE_BREWERY:

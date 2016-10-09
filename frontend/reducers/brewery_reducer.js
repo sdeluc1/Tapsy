@@ -19,6 +19,7 @@ const BreweryReducer = (state = {}, action) => {
       return newState;
 
     case RECEIVE_BREWERY:
+      debugger 
       return merge({}, state, {showBrewery: action.brewery, loading: false});
 
     case BREWERY_ERRORS:

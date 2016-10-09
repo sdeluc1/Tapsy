@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import merge from 'lodash/merge';
+import Modal from 'react-modal';
 
 class AddForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class AddForm extends React.Component {
       brewery: {
         name: "",
         location: ""
-      }
+      },
+      open: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,7 +61,7 @@ class AddForm extends React.Component {
 
   render(){
     this.errors = this.errors || "";
-
+    debugger
     const addBeerForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
         <strong className="form-title">ADD BEER</strong>
@@ -97,6 +99,7 @@ class AddForm extends React.Component {
 
     if(this.props.formType === 'beer'){
       return(
+
         <div className="main-add-form">
           {addBeerForm}
           {this.errors}
