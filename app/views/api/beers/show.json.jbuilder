@@ -6,3 +6,4 @@ json.reviews @beer.reviews do |review|
   json.author_name review.author.name
   json.brewery @beer.brewery, :id, :name
 end
+json.rev_count @beer.reviews.length

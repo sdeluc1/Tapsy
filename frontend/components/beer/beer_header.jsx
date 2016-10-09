@@ -14,7 +14,7 @@ const BeerHeader = (props) => {
       <div className="num-reviews">
         <p id="total-box">
           <strong id="total">TOTAL</strong>
-          <strong id="total-beer-reviews">47</strong>
+          <strong id="total-beer-reviews">{props.beer.rev_count}</strong>
         </p>
         <p id="you-box">
           <strong id="you">YOU</strong>

@@ -52,12 +52,31 @@
   letter-spacing: 1px;
 }
 
-.nav-search {
+.nav-bar .nav-right {
   float: right;
-  margin-top: 8px;
-  width: 240px;
+}
+
+.nav-bar .nav-user-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background: image-url("default_avatar.png");
+  background-size: cover;
+  position: absolute;
+  right: 264px;
+  top: 8px;
+}
+
+.nav-search {
+  float: left;
+  margin-top: 7px;
+  width: 202px;
   border-radius: 4px;
-  padding: 7px;
+  padding: 9px 32px 8px 8px;
   font-size: 15px;
   border: 0;
+  background-image: image-url("mag_glass.png");
+  background-size: 18px 18px;
+  background-position: 96% center;
+  background-repeat: no-repeat;
 }

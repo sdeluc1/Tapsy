@@ -14,10 +14,12 @@ const NavBar = () => (
         <a href="#/add-beer"><li>Add Beer</li></a>
         <a href="#/add-brewery"><li>Add Brewery</li></a>
       </ul>
-
-      <form>
-        <input className="nav-search" type="text" placeholder="Find a beer or brewery..." />
-      </form>
+      <div className="nav-right">
+        <div className="nav-user-pic"></div>
+        <form className="search">
+          <input className="nav-search" type="text" placeholder="Find a beer or brewery..." />
+        </form>
+      </div>
     </nav>
   </header>
 );
