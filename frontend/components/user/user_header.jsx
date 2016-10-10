@@ -45,6 +45,6 @@ const UserHeader = (props) => {
     </header>
   );
 
-}
+};
 
 export default UserHeader;

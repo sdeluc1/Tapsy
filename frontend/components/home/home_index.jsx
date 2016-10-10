@@ -10,7 +10,7 @@ const HomeIndex = (props) => {
     return (
       <main className="group home-index">
         <div className="home-review-feed">
-          <ReviewFeed feedType={props.feedType} reviews={props.reviews}/>
+          <ReviewFeed feedType={props.feedType} reviews={props.reviews} user={props.user}/>
         </div>
         <div className="home-user-stats">
           <UserStats reviews={props.reviews} user={props.user} />

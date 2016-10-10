@@ -26,6 +26,15 @@ class User < ActiveRecord::Base
     foreign_key: :author_id,
     primary_key: :id
 
+  has_many :follows,
+    class_name: "Follow",
+    foreign_key: :user_id,
+    primary_key: :id
+
+  def follows_array
+    self.follows.map {|follow| follow.follow_id }
+  end
+
   def num_unique_reviews
     result = []
     ids = []

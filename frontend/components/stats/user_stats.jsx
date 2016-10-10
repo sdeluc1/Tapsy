@@ -18,8 +18,8 @@ const UserStats = (props) => {
           <strong id="word-total">TOTAL</strong>
         </p>
         <p id="stats-friends-box">
-          <strong id="count-total">11</strong>
-          <strong id="word-total">FRIENDS</strong>
+          <strong id="count-total">{props.user.follows.length}</strong>
+          <strong id="word-total">FOLLOWS</strong>
         </p>
       </div>
     </div>

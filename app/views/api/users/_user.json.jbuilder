@@ -6,5 +6,8 @@ json.reviews user.reviews do |review|
   json.brewery review.beer.brewery, :id, :name
   json.beer_name review.beer.name
 end
+
 json.rev_count user.reviews.length
 json.unique_count user.num_unique_reviews
+
+json.follows user.follows_array
