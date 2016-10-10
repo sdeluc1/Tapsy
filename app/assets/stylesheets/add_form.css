@@ -1,7 +1,7 @@
 
 .add-beer-modal {
   z-index: 300;
-  top: 180px;
+  top: 120px;
   left: 50%;
   margin-left: -200px;
   position: fixed;
@@ -12,7 +12,7 @@
   border: 2px solid #ccc;
   border-radius: 10px;
   width: 400px;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   background-color: #fff;
 }

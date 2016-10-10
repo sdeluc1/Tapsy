@@ -138,11 +138,17 @@
   text-align: center;
   padding: 5px 0;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .beer-header .wishlist-box {
   font-size: 38px;
   padding-top: 2px;
+}
+
+.beer-check-boxes .checkin-box:hover,
+.beer-check-boxes .wishlist-box:hover {
+  background-color: #f4b800;
 }
 
 .group:after {

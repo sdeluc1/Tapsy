@@ -22,6 +22,14 @@ class Beer < ActiveRecord::Base
     foreign_key: :brewery_id,
     primary_key: :id
 
-  has_many :reviews 
+  has_many :reviews
+
+  def overall_rating
+    total = 0;
+    self.reviews.each do |review|
+      total += review.rating
+    end
+    total / self.reviews.length
+  end
 
 end

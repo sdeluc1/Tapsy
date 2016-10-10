@@ -49,7 +49,7 @@ class ReviewFeed extends React.Component {
         <header id="review-feed-header">Recent Activity</header>
         <ul className="review-feed-list">
           {
-            this.filterFeed().map( (review, idx) => {
+            this.filterFeed().reverse().map( (review, idx) => {
               return <ReviewFeedItem key={idx} review={review} />;
             })
           }

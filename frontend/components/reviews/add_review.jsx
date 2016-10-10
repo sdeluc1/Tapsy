@@ -9,8 +9,21 @@ class AddReview extends React.Component {
       author_id: this.props.currUserId,
       beer_id: this.props.beerId
     }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  update(field) {
+    return e => {
+      this.setState({ [field]: e.currentTarget.value});
+    };
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createReview({review: this.state});
+    this.props.close();
+  }
 
 
   render() {
@@ -22,9 +35,34 @@ class AddReview extends React.Component {
           <h2>Check-In</h2>
         </span>
         <div className="review-form-content">
-          <form id="review-form">
-            <textarea id="review-form-description" placeholder="What did you think?"></textarea>
+          <form onSubmit={this.handleSubmit} id="review-form">
+
+            <textarea
+              onChange={this.update("description")}
+              id="review-form-description"
+              placeholder="What did you think?">
+            </textarea>
+
             <div id="review-photo-button"></div>
+
+            <div className="rating-slider">
+              <input
+                onChange={this.update("rating")}
+                type="range"
+                min="0.0"
+                max="5.0"
+                step="0.25"
+                value={this.state.rating}
+              />
+
+              <p className="rating-val-box">
+                <span id="rating-value">{this.state.rating}</span>
+                <span id="rating-word">RATING</span>
+              </p>
+
+              <button className="submit-review">Confirm</button>
+            </div>
+
           </form>
         </div>
       </div>

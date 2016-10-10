@@ -66,6 +66,11 @@
   background-color: #ffcc00;
   display: inline-block;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+#review-photo-button:hover {
+  background-color: #f4b800;
 }
 
 #close-modal {
@@ -79,4 +84,55 @@
   background-position: center center;
   float: right;
   cursor: pointer;
+}
+
+#review-form input[type=range] {
+  width: 70%;
+}
+
+#review-form .submit-review {
+  // position: absolute;
+  // right: 16px;
+  // bottom: 10px;
+  padding: 8px 38px;
+  background-color: #ffcc00;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1em;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+#review-form .submit-review:hover {
+  background-color: #f4b800;
+}
+
+.rating-slider {
+  display: block;
+  width: 95%;
+  margin-top: 30px;
+
+}
+
+.rating-slider #rating-value {
+  font-size: 28px;
+  display: block;
+}
+
+.rating-slider #rating-word {
+  font-size: 16px;
+  display: block;
+}
+
+.rating-slider .rating-val-box {
+  display: inline-block;
+  float: right;
+  background-color: #ccc;
+  padding: 4px;
+  width: 72px;
+  text-align: center;
+  color: #fff;
+  border-radius: 6px;
 }

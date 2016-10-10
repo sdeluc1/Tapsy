@@ -45,8 +45,8 @@ class BeerHeader extends React.Component {
         <div className="info-bar">
           <strong id="abv" className="beer-bar-item">{this.props.beer.abv}% ABV</strong>
           <strong id="ibu"className="beer-bar-item">{this.props.beer.ibu} IBU</strong>
-          <strong id="rating" className="beer-bar-item">RATING OOOOO</strong>
-          <strong id="num-ratings" className="beer-bar-item"># of ratings</strong>
+          <strong id="rating" className="beer-bar-item">RATING: {this.props.beer.avg_rating}</strong>
+          <strong id="num-ratings" className="beer-bar-item">{this.props.beer.rev_count} total</strong>
           <strong id="date-added" className="beer-bar-item">Added 10/6/16</strong>
         </div>
         <div className="beer-description">{this.props.beer.description}</div>
@@ -54,8 +54,10 @@ class BeerHeader extends React.Component {
           <div className="wishlist-box">
             <strong id="plus-sign">+</strong>
           </div>
-          <div className="checkin-box" onClick={this.openReviewModal}>
-            <strong id="checkmark">&#10004;</strong>
+          <div className="click-checkbox" onClick={this.openReviewModal}>
+            <div className="checkin-box" >
+              <strong id="checkmark">&#10004;</strong>
+            </div>
           </div>
         </div>
         <div id="modal-overlay" style={this.state.modalDisplay}></div>
