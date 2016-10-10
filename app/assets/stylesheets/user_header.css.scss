@@ -5,9 +5,7 @@
 
 .main-user-header {
   width: 984px;
-  // margin: 0 auto;
   height: 165px;
-  // background-image: image-url("beer_login.jpg");
   background-size: cover;
   background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("beer_login.jpg");
   background-position: center;
@@ -75,10 +73,10 @@
 
 }
 
-.main-user-header .follow-user {
+.main-user-header .follow-user,
+.main-user-header .remove-follow-user {
   float: right;
   z-index: 2;
-  background-color: #ffcc00;
   padding: 6px 16px 6px 34px;
   border-radius: 4px;
   color: #fff;
@@ -88,6 +86,15 @@
   background-image: image-url("add_icon.png");
   background-repeat: no-repeat;
   background-position: 8px center;
+  cursor: pointer;
+}
+
+.main-user-header .follow-user {
+  background-color: #ffcc00;
+}
+
+.main-user-header .remove-follow-user {
+  background-color: #ccc;
 }
 
 .main-user-header .header-stats p {

@@ -10,4 +10,9 @@ end
 json.rev_count user.reviews.length
 json.unique_count user.num_unique_reviews
 
-json.follows user.follows_array
+json.follows_arr user.follows_array
+
+json.follows user.follows do |follow|
+  json.id follow.id
+  json.follow follow.follow_id
+end

@@ -14,7 +14,7 @@ class ReviewFeed extends React.Component {
       this.props.reviews.forEach( (review) => {
         switch(this.props.feedType) {
           case "home":
-            if(this.props.user.follows.includes(review.author_id)){
+            if(this.props.user.follows_arr.includes(review.author_id)){
               selectedReviews.push(review);
             }
             break;
