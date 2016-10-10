@@ -7,11 +7,14 @@ import HomeContainer from './home/home_container';
 import AddFormContainer from './add_forms/add_form_container';
 import { requestBreweries, requestBrewery } from '../actions/brewery_actions';
 import { requestBeer } from '../actions/beer_actions';
-import { requestReviews } from '../actions/review_actions';
+import { requestReviews, requestReview } from '../actions/review_actions';
 import { requestUser } from '../actions/user_actions';
+import { requestFollows } from '../actions/follow_actions';
+import { receiveCurrentUser } from '../actions/session_actions';
 import BeerContainer from './beer/beer_container';
 import UserContainer from './user/user_container';
 import BreweryContainer from './brewery/brewery_container';
+import ReviewDetailContainer from './reviews/review_detail_container';
 
 const Root = ({ store }) => {
 
@@ -34,6 +37,7 @@ const Root = ({ store }) => {
   const homeOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestReviews());
+      store.dispatch(requestFollows());
       store.dispatch(requestBreweries());
     }
   }
@@ -59,15 +63,22 @@ const Root = ({ store }) => {
     }
   }
 
+  const reviewOnEnter = (nextState, replace) => {
+    if(_ensureLoggedIn(nextState, replace)) {
+      store.dispatch(requestReview(nextState.params.reviewId));
+    }
+  }
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App} >
           <IndexRedirect to="/login" />
-          <Route path="/home" component={HomeContainer} onEnter={homeOnEnter} feedType="home"/>
-          <Route path="/beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer"/>
-          <Route path="/brewery/:breweryId" component={BreweryContainer} onEnter={breweryOnEnter} feedType="brewery" />
-          <Route path="/user/:userId" component={UserContainer} onEnter={userOnEnter} feedType="user" />
+          <Route path="home" component={HomeContainer} onEnter={homeOnEnter} feedType="home"/>
+          <Route path="beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer"/>
+          <Route path="brewery/:breweryId" component={BreweryContainer} onEnter={breweryOnEnter} feedType="brewery" />
+          <Route path="user/:userId" component={UserContainer} onEnter={userOnEnter} feedType="user" />
+          <Route path="reviews/:reviewId" component={ReviewDetailContainer} onEnter={reviewOnEnter}/>
         </Route>
         <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>

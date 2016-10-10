@@ -16,3 +16,12 @@ export const removeFollow = (followId, success, error) => {
     error
   });
 };
+
+export const requestFollows = (success, error) => {
+  $.ajax({
+    url: 'api/follows',
+    method: 'GET',
+    success,
+    error
+  });
+};

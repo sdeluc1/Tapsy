@@ -2,6 +2,7 @@ export const REQUEST_USER = "REQUEST_USER";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const USER_ERRORS = "USER_ERRORS";
 
+
 export const requestUser = (userId) => ({
   type: REQUEST_USER,
   userId

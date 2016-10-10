@@ -1,7 +1,7 @@
 export const CREATE_FOLLOW = "CREATE_FOLLOW";
 export const DELETE_FOLLOW = "DELETE_FOLLOW";
-export const ADD_TO_FOLLOWS = "ADD_TO_FOLLOWS";
-export const REMOVE_FROM_FOLLOWS = "REMOVE_FROM_FOLLOWS";
+export const RECEIVE_FOLLOWS = "RECEIVE_FOLLOWS";
+export const REQUEST_FOLLOWS = "REQUEST_FOLLOWS";
 
 export const createFollow = (follow) => ({
   type: CREATE_FOLLOW,
@@ -13,10 +13,11 @@ export const deleteFollow = (followId) => ({
   followId
 });
 
-export const addToFollows = () => ({
-  type: ADD_TO_FOLLOWS
+export const receiveFollows = (follows) => ({
+  type: RECEIVE_FOLLOWS,
+  follows
 });
 
-export const removeFromFollows = () => ({
-  type: REMOVE_FROM_FOLLOWS
+export const requestFollows = () => ({
+  type: REQUEST_FOLLOWS
 });

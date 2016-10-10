@@ -1,12 +1,10 @@
-import { ADD_TO_FOLLOWS, REMOVE_FROM_FOLLOWS } from '../actions/review_actions';
+import { RECEIVE_FOLLOWS } from '../actions/follow_actions';
 import merge from 'lodash/merge';
 
-const FollowReducer = ( state = false, action) => {
+const FollowReducer = ( state = [], action) => {
   switch(action.type) {
-    case ADD_TO_FOLLOWS:
-      return true;
-    case REMOVE_FROM_FOLLOWS:
-      return false;
+    case RECEIVE_FOLLOWS:
+      return action.follows;
     default:
       return state;
   }

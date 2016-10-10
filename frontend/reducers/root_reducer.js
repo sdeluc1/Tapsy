@@ -12,7 +12,7 @@ const RootReducer = combineReducers({
   breweries: BreweryReducer,
   reviews: ReviewReducer,
   user: UserReducer,
-  follow: FollowReducer
+  follows: FollowReducer
 });
 
 export default RootReducer;

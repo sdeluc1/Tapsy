@@ -3,6 +3,6 @@ export const fetchUser = (userId, success, error) => {
     url: `api/users/${userId}`,
     method: 'GET',
     success,
-    error 
+    error
   });
-}
+};

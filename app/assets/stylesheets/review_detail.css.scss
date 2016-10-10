@@ -1,0 +1,45 @@
+.main-review-detail {
+  max-width: 1048px;
+  min-width: 320px;
+  width: 100%;
+  margin: 32px auto 48px;
+  padding: 0 12px;
+  position: relative;
+}
+
+.review-detail-user {
+  margin: 0 auto 16px;
+  width: 44%;
+  height: 50px;
+}
+
+.review-detail-user #user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 36px;
+  background-image: image-url("default_avatar.png");
+  background-size: cover;
+  display: inline-block;
+  float: left;
+}
+
+.review-detail-user #name-count {
+  display: inline-block;
+  padding-left: 15px;
+  padding-top: 4px;
+}
+
+.review-detail-user #name-count #user-name,
+.review-detail-user #name-count #checkins {
+  display: block;
+}
+
+.review-detail-user #name-count #user-name {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.review-detail-user #name-count #checkins{
+  font-size: 14px;
+  color: #999;
+}

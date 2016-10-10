@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
-import { createFollow, deleteFollow, toggleFollow } from '../../actions/follow_actions';
+import { createFollow, deleteFollow, requestFollows } from '../../actions/follow_actions';
+import { updateCurrentUser } from '../../actions/session_actions';
 
-const mapStateToProps = (state) => {
-  debugger
-  return{user: state.user,
-  currUser: state.session.currentUser,
-  followStatus: state.follow
-};};
+const mapStateToProps = (state) => ({
+  user: state.user,
+  currUser: state.session.currentUser
+});
 
 const mapDispatchToProps = (dispatch) => ({
   createFollow: (follow) => dispatch(createFollow(follow)),
   deleteFollow: (followId) => dispatch(deleteFollow(followId)),
-  toggleFollow: () => dispatch(toggleFollow())
+  requestFollows: () => dispatch(requestFollows()),
+  updateCurrentUser: (user) => dispatch(updateCurrentUser(user))
 });
 
 export default connect(

@@ -1,12 +1,17 @@
 class Api::FollowsController < ApplicationController
 
+  def index
+    @follows = Follow.all
+    render json: @follows
+  end 
+
   def create
     @follow = current_user.follows.new(follow_params)
     if @follow.save
       render json: @follow
     else
       render json: @follow.errors.full_messages, status: 422
-    end 
+    end
   end
 
   def destroy
