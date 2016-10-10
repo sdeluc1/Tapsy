@@ -8,7 +8,7 @@ class AddReview extends React.Component {
       rating: "0.0",
       author_id: this.props.currUserId,
       beer_id: this.props.beerId
-    }
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -22,7 +22,7 @@ class AddReview extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview({review: this.state});
-    this.props.close();
+    this.props.process();
   }
 
 

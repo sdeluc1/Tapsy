@@ -1,26 +1,62 @@
 import React from 'react';
 import BeerHeader from './beer_header';
 import ReviewFeed from '../reviews/review_feed';
+import AddReviewContainer from '../reviews/add_review_container';
 
-const BeerShow = (props) => {
+class BeerShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { modalDisplay: {display: 'none' }};
+    this.openReviewModal = this.openReviewModal.bind(this);
+    this.closeReviewModal = this.closeReviewModal.bind(this);
+    this.processReviewModal = this.processReviewModal.bind(this);
+  }
 
-    if (props.loadingBeer || props.loadingReview) {
+  openReviewModal(){
+    this.setState({ modalDisplay: { display: 'block' } });
+  }
+
+  closeReviewModal(){
+    this.setState({ modalDisplay: { display: 'none' } });
+  }
+
+  processReviewModal(){
+    this.props.updateReviews();
+    this.setState({ modalDisplay: { display: 'none' } });
+  }
+
+  render(){
+    if (this.props.loadingBeer || this.props.loadingReview) {
       return(
         <div></div>
       );
     } else {
       return(
         <div className="main-show-beer">
-          <BeerHeader beer={props.showBeer} />
-          <ReviewFeed
-            feedType={props.feedType}
-            reviews={props.reviews}
-            beerId={props.showBeer.id}
+          <BeerHeader
+            beer={this.props.showBeer}
+            openReviewModal={this.openReviewModal}
+            closeReviewModal={this.closeReviewModal}
           />
+          <ReviewFeed
+            feedType={this.props.feedType}
+            reviews={this.props.reviews}
+            beerId={this.props.showBeer.id}
+          />
+        <div id="modal-overlay" style={this.state.modalDisplay}></div>
+          <div className="add-review-modal" style={this.state.modalDisplay}>
+            <AddReviewContainer
+              beerId={this.props.showBeer.id}
+              close={this.closeReviewModal}
+              process={this.processReviewModal}
+            />
+          </div>
         </div>
       );
     }
+  }
 
-};
+
+}
 
 export default BeerShow;

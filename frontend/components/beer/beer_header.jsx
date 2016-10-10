@@ -1,41 +1,21 @@
 import React from 'react';
-import AddReviewContainer from '../reviews/add_review_container';
 
-// const appElement = document.getElementById('add-review-modal');
-
-class BeerHeader extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = { modalDisplay: {display: 'none' }};
-
-    this.openReviewModal = this.openReviewModal.bind(this);
-    this.closeReviewModal = this.closeReviewModal.bind(this);
-  }
-
-  openReviewModal(){
-    this.setState({ modalDisplay: { display: 'block' } });
-  }
-
-  closeReviewModal(){
-    this.setState({ modalDisplay: { display: 'none' } });
-  }
-
-  render() {
+const BeerHeader = (props) => {
 
     return(
       <header className="group beer-header">
         <div className="beer-icon"></div>
         <div className="info-list">
-          <strong id="beer-name">{this.props.beer.name}</strong>
-          <a href={`#/brewery/${this.props.beer.brewery.id}`}>
-            <strong id="brewery-name">{this.props.beer.brewery.name}</strong>
+          <strong id="beer-name">{props.beer.name}</strong>
+          <a href={`#/brewery/${props.beer.brewery.id}`}>
+            <strong id="brewery-name">{props.beer.brewery.name}</strong>
           </a>
-          <strong id="beer-style">{this.props.beer.style}</strong>
+          <strong id="beer-style">{props.beer.style}</strong>
         </div>
         <div className="num-reviews">
           <p id="total-box">
             <strong id="total">TOTAL</strong>
-            <strong id="total-beer-reviews">{this.props.beer.rev_count}</strong>
+            <strong id="total-beer-reviews">{props.beer.rev_count}</strong>
           </p>
           <p id="you-box">
             <strong id="you">YOU</strong>
@@ -43,30 +23,26 @@ class BeerHeader extends React.Component {
           </p>
         </div>
         <div className="info-bar">
-          <strong id="abv" className="beer-bar-item">{this.props.beer.abv}% ABV</strong>
-          <strong id="ibu"className="beer-bar-item">{this.props.beer.ibu} IBU</strong>
-          <strong id="rating" className="beer-bar-item">RATING: {this.props.beer.avg_rating}</strong>
-          <strong id="num-ratings" className="beer-bar-item">{this.props.beer.rev_count} total</strong>
+          <strong id="abv" className="beer-bar-item">{props.beer.abv}% ABV</strong>
+          <strong id="ibu"className="beer-bar-item">{props.beer.ibu} IBU</strong>
+          <strong id="rating" className="beer-bar-item">RATING: {props.beer.avg_rating}</strong>
+          <strong id="num-ratings" className="beer-bar-item">{props.beer.rev_count} total</strong>
           <strong id="date-added" className="beer-bar-item">Added 10/6/16</strong>
         </div>
-        <div className="beer-description">{this.props.beer.description}</div>
+        <div className="beer-description">{props.beer.description}</div>
         <div className="beer-check-boxes">
           <div className="wishlist-box">
             <strong id="plus-sign">+</strong>
           </div>
-          <div className="click-checkbox" onClick={this.openReviewModal}>
+          <div className="click-checkbox" onClick={props.openReviewModal}>
             <div className="checkin-box" >
               <strong id="checkmark">&#10004;</strong>
             </div>
           </div>
         </div>
-        <div id="modal-overlay" style={this.state.modalDisplay}></div>
-        <div className="add-review-modal" style={this.state.modalDisplay}>
-          <AddReviewContainer beerId={this.props.beer.id} close={this.closeReviewModal}/>
-        </div>
+
       </header>
     );
-  }
 
 };
 

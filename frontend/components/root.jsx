@@ -65,8 +65,6 @@ const Root = ({ store }) => {
         <Route path="/" component={App} >
           <IndexRedirect to="/login" />
           <Route path="/home" component={HomeContainer} onEnter={homeOnEnter} feedType="home"/>
-          <Route path="/add-beer" component={AddFormContainer} onEnter={() => store.dispatch(requestBreweries())} />
-          <Route path="/add-brewery" component={AddFormContainer} />
           <Route path="/beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer"/>
           <Route path="/brewery/:breweryId" component={BreweryContainer} onEnter={breweryOnEnter} feedType="brewery" />
           <Route path="/user/:userId" component={UserContainer} onEnter={userOnEnter} feedType="user" />
