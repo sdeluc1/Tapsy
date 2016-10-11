@@ -38,17 +38,17 @@ const ReviewReducer = (state = defaultState, action) => {
       return newState;
 
     case RECEIVE_BEER:
-      return {list: action.beer.reviews};
+      return {list: action.beer.reviews, loadingOne: true};
 
     case RECEIVE_USER:
-      return {list: action.user.reviews};
+      return {list: action.user.reviews, loadingOne: true};
 
     case RECEIVE_BREWERY:
       const breweryReviews = [];
       action.brewery.beers.forEach( (beer) => {
         breweryReviews.push(...beer.reviews);
       });
-      return { list: breweryReviews };
+      return { list: breweryReviews, loadingOne: true };
 
     default:
       return state;

@@ -1,6 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const ReviewFeedItem = (props) => {
+  debugger
+  const reviewPhoto = () => {
+    if(props.review.image_url === "/assets/genericbeercan.jpg"){
+      return;
+    } else {
+      return(
+        <div className="review-item-photo">
+          <Link to={`/reviews/${props.review.id}`}>
+            <img id="item-pic" src={props.review.image_url} />
+          </Link>
+        </div>
+      );
+    }
+  };
 
   return(
     <li className="main-review-item">
@@ -23,9 +38,12 @@ const ReviewFeedItem = (props) => {
           <strong id="review-item-description">{props.review.description}</strong>
           <strong id="review-item-rating">Rating: {props.review.rating}</strong>
         </div>
+
+        {reviewPhoto()}
+
         <footer className="review-item-time-detail">
           <strong id="created-at">{props.review.created_at} ago</strong>
-          <a href={`#/reviews/${props.review.id}`}><strong id="detail-link">View Detailed Check-in</strong></a>
+          <Link to={`/reviews/${props.review.id}`}><strong id="detail-link">View Detailed Check-in</strong></Link>
         </footer>
       </section>
     </li>
