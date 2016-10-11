@@ -1,5 +1,6 @@
 import React from 'react';
 import AddFormContainer from './add_forms/add_form_container';
+import { Link } from 'react-router';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -60,7 +61,7 @@ class NavBar extends React.Component {
               <input className="nav-search" type="text" placeholder="Find a beer or brewery..." />
             </form>
           </div>
-          <div id="modal-overlay" style={this.state.background} />
+          <div onClick={this.closeModal} id="modal-overlay" style={this.state.background} />
           <div className="add-beer-modal" style={this.state.addBeer}>
             <AddFormContainer formType="beer" close={this.closeModal} openBrewery={this.openBreweryModal}/>
           </div>

@@ -31,9 +31,15 @@
 }
 
 #review-item-rating {
-  color: #ffcc00;
+  background-color: #ffcc00;
   display: block;
   margin-top: 8px;
+  padding: 5px;
+  color: #fff;
+  max-width: 120px;
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 2px;
 }
 
 .main-review-item {

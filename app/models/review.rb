@@ -14,7 +14,7 @@
 class Review < ActiveRecord::Base
 
   validates :rating, :author_id, :beer_id, presence: true
-  has_attached_file :image
+  has_attached_file :image, default_url: "/assets/genericbeercan.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   belongs_to :author,

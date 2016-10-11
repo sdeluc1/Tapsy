@@ -43,7 +43,7 @@ class BeerShow extends React.Component {
             reviews={this.props.reviews}
             beerId={this.props.showBeer.id}
           />
-        <div id="modal-overlay" style={this.state.modalDisplay}></div>
+        <div onClick={this.closeReviewModal} id="modal-overlay" style={this.state.modalDisplay}></div>
           <div className="add-review-modal" style={this.state.modalDisplay}>
             <AddReviewContainer
               beerId={this.props.showBeer.id}

@@ -91,9 +91,6 @@
 }
 
 #review-form .submit-review {
-  // position: absolute;
-  // right: 16px;
-  // bottom: 10px;
   padding: 8px 38px;
   background-color: #ffcc00;
   color: #fff;
@@ -101,8 +98,8 @@
   font-size: 1.1em;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
-  margin-left: 80px;
+  margin-top: 20px;
+  margin-left: 40px;
 }
 
 #review-form .submit-review:hover {
@@ -111,8 +108,8 @@
 
 .rating-slider {
   display: block;
-  width: 95%;
-  margin-top: 30px;
+  width: 100%;
+  margin-top: 20px;
 
 }
 
@@ -135,4 +132,15 @@
   text-align: center;
   color: #fff;
   border-radius: 6px;
+  margin-top: 10px;
+}
+
+.review-form-content .preview-image #review-img-prev {
+  width: 90px;
+  height: 65px;
+  background-image: image-url("review_img_holder.png");
+  background-size: cover;
+  float: right;
+  margin-left: 53px;
+  border: 2px solid black;
 }

@@ -57,7 +57,6 @@ class AddReview extends React.Component {
 
 
   render() {
-
     return(
       <div className="review-modal">
         <span id="review-modal-header">
@@ -75,7 +74,6 @@ class AddReview extends React.Component {
             </textarea>
 
             <input type="file" id="review-photo-button" onChange={this.updateFile} />
-            <img src={this.state.imageUrl} />
             <div className="rating-slider">
               <input
                 onChange={this.update("rating")}
@@ -85,6 +83,10 @@ class AddReview extends React.Component {
                 step="0.25"
                 value={this.state.rating}
               />
+
+              <p className="preview-image">
+                <img id="review-img-prev" src={this.state.imageUrl} />
+              </p>
 
               <p className="rating-val-box">
                 <span id="rating-value">{this.state.rating}</span>

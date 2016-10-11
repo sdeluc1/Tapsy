@@ -46,21 +46,21 @@ const Root = ({ store }) => {
   const beerOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestBeer(nextState.params.beerId));
-      store.dispatch(requestReviews());
+      // store.dispatch(requestReviews());
     }
   }
 
   const userOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestUser(nextState.params.userId));
-      store.dispatch(requestReviews());
+      // store.dispatch(requestReviews());
     }
   }
 
   const breweryOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestBrewery(nextState.params.breweryId));
-      store.dispatch(requestReviews());
+      // store.dispatch(requestReviews());
     }
   }
 

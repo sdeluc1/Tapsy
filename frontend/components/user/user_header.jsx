@@ -23,8 +23,8 @@ class UserHeader extends React.Component {
     this.setState({ followed: true });
   }
 
-  remove(id) {
-    this.props.removeFollow(id);
+  remove(userId) {
+    this.props.removeFollow(userId);
     this.props.receiveCurr(this.props.currUser);
     this.setState({ followed: false });
   }

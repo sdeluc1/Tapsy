@@ -2,15 +2,21 @@
   max-width: 1048px;
   min-width: 320px;
   width: 100%;
-  margin: 32px auto 48px;
-  padding: 0 12px;
   position: relative;
+  margin: 32px auto 48px;
 }
 
 .review-detail-user {
-  margin: 0 auto 16px;
-  width: 44%;
+  margin-bottom: 16px;
   height: 50px;
+}
+
+.review-box {
+  float: left;
+  padding: 20px 50px;
+  padding-right: 0;
+  margin-top: 30px;
+  width: 50%;
 }
 
 .review-detail-user #user-avatar {
@@ -45,8 +51,7 @@
 }
 
 #review-detail-content {
-  margin: 0 auto 16px;
-  width: 41%;
+  // width: 460px;
   background-color: #fff;
   padding: 16px;
   position: relative;
@@ -82,7 +87,6 @@
 
 #review-detail-content #content-bottom {
   padding: 10px 60px;
-  // border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
@@ -106,4 +110,11 @@
   float: right;
   font-size: 12px;
   color: #ccc;
+}
+
+.main-review-detail .review-pic #review-image {
+  float: right;
+  max-width: 300px;
+  max-height: 600px;
+  padding: 20px 40px;
 }
