@@ -35,11 +35,12 @@
   display: block;
   margin-top: 8px;
   padding: 5px;
-  color: #fff;
+  color: #000;
   max-width: 120px;
   text-align: center;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px white;
   letter-spacing: 2px;
+  border-radius: 5px;
 }
 
 .main-review-item {

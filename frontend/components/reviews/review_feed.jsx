@@ -21,12 +21,24 @@ const ReviewFeed = (props) => {
       reviews = selectedReviews;
     }
 
+    const compare = (a, b) => {
+      if(a.id < b.id){
+        return -1;
+      } else {
+        return 1;
+      }
+    };
+
+    reviews.sort( (a, b) => {
+      return b.id - a.id;
+    });
+
     return(
       <div className="review-feed">
         <header id="review-feed-header">Recent Activity</header>
         <ul className="review-feed-list">
           {
-            reviews.reverse().map( (review, idx) => {
+            reviews.map( (review, idx) => {
               return <ReviewFeedItem key={idx} review={review} />;
             })
           }
