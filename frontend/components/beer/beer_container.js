@@ -4,10 +4,10 @@ import { requestReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loadingBeer: state.beer.loading,
-  loadingReview: state.reviews.loading,
+  loadingReview: state.reviews.loadingAll,
   showBeer: state.beer.showBeer,
   feedType: ownProps.route.feedType,
-  reviews: state.reviews
+  reviews: state.reviews.list
 });
 
 const mapDispatchToProps = (dispatch) => ({

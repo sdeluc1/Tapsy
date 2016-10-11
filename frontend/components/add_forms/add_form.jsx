@@ -37,8 +37,7 @@ class AddForm extends React.Component {
     } else {
       this.props.processForm({ brewery: this.state.brewery }, "brewery");
     }
-    this.errors = this.getErrors();
-    this.forceUpdate();
+    this.props.close;
   }
 
   getErrors(){
@@ -76,7 +75,7 @@ class AddForm extends React.Component {
             })
           }
         </select>
-        <Link className="add-brewery-link" to="/add-brewery">Add Brewery</Link>
+        <strong onClick={this.props.openBrewery} className="add-brewery-link">Add Brewery</strong>
         <input className="short-input" type="text" onChange={this.update("style")} placeholder="Style"/>
         <input className="short-input" type="text" onChange={this.update("abv")} placeholder="ABV"/>
         <input className="short-input" type="text" onChange={this.update("ibu")} placeholder="IBU"/>

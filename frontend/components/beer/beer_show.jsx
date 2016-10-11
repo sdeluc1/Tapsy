@@ -26,7 +26,7 @@ class BeerShow extends React.Component {
   }
 
   render(){
-    if (this.props.loadingBeer || this.props.loadingReview) {
+    if (this.props.loadingBeer) {
       return(
         <div></div>
       );

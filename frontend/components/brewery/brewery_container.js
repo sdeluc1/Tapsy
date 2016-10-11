@@ -5,7 +5,7 @@ const mapStateToProps = (state, ownProps) => ({
   loadingBrewery: state.breweries.loading,
   showBrewery: state.breweries.showBrewery,
   feedType: ownProps.route.feedType,
-  reviews: state.reviews
+  reviews: state.reviews.list
 });
 
 export default connect(

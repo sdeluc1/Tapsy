@@ -61,6 +61,11 @@
   text-shadow: 0 0 3px #000;
   margin-left: 10px;
   margin-right: 20px;
+  cursor: pointer;
+}
+
+.add-brewery-link:hover {
+  background-color: #f4b800;
 }
 
 .add-form .short-input {
@@ -89,6 +94,11 @@
   border-radius: 4px;
   text-shadow: 0 1px 3px #000;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.add-form button:hover {
+  background-color: #f4b800;
 }
 
 .add-form .loc-type {

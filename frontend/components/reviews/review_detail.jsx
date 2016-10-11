@@ -22,9 +22,13 @@ const ReviewDetail = (props) => {
               <strong id="brewery-name">{props.showReview.brewery.name}</strong>
             </div>
           </div>
-
-          <div id="review-detail-description">{props.showReview.description}</div>
-          <div id="review-detail-rating">Rating: {props.showReview.rating}</div>
+          <div id="content-bottom">
+            <div id="review-detail-description">{props.showReview.description}</div>
+            <div id="review-detail-rating">Rating: {props.showReview.rating}</div>
+          </div>
+          <footer className="rev-content-footer">
+            <span id="time-stamp">{props.showReview.created_at} ago</span>
+          </footer>
         </div>
       </div>
     );

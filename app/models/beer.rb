@@ -29,7 +29,8 @@ class Beer < ActiveRecord::Base
     self.reviews.each do |review|
       total += review.rating
     end
-    total / self.reviews.length
+    return total / self.reviews.length if self.reviews.length > 0
+    0
   end
 
 end

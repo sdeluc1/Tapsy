@@ -6,15 +6,21 @@ import {
 } from '../actions/review_actions';
 import merge from 'lodash/merge';
 
-const ReviewReducer = (state = {loading: true}, action) => {
+const defaultState = {
+  loadingAll: true,
+  loadingOne: true,
+  list: []
+};
+
+const ReviewReducer = (state = defaultState, action) => {
 
   let newState;
   switch(action.type) {
     case RECEIVE_REVIEWS:
-      return action.reviews;
+      return {list: action.reviews, loadingAll: false, loadingOne: true};
 
     case RECEIVE_REVIEW:
-      newState = merge({}, state, {showReview: action.review, loading: false});
+      newState = merge({}, state, {showReview: action.review, loadingOne: false, loadingAll: true});
       return newState;
 
     case REVIEW_ERRORS:

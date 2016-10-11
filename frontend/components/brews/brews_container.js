@@ -3,7 +3,7 @@ import BrewsIndex from './brews_index';
 
 const mapStateToProps = (state, ownProps) => ({
   feedType: ownProps.route.feedType,
-  reviews: state.reviews,
+  reviews: state.reviews.list,
   beers: state.beer,
   loadingReviews: state.reviews.loading
 });

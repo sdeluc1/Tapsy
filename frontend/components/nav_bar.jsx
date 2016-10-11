@@ -16,11 +16,19 @@ class NavBar extends React.Component {
   }
 
   openBeerModal() {
-    this.setState( { addBeer: {display: 'block'}, background: { display: 'block '} } );
+    this.setState( {
+      addBeer: {display: 'block'},
+      addBrewery: {display: 'none'},
+      background: { display: 'block '}
+    } );
   }
 
   openBreweryModal() {
-    this.setState( { addBrewery: {display: 'block'}, background: { display: 'block '} } );
+    this.setState( {
+      addBeer: {display: 'none'},
+      addBrewery: {display: 'block'},
+      background: { display: 'block '}
+    } );
   }
 
   closeModal(formType) {
@@ -54,7 +62,7 @@ class NavBar extends React.Component {
           </div>
           <div id="modal-overlay" style={this.state.background} />
           <div className="add-beer-modal" style={this.state.addBeer}>
-            <AddFormContainer formType="beer" close={this.closeModal}/>
+            <AddFormContainer formType="beer" close={this.closeModal} openBrewery={this.openBreweryModal}/>
           </div>
           <div className="add-beer-modal" style={this.state.addBrewery}>
             <AddFormContainer formType="brewery" close={this.closeModal}/>
