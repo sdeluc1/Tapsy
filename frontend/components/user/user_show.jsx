@@ -15,7 +15,7 @@ const UserShow = (props) => {
           addFollow={props.createFollow}
           removeFollow={props.deleteFollow}
           requestFollows={props.requestFollows}
-          updateCurr={props.updateCurrentUser}
+          receiveCurr={props.receiveCurrentUser}
         />
         <ReviewFeed feedType="user" reviews={props.user.reviews} userId={props.user.id} />
       </div>

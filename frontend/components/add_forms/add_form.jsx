@@ -62,7 +62,6 @@ class AddForm extends React.Component {
 
   render(){
     this.errors = this.errors || "";
-
     const addBeerForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
         <p id="close-modal" onClick={this.props.close}></p>
@@ -72,8 +71,8 @@ class AddForm extends React.Component {
         <select onChange={this.update("brewery_id")}>
           <option selected disabled>Choose Brewery</option>
           {
-            Object.keys(this.props.breweries).map((id, idx) => {
-              return <option key={idx} value={id}>{this.props.breweries[id].name}</option>;
+              this.props.breweries.list.map((brewery, idx) => {
+              return <option key={idx} value={brewery.id}>{brewery.name}</option>;
             })
           }
         </select>

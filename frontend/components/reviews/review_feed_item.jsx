@@ -25,7 +25,7 @@ const ReviewFeedItem = (props) => {
         </div>
         <footer className="review-item-time-detail">
           <strong id="created-at">{props.review.created_at} ago</strong>
-          <a href="#"><strong id="detail-link">View Detailed Check-in</strong></a>
+          <a href={`#/reviews/${props.review.id}`}><strong id="detail-link">View Detailed Check-in</strong></a>
         </footer>
       </section>
     </li>

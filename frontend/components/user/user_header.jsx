@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 class UserHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {followed: false};
+    this.state = {followed: this.props.currUser.follows_arr.includes(this.props.user.id)};
   }
 
   getFollowId(followed_id){
@@ -19,11 +19,13 @@ class UserHeader extends React.Component {
 
   add(follow) {
     this.props.addFollow(follow);
+    this.props.receiveCurr(this.props.currUser);
     this.setState({ followed: true });
   }
 
   remove(id) {
     this.props.removeFollow(id);
+    this.props.receiveCurr(this.props.currUser);
     this.setState({ followed: false });
   }
 

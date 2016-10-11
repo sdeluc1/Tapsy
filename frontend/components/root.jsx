@@ -6,7 +6,7 @@ import SessionFormContainer from './sessions/session_form_container';
 import HomeContainer from './home/home_container';
 import AddFormContainer from './add_forms/add_form_container';
 import { requestBreweries, requestBrewery } from '../actions/brewery_actions';
-import { requestBeer } from '../actions/beer_actions';
+import { requestBeer, requestBeers } from '../actions/beer_actions';
 import { requestReviews, requestReview } from '../actions/review_actions';
 import { requestUser } from '../actions/user_actions';
 import { requestFollows } from '../actions/follow_actions';
@@ -15,6 +15,7 @@ import BeerContainer from './beer/beer_container';
 import UserContainer from './user/user_container';
 import BreweryContainer from './brewery/brewery_container';
 import ReviewDetailContainer from './reviews/review_detail_container';
+import BrewsContainer from './brews/brews_container';
 
 const Root = ({ store }) => {
 
@@ -69,6 +70,13 @@ const Root = ({ store }) => {
     }
   }
 
+  const brewsOnEnter = (nextState, replace) => {
+    if(_ensureLoggedIn(nextState, replace)) {
+      store.dispatch(requestReviews());
+      store.dispatch(requestBeers());
+    }
+  }
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -79,6 +87,7 @@ const Root = ({ store }) => {
           <Route path="brewery/:breweryId" component={BreweryContainer} onEnter={breweryOnEnter} feedType="brewery" />
           <Route path="user/:userId" component={UserContainer} onEnter={userOnEnter} feedType="user" />
           <Route path="reviews/:reviewId" component={ReviewDetailContainer} onEnter={reviewOnEnter}/>
+          <Route path="thebrews" component={BrewsContainer} onEnter={brewsOnEnter} feedType="brews" />
         </Route>
         <Route path="/login" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>
         <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn}/>

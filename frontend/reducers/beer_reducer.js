@@ -8,15 +8,16 @@ import {
 } from '../actions/beer_actions';
 import merge from 'lodash/merge';
 
-const BeerReducer = (state = {loading: true}, action) => {
+const BeerReducer = (state = {loading: true, list: []}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BEERS:
-      newState = {};
-      action.beers.forEach((beer) => {
-        newState[beer.id] = beer;
-      });
-      return newState;
+      // newState = {};
+      // action.beers.forEach((beer) => {
+      //   newState[beer.id] = beer;
+      // });
+      // return newState;
+      return {loading: true, list: action.beers};
 
     case RECEIVE_BEER:
       newState = merge({}, state, {showBeer: action.beer, loading: false});

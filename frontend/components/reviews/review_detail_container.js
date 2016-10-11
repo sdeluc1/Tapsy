@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import ReviewDetail from './review_detail';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+return{
   showReview: state.reviews.showReview,
   reviewLoading: state.reviews.loading
-});
+};};
 
 const mapDispatchToProps = (dispatch) => ({
 

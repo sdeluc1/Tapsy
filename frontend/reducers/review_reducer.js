@@ -7,7 +7,7 @@ import {
 import merge from 'lodash/merge';
 
 const ReviewReducer = (state = {loading: true}, action) => {
-  
+
   let newState;
   switch(action.type) {
     case RECEIVE_REVIEWS:

@@ -40,6 +40,54 @@
 }
 
 .review-detail-user #name-count #checkins{
-  font-size: 14px;
+  font-size: 13px;
   color: #999;
+}
+
+#review-detail-content {
+  margin: 0 auto 16px;
+  width: 41%;
+  background-color: #fff;
+  padding: 16px;
+  position: relative;
+}
+
+#review-detail-content #content-top {
+  margin-bottom: 16px;
+}
+
+#review-detail-content .beer-brewery {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#review-detail-content #review-beer-icon {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background-image: image-url("beer_glass.png");
+  background-size: cover;
+}
+
+.beer-brewery #beer-name {
+  font-size: 25px;
+  display: block;
+}
+
+.beer-brewery #brewery-name {
+  color: #666;
+  font-size: 15px;
+  display: block;
+}
+
+#review-detail-content #review-detail-description {
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+#review-detail-content #review-detail-rating {
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 600;
 }

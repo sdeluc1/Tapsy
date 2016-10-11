@@ -42,7 +42,7 @@ class NavBar extends React.Component {
             </div>
           </a>
           <ul>
-            <a href="#"><li>The Brews</li></a>
+            <a href="#/thebrews"><li>The Brews</li></a>
             <a onClick={this.openBeerModal}><li >Add Beer</li></a>
             <a onClick={this.openBreweryModal}><li>Add Brewery</li></a>
           </ul>
@@ -64,6 +64,6 @@ class NavBar extends React.Component {
       </header>
     );
   }
-};
+}
 
 export default NavBar;
