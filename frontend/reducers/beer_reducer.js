@@ -12,11 +12,6 @@ const BeerReducer = (state = {loading: true, list: []}, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BEERS:
-      // newState = {};
-      // action.beers.forEach((beer) => {
-      //   newState[beer.id] = beer;
-      // });
-      // return newState;
       return {loading: true, list: action.beers};
 
     case RECEIVE_BEER:
