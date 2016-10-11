@@ -19,6 +19,7 @@ class AddForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.closeForm = this.closeForm.bind(this);
   }
 
   update(field) {
@@ -37,7 +38,7 @@ class AddForm extends React.Component {
     } else {
       this.props.processForm({ brewery: this.state.brewery }, "brewery");
     }
-    this.props.close;
+    this.props.close();
   }
 
   getErrors(){
@@ -58,17 +59,38 @@ class AddForm extends React.Component {
     return errorList;
   }
 
+  closeForm() {
+    this.setState({
+      beer: {
+        name: "",
+        brewery_id: "",
+        abv: "",
+        ibu: "",
+        style: "",
+        description: ""
+      },
+      brewery: {
+        name: "",
+        location: "",
+        description: "",
+        brewery_type: ""
+      },
+      open: false
+    });
+    this.props.close();
+  }
+
 
   render(){
     this.errors = this.errors || "";
     const addBeerForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
-        <p id="close-modal" onClick={this.props.close}></p>
+        <p id="close-modal" onClick={this.closeForm}></p>
         <strong className="form-title">ADD BEER</strong>
         {this.errors}
-        <input className="name" type="text" onChange={this.update("name")} placeholder="Beer Name"/>
-        <select onChange={this.update("brewery_id")}>
-          <option selected disabled>Choose Brewery</option>
+        <input className="name" type="text" onChange={this.update("name")} placeholder="Beer Name" value={this.state.beer.name}/>
+        <select defaultValue="Choose Brewery" onChange={this.update("brewery_id")}>
+          <option disabled>Choose Brewery</option>
           {
               this.props.breweries.list.map((brewery, idx) => {
               return <option key={idx} value={brewery.id}>{brewery.name}</option>;
@@ -76,10 +98,10 @@ class AddForm extends React.Component {
           }
         </select>
         <strong onClick={this.props.openBrewery} className="add-brewery-link">Add Brewery</strong>
-        <input className="short-input" type="text" onChange={this.update("style")} placeholder="Style"/>
-        <input className="short-input" type="text" onChange={this.update("abv")} placeholder="ABV"/>
-        <input className="short-input" type="text" onChange={this.update("ibu")} placeholder="IBU"/>
-        <textarea onChange={this.update("description")} placeholder="Description"></textarea>
+        <input className="short-input" type="text" onChange={this.update("style")} placeholder="Style" value={this.state.beer.style}/>
+        <input className="short-input" type="text" onChange={this.update("abv")} placeholder="ABV" value={this.state.beer.abv}/>
+        <input className="short-input" type="text" onChange={this.update("ibu")} placeholder="IBU" value={this.state.beer.ibu}/>
+        <textarea onChange={this.update("description")} placeholder="Description" value={this.state.beer.description}></textarea>
 
         <button>Submit Beer</button>
       </form>
@@ -87,12 +109,12 @@ class AddForm extends React.Component {
 
     const addBreweryForm = (
       <form className="add-form" onSubmit={this.handleSubmit}>
-        <p id="close-modal" onClick={this.props.close}></p>
+        <p id="close-modal" onClick={this.closeForm}></p>
         <strong className="form-title">ADD BREWERY</strong>
-        <input className="name" type="text" onChange={this.update("name")} placeholder="Brewery Name"/>
-        <input className="loc-type" type="text" onChange={this.update("location")} placeholder="Location"/>
-        <input className="loc-type" type="text" onChange={this.update("brewery_type")} placeholder="Type of Brewery"/>
-        <textarea onChange={this.update("description")} placeholder="Description" ></textarea>
+        <input className="name" type="text" onChange={this.update("name")} placeholder="Brewery Name" value={this.state.brewery.name}/>
+        <input className="loc-type" type="text" onChange={this.update("location")} placeholder="Location" value={this.state.brewery.location}/>
+        <input className="loc-type" type="text" onChange={this.update("brewery_type")} placeholder="Type of Brewery" value={this.state.brewery.brewery_type}/>
+        <textarea onChange={this.update("description")} placeholder="Description" value={this.state.brewery.description}></textarea>
 
         <button>Submit Brewery</button>
       </form>

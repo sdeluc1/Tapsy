@@ -24,6 +24,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
+gem 'paperclip', '5.0.0.beta1'
+gem 'figaro'
+gem 'aws-sdk', '>= 2.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -32,7 +36,7 @@ gem 'bcrypt'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug' 
+  gem 'byebug'
 end
 
 group :development do

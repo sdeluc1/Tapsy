@@ -21,7 +21,7 @@ const ReviewFeedItem = (props) => {
         </p>
         <div className="review-item-body">
           <strong id="review-item-description">{props.review.description}</strong>
-          <strong id="review-item-rating">Rating Here</strong>
+          <strong id="review-item-rating">Rating: {props.review.rating}</strong>
         </div>
         <footer className="review-item-time-detail">
           <strong id="created-at">{props.review.created_at} ago</strong>

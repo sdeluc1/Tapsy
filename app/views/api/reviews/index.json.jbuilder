@@ -7,4 +7,5 @@ json.array!(@reviews) do |review|
   json.beer_name review.beer.name
   json.author_name review.author.name
   json.brewery review.beer.brewery, :id, :name
+  json.image_url asset_path(review.image.url)
 end

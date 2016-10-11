@@ -1,4 +1,4 @@
-export const fetchReviews = (success, error) => { 
+export const fetchReviews = (success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
@@ -17,9 +17,12 @@ export const fetchOneReview = (reviewId, success, error) => {
 };
 
 export const createReview = (review, success, error) => {
+  debugger 
   $.ajax({
     url: 'api/reviews',
     method: 'POST',
+    processData: false,
+    contentType: false,
     data: review,
     success,
     error

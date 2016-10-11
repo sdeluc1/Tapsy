@@ -13,7 +13,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render :show
     else
-      render json: @review.erros.full_messages, status: 422
+      render json: @review.errors.full_messages, status: 422
     end
   end
 
@@ -29,7 +29,7 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:beer_id, :rating, :description)
+    params.require(:review).permit(:beer_id, :rating, :description, :image)
   end
 
 end

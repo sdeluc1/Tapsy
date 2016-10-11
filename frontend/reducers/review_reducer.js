@@ -20,6 +20,7 @@ const ReviewReducer = (state = defaultState, action) => {
       return {list: action.reviews, loadingAll: false, loadingOne: true};
 
     case RECEIVE_REVIEW:
+    debugger 
       newState = merge({}, state, {showReview: action.review, loadingOne: false, loadingAll: true});
       return newState;
 
