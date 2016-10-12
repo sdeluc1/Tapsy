@@ -1,7 +1,8 @@
 class Api::BeersController < ApplicationController
 
   def index
-    @beers = Beer.all.includes(:reviews)
+    # @beers = Beer.all.includes(:reviews)
+    @top_beers = Beer.top_rated_beers
   end
 
   def show

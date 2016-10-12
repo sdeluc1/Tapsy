@@ -26,11 +26,22 @@ class Beer < ActiveRecord::Base
 
   def overall_rating
     total = 0;
-    self.reviews.each do |review|
-      total += review.rating
+    if self.reviews.length > 0
+      self.reviews.each do |review|
+        total += review.rating
+      end
+    else
+      return 0
     end
-    return total / self.reviews.length if self.reviews.length > 0
-    0
+    return (total / self.reviews.length).round(2)
+  end
+
+  def self.top_rated_beers
+    rated = {}
+    Beer.all.each do |beer|
+      rated[beer.name] = beer.overall_rating
+    end
+    rated.sort_by {|k, v| v}.reverse.take(20).to_h
   end
 
   def top_drinkers
@@ -38,7 +49,7 @@ class Beer < ActiveRecord::Base
     self.reviews.each do |review|
       drinkers[review.author.name] += 1
     end
-    drinkers
+    drinkers.sort_by {|k, v| v}.reverse.take(20).to_h
   end
 
 end

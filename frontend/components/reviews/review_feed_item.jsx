@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const ReviewFeedItem = (props) => {
-  
+
   const reviewPhoto = () => {
-    if(props.review.image_url === "/assets/genericbeercan.jpg"){
+    if(props.review.image_url.includes("genericbeercan.jpg")){
       return;
     } else {
       return(

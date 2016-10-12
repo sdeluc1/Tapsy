@@ -1,0 +1,37 @@
+
+.main-top-beers {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 268px;
+}
+
+.top-beers-header {
+  padding: 0 20px 16px 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #cc6600;
+}
+
+.top-beers-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  display: inline-block;
+  width: 85%;
+  float: left;
+}
+
+.top-beers-item:last-child {
+  border-bottom: 0;
+}
+
+.top-beers-item #top-beers-name {
+  font-size: 18px;
+  display: block;
+}
+
+.top-beers-item #rating {
+  font-size: 12px;
+  display: block;
+  color: #ccc;
+}

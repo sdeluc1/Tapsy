@@ -4,8 +4,9 @@ import BrewsIndex from './brews_index';
 const mapStateToProps = (state, ownProps) => ({
   feedType: ownProps.route.feedType,
   reviews: state.reviews.list,
-  beers: state.beer,
-  loadingReviews: state.reviews.loading
+  beers: state.beer.top_beers,
+  loadingReviews: state.reviews.loading,
+  loadingBeer: state.beer.loadingAll
 });
 
 export default connect(

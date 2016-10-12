@@ -3,7 +3,7 @@ import BeerShow from './beer_show';
 import { requestReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  loadingBeer: state.beer.loading,
+  loadingBeer: state.beer.loadingOne,
   loadingReview: state.reviews.loadingAll,
   showBeer: state.beer.showBeer,
   feedType: ownProps.route.feedType,

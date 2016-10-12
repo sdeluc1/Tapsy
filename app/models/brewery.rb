@@ -25,7 +25,7 @@ class Brewery < ActiveRecord::Base
     self.reviews.each do |review|
       drinkers[review.author.name] += 1
     end
-    drinkers
+    drinkers.sort_by {|k, v| v}.reverse.take(20).to_h
   end
 
 end

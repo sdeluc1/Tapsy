@@ -9,14 +9,20 @@ import {
 } from '../actions/beer_actions';
 import merge from 'lodash/merge';
 
-const BeerReducer = (state = {loading: true, list: []}, action) => {
+const defaultState = {
+  loadingAll: true,
+  loadingOne: true,
+  list: []
+};
+
+const BeerReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_BEERS:
-      return {loading: true, list: action.beers};
+      return merge({}, state, {loadingAll: false}, action.beers);
 
     case RECEIVE_BEER:
-      newState = merge({}, state, {showBeer: action.beer, loading: false});
+      newState = merge({}, state, {showBeer: action.beer, loadingOne: false});
       return newState;
 
     case BEER_ERRORS:
