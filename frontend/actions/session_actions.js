@@ -4,14 +4,16 @@ export const SIGNUP = "SIGNUP";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const UPDATE_CURRENT_USER = "UPDATE_CURRENT_USER";
+export const RECEIVE_USER_LOGIN = "RECEIVE_USER_LOGIN";
 
 export const login = (user) => ({
   type: LOGIN,
   user
 });
 
-export const logout = () => ({
-  type: LOGOUT
+export const logout = (callback) => ({
+  type: LOGOUT,
+  callback
 });
 
 export const signup = (user) => ({
@@ -31,5 +33,10 @@ export const receiveErrors = (errors) => ({
 
 export const updateCurrentUser = (user) => ({
   type: UPDATE_CURRENT_USER,
+  user
+});
+
+export const receiveUserLogin = (user) => ({
+  type: RECEIVE_USER_LOGIN,
   user
 });

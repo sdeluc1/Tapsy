@@ -15,7 +15,7 @@ json.follows_arr user.follows_array
 
 json.follows user.follows do |follow|
   json.id follow.id
-  json.follow follow.follow_id
+  json.follow_id follow.follow_id
 end
 
 json.curr_follow current_user.follows?(user)

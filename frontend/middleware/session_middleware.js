@@ -3,13 +3,13 @@ import {
   LOGIN,
   LOGOUT,
   SIGNUP,
-  receiveCurrentUser,
+  receiveUserLogin,
   receiveErrors
 } from '../actions/session_actions';
 import * as API from '../util/session_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
-  const successCallback = user => dispatch(receiveCurrentUser(user));
+  const successCallback = user => dispatch(receiveUserLogin(user));
   const errorCallback = xhr => dispatch(receiveErrors(xhr.responseJSON));
 
   switch(action.type) {
@@ -17,7 +17,10 @@ export default ({ getState, dispatch }) => next => action => {
       API.login(action.user, successCallback, errorCallback);
       break;
     case LOGOUT:
-      API.logout(() => next(action));
+      API.logout(() => {
+        next(action);
+        action.callback();
+      });
       break;
     case SIGNUP:
       API.signup(action.user, successCallback, errorCallback);

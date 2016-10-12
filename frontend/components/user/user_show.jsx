@@ -11,7 +11,10 @@ const UserShow = (props) => {
       <div className="main-user-show">
         <UserHeader
           user={props.user}
-          currUser={props.currUser}
+          currUserId={props.currUserId}
+          follows={props.follows}
+          following={props.currFollow}
+          allFollows={props.allFollows}
           addFollow={props.createFollow}
           removeFollow={props.deleteFollow}
           requestFollows={props.requestFollows}

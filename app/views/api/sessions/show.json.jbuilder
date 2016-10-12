@@ -15,4 +15,5 @@ json.follows_arr @user.follows_array
 json.follows @user.follows do |follow|
   json.id follow.id
   json.follow_id follow.follow_id
+  json.user_id follow.user_id 
 end

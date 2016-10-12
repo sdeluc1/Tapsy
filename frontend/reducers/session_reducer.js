@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, LOGOUT } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_USER_LOGIN, RECEIVE_ERRORS, LOGOUT } from '../actions/session_actions';
 import { CREATE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
@@ -13,10 +13,17 @@ const defaultState = {
 const SessionReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type) {
+    case RECEIVE_USER_LOGIN:
+    debugger 
+      newState = merge({}, state);
+      newState.currentUser = action.user;
+      newState.follows_arr = action.user.follows;
+      newState.errors = [];
+      return newState;
+
     case RECEIVE_CURRENT_USER:
       newState = merge({}, state);
       newState.currentUser = action.currentUser;
-      newState.follows_arr = action.currentUser.follows;
       newState.errors = [];
       return newState;
 
@@ -33,7 +40,6 @@ const SessionReducer = (state = defaultState, action) => {
       return newState;
 
     case CREATE_FOLLOW:
-    debugger
       newState = merge({}, state);
       newState.follows_arr.push(action.follow.follow);
       newState.following = true;
@@ -41,10 +47,10 @@ const SessionReducer = (state = defaultState, action) => {
 
     case DELETE_FOLLOW:
       newState = merge({}, state);
-      // const followIdx = newState.follows_arr.indexOf(action.follow.follow_id);
+      debugger
       let followIdx;
       for(let i = 0; i < newState.follows_arr.length; i++){
-        if(newState.follows_arr[i].id === action.follow.id){
+        if(newState.follows_arr[i].follow_id === action.follow.follow_id){
           followIdx = i;
           break;
         }
@@ -57,6 +63,7 @@ const SessionReducer = (state = defaultState, action) => {
 
     case RECEIVE_USER:
       newState = merge({}, state);
+      debugger
       newState.following = false;
       for(let i = 0; i < newState.follows_arr.length; i++){
         if(newState.follows_arr[i].follow_id === action.user.id){

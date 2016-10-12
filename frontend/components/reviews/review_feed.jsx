@@ -5,6 +5,10 @@ const ReviewFeed = (props) => {
 
     let reviews = props.reviews;
 
+    if(props.user === null){
+      return <div className="review-feed"></div>;
+    }
+
     if(props.feedType === "home"){
       const selectedReviews = [];
       props.reviews.forEach( (review) => {

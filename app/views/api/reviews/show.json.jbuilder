@@ -5,4 +5,4 @@ json.author(@review.author, :username, :id, :name)
 json.brewery(@review.beer.brewery, :name)
 json.created_at time_ago_in_words(@review.created_at)
 json.author_count @review.author.reviews.length
-json.image_url @review.image.url
+json.image_url asset_url(@review.image.url)

@@ -9,22 +9,23 @@ class UserHeader extends React.Component {
 
   getFollow(followed_id){
     let result;
-    this.props.follows.forEach( (followObj) => {
-      if(followObj.follow_id === followed_id ) {
+    this.props.allFollows.forEach( (followObj) => {
+      if(followObj.follow_id === followed_id && followObj.user_id === this.props.currUserId) {
         result = followObj;
       }
     });
-    debugger
     return result;
   }
 
   add(follow) {
     this.props.addFollow(follow);
+    this.props.requestFollows();
     this.setState({ followed: true });
   }
 
   remove(user) {
     this.props.removeFollow(user);
+    this.props.requestFollows();
     this.setState({ followed: false });
   }
 

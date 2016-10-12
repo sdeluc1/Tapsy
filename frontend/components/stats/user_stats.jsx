@@ -2,6 +2,10 @@ import React from 'react';
 
 const UserStats = (props) => {
 
+  if(props.user === null){
+    return <div className="group user-states-box"></div>;
+  }
+
   return(
     <div className="group user-stats-box">
       <div className="group user-stats-top">
