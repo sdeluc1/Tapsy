@@ -35,11 +35,6 @@ class User < ActiveRecord::Base
     self.follows.map {|follow| follow.follow_id }
   end
 
-  def follows?(user)
-    return true if self.follows_array.include?(user.id)
-    false
-  end
-
   def num_unique_reviews
     result = []
     ids = []

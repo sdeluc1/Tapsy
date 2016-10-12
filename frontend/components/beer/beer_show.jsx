@@ -2,6 +2,7 @@ import React from 'react';
 import BeerHeader from './beer_header';
 import ReviewFeed from '../reviews/review_feed';
 import AddReviewContainer from '../reviews/add_review_container';
+import Drinkers from '../drinkers/drinkers';
 
 class BeerShow extends React.Component {
   constructor(props) {
@@ -24,7 +25,6 @@ class BeerShow extends React.Component {
     this.props.updateReviews();
     this.setState({ modalDisplay: { display: 'none' } });
   }
-
   render(){
     if (this.props.loadingBeer) {
       return(
@@ -32,17 +32,19 @@ class BeerShow extends React.Component {
       );
     } else {
       return(
-        <div className="main-show-beer">
-          <BeerHeader
-            beer={this.props.showBeer}
-            openReviewModal={this.openReviewModal}
-            closeReviewModal={this.closeReviewModal}
-          />
-          <ReviewFeed
-            feedType={this.props.feedType}
-            reviews={this.props.reviews}
-            beerId={this.props.showBeer.id}
-          />
+        <div className="group main-show-beer">
+          <div className="left-content">
+            <BeerHeader
+              beer={this.props.showBeer}
+              openReviewModal={this.openReviewModal}
+              closeReviewModal={this.closeReviewModal}
+              />
+            <ReviewFeed
+              feedType={this.props.feedType}
+              reviews={this.props.reviews}
+              beerId={this.props.showBeer.id}
+              />
+          </div>
         <div onClick={this.closeReviewModal} id="modal-overlay" style={this.state.modalDisplay}></div>
           <div className="add-review-modal" style={this.state.modalDisplay}>
             <AddReviewContainer
@@ -50,6 +52,9 @@ class BeerShow extends React.Component {
               close={this.closeReviewModal}
               process={this.processReviewModal}
             />
+          </div>
+          <div className="top-drinkers">
+            <Drinkers drinkers={this.props.showBeer.top_drinkers} />
           </div>
         </div>
       );

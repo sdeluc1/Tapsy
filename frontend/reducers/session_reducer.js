@@ -14,7 +14,7 @@ const SessionReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_USER_LOGIN:
-    debugger 
+    debugger
       newState = merge({}, state);
       newState.currentUser = action.user;
       newState.follows_arr = action.user.follows;
@@ -24,6 +24,7 @@ const SessionReducer = (state = defaultState, action) => {
     case RECEIVE_CURRENT_USER:
       newState = merge({}, state);
       newState.currentUser = action.currentUser;
+      newState.follows_arr = action.currentUser.follows;
       newState.errors = [];
       return newState;
 

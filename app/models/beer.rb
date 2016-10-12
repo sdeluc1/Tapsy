@@ -33,4 +33,12 @@ class Beer < ActiveRecord::Base
     0
   end
 
+  def top_drinkers
+    drinkers = Hash.new(0)
+    self.reviews.each do |review|
+      drinkers[review.author.name] += 1
+    end
+    drinkers
+  end
+
 end

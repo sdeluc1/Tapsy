@@ -1,0 +1,40 @@
+.top-drinkers {
+  float: right;
+}
+
+.main-drinkers {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 268px;
+}
+
+.drinkers-header {
+  padding: 0 20px 16px 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #cc6600;
+}
+
+.drinkers-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  display: inline-block;
+  width: 85%;
+  float: left;
+}
+
+.drinkers-item:last-child {
+  border-bottom: 0;
+}
+
+.drinkers-item #drinker-name {
+  font-size: 18px;
+  display: block;
+}
+
+.drinkers-item #checkins {
+  font-size: 12px;
+  display: block;
+  color: #ccc;
+}

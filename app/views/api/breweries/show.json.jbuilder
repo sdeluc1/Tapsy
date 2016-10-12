@@ -7,6 +7,8 @@ json.beers @brewery.beers do |beer|
     json.author_name review.author.name
     json.brewery @brewery, :id, :name
     json.created_at time_ago_in_words(review.created_at)
-    json.image_url review.image.url 
+    json.image_url review.image.url
   end
 end
+
+json.top_drinkers @brewery.top_drinkers 

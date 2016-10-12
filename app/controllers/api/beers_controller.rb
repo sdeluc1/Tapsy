@@ -1,8 +1,7 @@
 class Api::BeersController < ApplicationController
 
   def index
-    @beers = Beer.all
-    render json: @beers
+    @beers = Beer.all.includes(:reviews)
   end
 
   def show

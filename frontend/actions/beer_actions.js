@@ -6,6 +6,7 @@ export const REMOVE_BEER = "REMOVE_BEER";
 export const UPDATE_BEER = "UPDATE_BEER";
 export const CREATE_BEER = "CREATE_BEER";
 export const BEER_ERRORS = "BEER_ERRORS";
+export const RESET_BEER = "RESET_BEER";
 
 export const requestBeers = () => ({
   type: REQUEST_BEERS
@@ -45,4 +46,8 @@ export const createBeer = (beer) => ({
 export const receiveErrors = (errors) => ({
   type: BEER_ERRORS,
   errors
+});
+
+export const resetBeer = () => ({
+  type: RESET_BEER
 });

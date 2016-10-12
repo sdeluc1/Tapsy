@@ -6,7 +6,7 @@ import SessionFormContainer from './sessions/session_form_container';
 import HomeContainer from './home/home_container';
 import AddFormContainer from './add_forms/add_form_container';
 import { requestBreweries, requestBrewery } from '../actions/brewery_actions';
-import { requestBeer, requestBeers } from '../actions/beer_actions';
+import { requestBeer, requestBeers, resetBeer } from '../actions/beer_actions';
 import { requestReviews, requestReview } from '../actions/review_actions';
 import { requestUser, resetUser } from '../actions/user_actions';
 import { requestFollows } from '../actions/follow_actions';
@@ -57,6 +57,7 @@ const Root = ({ store }) => {
     if(_ensureLoggedIn(nextState, replace)) {
       const currentUser = store.getState().session.currentUser;
       store.dispatch(receiveCurrentUser(currentUser));
+      store.dispatch(requestFollows());
       store.dispatch(requestUser(nextState.params.userId));
     }
   }
@@ -93,7 +94,7 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <IndexRedirect to="/login" />
           <Route path="home" component={HomeContainer} onEnter={homeOnEnter} feedType="home"/>
-          <Route path="beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer"/>
+          <Route path="beer/:beerId" component={BeerContainer} onEnter={beerOnEnter} feedType="beer" onLeave={() => store.dispatch(resetBeer())}/>
           <Route path="brewery/:breweryId" component={BreweryContainer} onEnter={breweryOnEnter} feedType="brewery" />
           <Route path="user/:userId" component={UserContainer} onEnter={userOnEnter} onLeave={() => store.dispatch(resetUser())} feedType="user" />
           <Route path="reviews/:reviewId" component={ReviewDetailContainer} onEnter={reviewOnEnter}/>

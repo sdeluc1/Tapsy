@@ -10,3 +10,5 @@ json.reviews @beer.reviews do |review|
 end
 json.rev_count @beer.reviews.length
 json.avg_rating @beer.overall_rating
+ 
+json.top_drinkers @beer.top_drinkers

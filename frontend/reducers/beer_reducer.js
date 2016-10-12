@@ -2,6 +2,7 @@ import {
   RECEIVE_BEERS,
   RECEIVE_BEER,
   REMOVE_BEER,
+  RESET_BEER,
   UPDATE_BEER,
   CREATE_BEER,
   BEER_ERRORS
@@ -26,6 +27,11 @@ const BeerReducer = (state = {loading: true, list: []}, action) => {
     case REMOVE_BEER:
       newState = merge({}, state);
       delete newState[action.beerId];
+      return newState;
+
+    case RESET_BEER:
+      newState = merge({}, state);
+      newState.loading = true;
       return newState;
 
     default:

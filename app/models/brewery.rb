@@ -17,4 +17,15 @@ class Brewery < ActiveRecord::Base
 
   has_many :beers
 
+  has_many :reviews,
+    through: :beers
+
+  def top_drinkers
+    drinkers = Hash.new(0)
+    self.reviews.each do |review|
+      drinkers[review.author.name] += 1
+    end
+    drinkers
+  end
+
 end
