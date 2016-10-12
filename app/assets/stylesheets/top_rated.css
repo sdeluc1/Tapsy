@@ -35,3 +35,7 @@
   display: block;
   color: #ccc;
 }
+
+.top-beers-item #rating #rating-num {
+  font-weight: bold;
+}

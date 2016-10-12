@@ -1,5 +1,4 @@
 export const addFollow = (follow, success, error) => {
-  debugger
   $.ajax({
     url: 'api/follows',
     method: 'POST',

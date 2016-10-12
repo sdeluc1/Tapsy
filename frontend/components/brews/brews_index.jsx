@@ -3,7 +3,6 @@ import ReviewFeed from '../reviews/review_feed';
 import TopBeers from '../top_beers/top_beers';
 
 const BrewsIndex = (props) => {
-  debugger
   if(props.loadingReviews || props.loadingBeer){
     return <div></div>;
   } else {
