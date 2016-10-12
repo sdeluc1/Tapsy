@@ -3,16 +3,19 @@ import UserShow from './user_show';
 import { createFollow, deleteFollow, requestFollows } from '../../actions/follow_actions';
 import { receiveCurrentUser } from '../../actions/session_actions';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+debugger
+return{
   user: state.user,
-  currUser: state.session.currentUser
-});
+  currUserId: state.session.currentUser.id,
+  currFollow: state.session.following,
+  follows: state.session.follows_arr
+};};
 
 const mapDispatchToProps = (dispatch) => ({
   createFollow: (follow) => dispatch(createFollow(follow)),
-  deleteFollow: (followId) => dispatch(deleteFollow(followId)),
+  deleteFollow: (follow) => dispatch(deleteFollow(follow)),
   requestFollows: () => dispatch(requestFollows()),
-  receiveCurrentUser: (user) => dispatch(receiveCurrentUser(user))
 });
 
 export default connect(

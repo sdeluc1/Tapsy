@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const ReviewFeedItem = (props) => {
-  debugger
+  
   const reviewPhoto = () => {
     if(props.review.image_url === "/assets/genericbeercan.jpg"){
       return;

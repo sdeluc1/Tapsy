@@ -8,9 +8,9 @@ export const createFollow = (follow) => ({
   follow
 });
 
-export const deleteFollow = (followId) => ({
+export const deleteFollow = (follow) => ({
   type: DELETE_FOLLOW,
-  followId
+  follow
 });
 
 export const receiveFollows = (follows) => ({

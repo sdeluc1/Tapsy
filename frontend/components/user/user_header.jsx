@@ -4,38 +4,37 @@ import merge from 'lodash/merge';
 class UserHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {followed: this.props.currUser.follows_arr.includes(this.props.user.id)};
+    this.state = {followed: this.props.following};
   }
 
-  getFollowId(followed_id){
+  getFollow(followed_id){
     let result;
-    this.props.currUser.follows.forEach( (followObj) => {
-      if(followObj.follow === followed_id ) {
-        result = followObj.id;
+    this.props.follows.forEach( (followObj) => {
+      if(followObj.follow_id === followed_id ) {
+        result = followObj;
       }
     });
+    debugger
     return result;
   }
 
   add(follow) {
     this.props.addFollow(follow);
-    this.props.receiveCurr(this.props.currUser);
     this.setState({ followed: true });
   }
 
-  remove(userId) {
-    this.props.removeFollow(userId);
-    this.props.receiveCurr(this.props.currUser);
+  remove(user) {
+    this.props.removeFollow(user);
     this.setState({ followed: false });
   }
 
   followStatus() {
-    if(this.props.user.id === this.props.currUser.id) {
+    if(this.props.user.id === this.props.currUserId) {
       return;
     } else if(this.state.followed){
       return(
         <div
-          onClick={() => this.remove(this.getFollowId(this.props.user.id))}
+          onClick={() => this.remove(this.getFollow(this.props.user.id))}
           className="remove-follow-user">
           <span id="remove-follow">
             Remove Follow
@@ -45,7 +44,7 @@ class UserHeader extends React.Component {
     } else {
       const follow = {
         follow: {
-          user_id: this.props.currUser.id,
+          user_id: this.props.currUserId,
           follow_id: this.props.user.id
         }
       };

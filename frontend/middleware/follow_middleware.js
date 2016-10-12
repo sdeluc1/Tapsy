@@ -15,7 +15,8 @@ export default ({ getState, dispatch }) => next => action => {
       addFollow(action.follow, next(action), errorCallback);
       break;
     case DELETE_FOLLOW:
-      removeFollow(action.followId, next(action), errorCallback);
+      debugger 
+      removeFollow(action.follow.id, next(action), errorCallback);
       break;
     case REQUEST_FOLLOWS:
       requestFollows(success, errorCallback)

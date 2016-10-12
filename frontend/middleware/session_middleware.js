@@ -3,7 +3,6 @@ import {
   LOGIN,
   LOGOUT,
   SIGNUP,
-  UPDATE_CURRENT_USER,
   receiveCurrentUser,
   receiveErrors
 } from '../actions/session_actions';
@@ -23,9 +22,7 @@ export default ({ getState, dispatch }) => next => action => {
     case SIGNUP:
       API.signup(action.user, successCallback, errorCallback);
       return next(action);
-    case UPDATE_CURRENT_USER:
-      API.updateCurrentUser(action.user, successCallback, errorCallback);
-      break;
+
     default:
       return next(action);
   }

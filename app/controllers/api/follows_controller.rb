@@ -3,7 +3,7 @@ class Api::FollowsController < ApplicationController
   def index
     @follows = Follow.all
     render json: @follows
-  end 
+  end
 
   def create
     @follow = current_user.follows.new(follow_params)
