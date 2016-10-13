@@ -6,7 +6,7 @@ class AddReview extends React.Component {
     this.state = {
       description: "",
       rating: "0.0",
-      beer_id: this.props.beerId,
+      // beer_id: this.props.beerId,
       imageFile: null,
       imageUrl: null
     };
@@ -34,11 +34,12 @@ class AddReview extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const formData = new FormData();
     formData.append("review[description]", this.state.description);
     formData.append("review[rating]", this.state.rating);
-    formData.append("review[beer_id]", this.state.beer_id);
+    formData.append("review[beer_id]", this.props.beerId);
     if(this.state.imageFile){
       formData.append("review[image]", this.state.imageFile);
     }
@@ -50,7 +51,7 @@ class AddReview extends React.Component {
     this.setState({
       description: "",
       rating: "0.0",
-      beer_id: this.props.beerId,
+      // beer_id: this.props.beerId,
       imageFile: null,
       imageUrl: null
     });

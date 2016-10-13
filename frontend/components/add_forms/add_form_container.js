@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { createBeer } from '../../actions/beer_actions';
 import { createBrewery, requestBreweries } from '../../actions/brewery_actions';
 import AddForm from './add_form';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => ({
   breweries: state.breweries,
@@ -23,4 +24,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(AddForm);
+)(withRouter(AddForm));
