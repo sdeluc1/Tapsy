@@ -34,7 +34,7 @@ const ReviewFeed = (props) => {
         case "user":
           return `${props.user.name}'s Recent Activity`;
         case "brewery":
-          return "Recent Activity"
+          return "Recent Activity";
         case "brews":
           return "Recent Global Activity";
         default:

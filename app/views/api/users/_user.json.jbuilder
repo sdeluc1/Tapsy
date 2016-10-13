@@ -15,7 +15,7 @@ json.reviews user.reviews do |review|
     json.username comment.user.username
     json.created_at time_ago_in_words(comment.created_at)
   end
-  
+
 end
 
 json.rev_count user.reviews.length
@@ -27,3 +27,5 @@ json.follows user.follows do |follow|
   json.id follow.id
   json.follow_id follow.follow_id
 end
+
+json.top_checkins user.top_checkins

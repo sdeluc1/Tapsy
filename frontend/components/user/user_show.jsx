@@ -1,6 +1,7 @@
 import React from 'react';
 import UserHeader from './user_header';
 import ReviewFeed from '../reviews/review_feed';
+import TopCheckins from '../top_checkins/top_checkins';
 
 const UserShow = (props) => {
 
@@ -9,17 +10,22 @@ const UserShow = (props) => {
   } else {
     return(
       <div className="main-user-show">
-        <UserHeader
-          user={props.user}
-          currUserId={props.currUserId}
-          follows={props.follows}
-          following={props.currFollow}
-          allFollows={props.allFollows}
-          addFollow={props.createFollow}
-          removeFollow={props.deleteFollow}
-          requestFollows={props.requestFollows}
-        />
-        <ReviewFeed feedType="user" reviews={props.user.reviews} user={props.user} />
+          <UserHeader
+            user={props.user}
+            currUserId={props.currUserId}
+            follows={props.follows}
+            following={props.currFollow}
+            allFollows={props.allFollows}
+            addFollow={props.createFollow}
+            removeFollow={props.deleteFollow}
+            requestFollows={props.requestFollows}
+            />
+        <div className="left-content">
+          <ReviewFeed feedType="user" reviews={props.user.reviews} user={props.user} />
+        </div>
+        <div className="top-checkins">
+          <TopCheckins topCheckins={props.user.top_checkins} />
+        </div>
       </div>
     );
   }

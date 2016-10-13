@@ -1,0 +1,36 @@
+.main-top-checkins {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 268px;
+}
+
+.top-checkins-header {
+  padding: 0 20px 16px 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #cc6600;
+}
+
+.top-checkins-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  display: inline-block;
+  width: 85%;
+  float: left;
+}
+
+.top-checkins-item:last-child {
+  border-bottom: 0;
+}
+
+.top-checkins-item #top-checkins-name {
+  font-size: 18px;
+  display: block;
+}
+
+.top-checkins-item #checkin-count {
+  font-size: 12px;
+  display: block;
+  color: #ccc;
+}

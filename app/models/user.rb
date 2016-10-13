@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
     primary_key: :id
 
   has_many :followings,
-    through: :follows 
+    through: :follows
 
   has_many :comments
 
@@ -50,6 +50,15 @@ class User < ActiveRecord::Base
       end
     end
     result.length
+  end
+
+  def top_checkins
+    checkins = Hash.new({count: 0, beer_id: 0})
+    self.reviews.each do |review|
+      name = review.beer.name
+      checkins[name] = {count: checkins[name][:count] + 1, beer_id: review.beer.id}
+    end
+    checkins.sort_by {|k, v| v[:count]}.reverse.take(20).to_h
   end
 
   def self.find_by_credentials(username, password)
