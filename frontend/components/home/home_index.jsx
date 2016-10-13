@@ -4,6 +4,7 @@ import ReviewFeed from '../reviews/review_feed';
 import UserStats from '../stats/user_stats';
 
 const HomeIndex = (props) => {
+  debugger
   if(props.loading) {
     return <div></div>;
   } else {

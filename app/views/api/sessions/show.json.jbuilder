@@ -17,3 +17,6 @@ json.follows @user.follows do |follow|
   json.follow_id follow.follow_id
   json.user_id follow.user_id
 end
+
+json.num_followed @user.num_followed
+json.num_followers @user.num_followers
