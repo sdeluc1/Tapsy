@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from '../comments/comment';
+import CommentForm from '../comments/comment_form';
 
 const ReviewDetail = (props) => {
   if(props.reviewLoading){
@@ -33,13 +34,18 @@ const ReviewDetail = (props) => {
                 <span id="time-stamp">{props.showReview.created_at} ago</span>
               </footer>
             </div>
-            <ul className="detail-comment-list">
-              {
-                props.showReview.comments.map( (comment, idx) => {
-                  return <Comment key={idx} comment={comment} />;
-                })
-              }
-            </ul>
+            <div className="rev-detail-comments">
+              <ul className="detail-comment-list">
+                {
+                  props.showReview.comments.map( (comment, idx) => {
+                    return <Comment key={idx} comment={comment} />;
+                  })
+                }
+              </ul>
+            </div>
+            <div className="group rev-detail-comment-form">
+              <CommentForm reviewId={props.showReview.id} addComment={props.addComment} />
+            </div>
           </div>
           <div className="review-pic">
             <img id="review-image" src={ props.showReview.image_url } />
