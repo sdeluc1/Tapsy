@@ -25,9 +25,9 @@ const BeerHeader = (props) => {
         <div className="info-bar">
           <strong id="abv" className="beer-bar-item">{props.beer.abv}% ABV</strong>
           <strong id="ibu"className="beer-bar-item">{props.beer.ibu} IBU</strong>
-          <strong id="rating" className="beer-bar-item">RATING: {props.beer.avg_rating}</strong>
+          <strong id="rating" className="beer-bar-item">Avg Rating: {props.beer.avg_rating}</strong>
           <strong id="num-ratings" className="beer-bar-item">{props.beer.rev_count} total</strong>
-          <strong id="date-added" className="beer-bar-item">Added 10/6/16</strong>
+          <strong id="date-added" className="beer-bar-item">Added {props.beer.created_at} ago</strong>
         </div>
         <div className="beer-description">{props.beer.description}</div>
         <div className="beer-check-boxes">

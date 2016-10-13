@@ -83,8 +83,12 @@ class UserHeader extends React.Component {
               <strong className="count-type">UNIQUE</strong>
             </p>
             <p>
-              <strong id="count">15</strong>
-              <strong className="count-type">FRIENDS</strong>
+              <strong id="count">{this.props.user.num_followed}</strong>
+              <strong className="count-type">FOLLOWING</strong>
+            </p>
+            <p>
+              <strong id="count">{this.props.user.num_followers}</strong>
+              <strong className="count-type">FOLLOWED BY</strong>
             </p>
           </div>
         </div>

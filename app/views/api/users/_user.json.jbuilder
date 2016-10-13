@@ -20,6 +20,8 @@ end
 
 json.rev_count user.reviews.length
 json.unique_count user.num_unique_reviews
+json.num_followed user.num_followed
+json.num_followers user.num_followers
 
 json.follows_arr user.follows_array
 

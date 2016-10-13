@@ -52,6 +52,19 @@ class User < ActiveRecord::Base
     result.length
   end
 
+  def num_followed
+    self.followings.length
+  end
+
+  def num_followers
+    users = User.all.includes(:follows)
+    count = 0
+    users.each do |user|
+      count += 1 if user.follows_array.include?(self.id)
+    end
+    count
+  end
+
   def top_checkins
     checkins = Hash.new({count: 0, beer_id: 0})
     self.reviews.each do |review|

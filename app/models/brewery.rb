@@ -21,11 +21,12 @@ class Brewery < ActiveRecord::Base
     through: :beers
 
   def top_drinkers
-    drinkers = Hash.new(0)
+    drinkers = Hash.new({count: 0, beer_id: 0})
     self.reviews.each do |review|
-      drinkers[review.author.name] += 1
+      name = review.author.name
+      drinkers[name] = {count: drinkers[name][:count] + 1, user_id: review.author.id}
     end
-    drinkers.sort_by {|k, v| v}.reverse.take(20).to_h
+    drinkers.sort_by {|k, v| v[:count]}.reverse.take(20).to_h
   end
 
 end

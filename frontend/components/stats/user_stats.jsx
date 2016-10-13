@@ -17,14 +17,26 @@ const UserStats = (props) => {
       </div>
 
       <div className="group stats-count-box">
-        <p id="stats-total-box">
-          <strong id="count-total">{props.user.rev_count}</strong>
-          <strong id="word-total">TOTAL</strong>
-        </p>
-        <p id="stats-friends-box">
-          <strong id="count-total">{props.user.follows.length}</strong>
-          <strong id="word-total">FOLLOWS</strong>
-        </p>
+        <div className="group top-stats-box">
+          <p id="stats-total-box">
+            <strong id="count-total">{props.user.rev_count}</strong>
+            <strong id="word-total">TOTAL</strong>
+          </p>
+          <p id="stats-friends-box">
+            <strong id="count-total">{props.user.num_followers}</strong>
+            <strong id="word-total">FOLLOWED BY</strong>
+          </p>
+        </div>
+        <div className="group bottom-stats-box">
+          <p id="stats-total-box">
+            <strong id="count-total">{props.user.unique_count}</strong>
+            <strong id="word-total">UNIQUE</strong>
+          </p>
+          <p id="stats-friends-box">
+            <strong id="count-total">{props.user.num_followed}</strong>
+            <strong id="word-total">FOLLOWING</strong>
+          </p>
+        </div>
       </div>
     </div>
   );

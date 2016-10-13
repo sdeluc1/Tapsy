@@ -19,7 +19,7 @@ class Api::UsersController < ApplicationController
     if @user.update(user_params)
       render :show
     end
-  end   
+  end
 
   private
   def user_params
