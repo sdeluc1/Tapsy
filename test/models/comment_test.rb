@@ -1,17 +1,18 @@
 # == Schema Information
 #
-# Table name: follows
+# Table name: comments
 #
 #  id         :integer          not null, primary key
+#  body       :text             not null
 #  user_id    :integer          not null
-#  follow_id  :integer          not null
+#  review_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 require 'test_helper'
 
-class FollowTest < ActiveSupport::TestCase
+class CommentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

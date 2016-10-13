@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :breweries
     resources :reviews, only: [:index, :create, :show, :destroy]
     resources :follows, only: [:index, :create, :destroy]
+    resources :comments, only: [:index, :show, :create, :destroy]
   end
 end

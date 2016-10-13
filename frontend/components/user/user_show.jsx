@@ -19,7 +19,7 @@ const UserShow = (props) => {
           removeFollow={props.deleteFollow}
           requestFollows={props.requestFollows}
         />
-        <ReviewFeed feedType="user" reviews={props.user.reviews} userId={props.user.id} />
+        <ReviewFeed feedType="user" reviews={props.user.reviews} user={props.user} />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Comment from '../comments/comment';
 
 const ReviewFeedItem = (props) => {
 
@@ -16,7 +17,7 @@ const ReviewFeedItem = (props) => {
       );
     }
   };
-
+  debugger 
   return(
     <li className="main-review-item">
       <div id="review-user-pic"></div>
@@ -45,6 +46,14 @@ const ReviewFeedItem = (props) => {
           <strong id="created-at">{props.review.created_at} ago</strong>
           <Link to={`/reviews/${props.review.id}`}><strong id="detail-link">View Detailed Check-in</strong></Link>
         </footer>
+
+        <ul className="comment-list">
+          {
+            props.review.comments.map( (comment, idx) => {
+              return <Comment key={idx} comment={comment} />;
+            })
+          }
+        </ul>
       </section>
     </li>
   );

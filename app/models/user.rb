@@ -31,6 +31,11 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_many :followings,
+    through: :follows 
+
+  has_many :comments
+
   def follows_array
     self.follows.map {|follow| follow.follow_id }
   end
