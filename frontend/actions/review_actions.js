@@ -3,7 +3,7 @@ export const REQUEST_REVIEW = "REQUEST_REVIEW";
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
-export const UPDATE_REVIEW = "UPDATE_REVIEW";
+export const REQUEST_BEER_REVIEWS = "REQUEST_BEER_REVIEWS";
 export const CREATE_REVIEW = "CREATE_REVIEW";
 export const REVIEW_ERRORS = "REVIEW_ERRORS";
 
@@ -39,4 +39,9 @@ export const createReview = (review) => ({
 export const receiveErrors = (errors) => ({
   type: REVIEW_ERRORS,
   errors
+});
+
+export const requestBeerReviews = (beerId) => ({
+  type: REQUEST_BEER_REVIEWS,
+  beerId
 });

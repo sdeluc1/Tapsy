@@ -11,7 +11,14 @@ const TopBeers = (props) => {
       <ul className="top-beers-list">
         {
           Object.keys(props.topBeers).map( (beer, idx) => {
-            return <TopBeersItem key={idx} topBeer={beer} rating={props.topBeers[beer]} />;
+            return(
+              <TopBeersItem
+                key={idx}
+                topBeer={beer}
+                rating={props.topBeers[beer].rating}
+                beerId={props.topBeers[beer].beer_id}
+              />
+            );
           })
         }
       </ul>

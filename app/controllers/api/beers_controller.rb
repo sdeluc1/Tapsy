@@ -7,6 +7,7 @@ class Api::BeersController < ApplicationController
 
   def show
     @beer = Beer.find(params[:id])
+    @user_reviews = @beer.user_reviews(current_user)
   end
 
   def create

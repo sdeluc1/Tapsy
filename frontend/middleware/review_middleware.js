@@ -3,6 +3,7 @@ import {
   REQUEST_REVIEW,
   REMOVE_REVIEW,
   CREATE_REVIEW,
+  REQUEST_BEER_REVIEWS,
   receiveReviews,
   receiveReview,
   removeReview,
@@ -27,8 +28,11 @@ export default ({ getState, dispatch }) => next => action => {
       reviewAPI.removeReview(action.reviewId, next(action), errorCallback);
       break;
 
+    case REQUEST_BEER_REVIEWS:
+      reviewAPI.getBeerReviews(action.beerId, successReviews, errorCallback);
+      break;
+
     case CREATE_REVIEW:
-    debugger
       reviewAPI.createReview(action.review, successReview, errorCallback);
       break;
     default:

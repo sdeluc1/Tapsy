@@ -30,6 +30,10 @@
   display: block;
 }
 
+.top-beers-item #top-beers-name:hover {
+  color: #feb800;
+}
+
 .top-beers-item #rating {
   font-size: 12px;
   display: block;

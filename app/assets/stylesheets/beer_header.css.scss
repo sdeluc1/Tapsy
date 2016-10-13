@@ -56,6 +56,10 @@
   margin-bottom: 6px;
 }
 
+.beer-header #brewery-name:hover {
+  color: #feb800;
+}
+
 .beer-header #beer-style {
   display: block;
   color: #888;
@@ -77,7 +81,7 @@
 }
 
 .beer-header #ibu {
-  width: 14%;
+  width: 10%;
 }
 
 .beer-header #rating {
@@ -85,11 +89,11 @@
 }
 
 .beer-header #num-ratings {
-  width: 21%;
+  width: 17%;
 }
 
 .beer-header #date-added {
-  width: 25%;
+  width: 33%;
 }
 
 .beer-header .beer-description {

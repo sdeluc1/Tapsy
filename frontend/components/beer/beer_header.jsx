@@ -19,7 +19,7 @@ const BeerHeader = (props) => {
           </p>
           <p id="you-box">
             <strong id="you">YOU</strong>
-            <strong id="user-beer-reviews">12</strong>
+            <strong id="user-beer-reviews">{props.beer.user_reviews}</strong>
           </p>
         </div>
         <div className="info-bar">

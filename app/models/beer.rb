@@ -39,9 +39,9 @@ class Beer < ActiveRecord::Base
   def self.top_rated_beers
     rated = {}
     Beer.all.each do |beer|
-      rated[beer.name] = beer.overall_rating
+      rated[beer.name] = {rating: beer.overall_rating, beer_id: beer.id}
     end
-    rated.sort_by {|k, v| v}.reverse.take(20).to_h
+    rated.sort_by {|k, v| v[:rating]}.reverse.take(20).to_h
   end
 
   def top_drinkers
@@ -51,6 +51,16 @@ class Beer < ActiveRecord::Base
       drinkers[name] = {count: drinkers[name][:count] + 1, user_id: review.author.id}
     end
     drinkers.sort_by {|k, v| v[:count]}.reverse.take(20).to_h
+  end
+
+  def user_reviews(user)
+    count = 0
+    self.reviews.each do |review|
+      if review.author_id == user.id
+        count += 1
+      end
+    end
+    count 
   end
 
 end

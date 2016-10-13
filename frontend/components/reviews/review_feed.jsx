@@ -23,6 +23,14 @@ const ReviewFeed = (props) => {
         }
       });
       reviews = selectedReviews;
+    } else if(props.feedType === "beer"){
+      const selectedReviews =[];
+      props.reviews.forEach( (review) => {
+        if(review.beer_id === props.beerId){
+          selectedReviews.push(review);
+        }
+      });
+      reviews = selectedReviews;
     }
 
     const headerText = () => {
@@ -41,6 +49,12 @@ const ReviewFeed = (props) => {
           return "";
       }
 
+    };
+
+    const handleEmpty = () => {
+      if(reviews.length < 1){
+        return <li className="no-reviews">No Recent Activity</li>;
+      }
     };
 
     const compare = (a, b) => {
@@ -64,6 +78,7 @@ const ReviewFeed = (props) => {
               return <ReviewFeedItem key={idx} review={review} />;
             })
           }
+          {handleEmpty()}
         </ul>
       </div>
     );

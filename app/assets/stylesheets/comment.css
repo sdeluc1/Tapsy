@@ -23,6 +23,10 @@
   float: left;
 }
 
+.comment #comment-name:hover {
+  color: #feb800;
+}
+
 .comment #comment-body {
   margin-left: 5px;
   float: left;

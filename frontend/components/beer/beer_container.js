@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BeerShow from './beer_show';
-import { requestReviews } from '../../actions/review_actions';
+import { requestBeerReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loadingBeer: state.beer.loadingOne,
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateReviews: () => dispatch(requestReviews())
+  updateReviews: (beerId) => dispatch(requestBeerReviews(beerId))
 });
 
 export default connect(

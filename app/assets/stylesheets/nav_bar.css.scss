@@ -31,6 +31,10 @@ a {
   width: 100px;
 }
 
+.nav-logo:hover {
+  color: #000;
+}
+
 .nav-logo-main {
   font-size: 30px;
   font-weight: bold;
@@ -54,6 +58,10 @@ a {
   padding-right: 30px;
   font-size: 19px;
   letter-spacing: 1px;
+}
+
+.nav-bar .nav-list li:hover {
+  color: #000;
 }
 
 .nav-bar .nav-right {

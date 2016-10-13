@@ -17,7 +17,6 @@ export const fetchOneReview = (reviewId, success, error) => {
 };
 
 export const createReview = (review, success, error) => {
-  debugger 
   $.ajax({
     url: 'api/reviews',
     method: 'POST',
@@ -33,6 +32,16 @@ export const removeReview = (reviewId, success, error) => {
   $.ajax({
     url: `api/reviews/${reviewId}`,
     method: 'DELETE',
+    success,
+    error
+  });
+};
+
+export const getBeerReviews = (beerId, success, error) => {
+  $.ajax({
+    url: 'api/reviews',
+    method: 'GET',
+    data: {beer_id: beerId},
     success,
     error
   });

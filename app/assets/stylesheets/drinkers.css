@@ -33,6 +33,10 @@
   display: block;
 }
 
+.drinkers-item #drinker-name:hover {
+  color: #feb800;
+}
+
 .drinkers-item #checkins {
   font-size: 12px;
   display: block;

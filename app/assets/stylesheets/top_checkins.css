@@ -29,6 +29,10 @@
   display: block;
 }
 
+.top-checkins-item #top-checkins-name:hover {
+  color: #feb800;
+}
+
 .top-checkins-item #checkin-count {
   font-size: 12px;
   display: block;

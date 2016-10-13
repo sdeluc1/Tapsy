@@ -22,7 +22,7 @@ class BeerShow extends React.Component {
   }
 
   processReviewModal(){
-    this.props.updateReviews();
+    this.props.updateReviews(this.props.showBeer.id);
     this.setState({ modalDisplay: { display: 'none' } });
   }
   render(){

@@ -6,7 +6,7 @@ class Api::BreweriesController < ApplicationController
 
   def show
     @brewery = Brewery.find(params[:id])
-    # render json: @brewery
+    @user_reviews = @brewery.user_reviews(current_user)
   end
 
   def create
