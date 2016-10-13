@@ -5,6 +5,7 @@ import BreweryMiddleware from './brewery_middleware';
 import ReviewMiddleware from './review_middleware';
 import UserMiddleware from './user_middleware';
 import FollowMiddleware from './follow_middleware';
+import CommentMiddleware from './comment_middleware';
 import createLogger from 'redux-logger';
 
 const RootMiddleware = applyMiddleware(
@@ -14,6 +15,7 @@ const RootMiddleware = applyMiddleware(
   ReviewMiddleware,
   FollowMiddleware,
   UserMiddleware,
+  CommentMiddleware,
   createLogger()
 );
 

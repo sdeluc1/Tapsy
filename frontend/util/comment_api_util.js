@@ -6,7 +6,7 @@ export const getComments = (reviewId, success, error) => {
     success,
     error
   });
-}
+};
 
 export const createComment = (comment, success, error) => {
   $.ajax({
@@ -16,7 +16,7 @@ export const createComment = (comment, success, error) => {
     success,
     error
   });
-}
+};
 
 export const deleteComment = (commentId, success, error) => {
   $.ajax({
@@ -25,4 +25,4 @@ export const deleteComment = (commentId, success, error) => {
     success,
     error
   });
-}
+};

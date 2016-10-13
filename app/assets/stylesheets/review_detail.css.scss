@@ -3,7 +3,7 @@
   min-width: 320px;
   width: 100%;
   position: relative;
-  margin: 32px auto 48px;
+  margin: 0px auto 48px;
 }
 
 .review-detail-user {
@@ -97,13 +97,20 @@
 }
 
 #review-detail-content #review-detail-rating {
+
+  background-color: #ffcc00;
+  display: block;
+  padding: 5px;
+  color: #000;
+  max-width: 120px;
+  text-align: center;
+  text-shadow: 1px 1px 1px white;
   letter-spacing: 2px;
-  font-size: 15px;
-  font-weight: 600;
+  border-radius: 5px;
 }
 
 .rev-content-footer {
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 .rev-content-footer #time-stamp {
@@ -114,34 +121,13 @@
 
 .main-review-detail .review-pic #review-image {
   float: right;
-  max-width: 300px;
+  max-width: 30%;
   max-height: 600px;
   padding: 20px 40px;
+  margin-top: 97px;
 
 }
 
-.rev-detail-comment-form {
-  width: 100%;
-  margin-top: 20px;
-  background-color: #ccc;
-  border-radius: 4px;
-}
-
-.add-comment {
-  padding: 20px;
-}
-
-.add-comment #comment-body {
-  resize: none;
-  width: 99%;
-  height: 50px;
-  font-size: 14px;
-}
-
-.add-comment #submit-comment {
-  float: right;
-  border-radius: 5px;
-  font-size: 14px;
-  margin: 10px 0;
-  width: 20%;
+.main-rev-detail-content {
+  border: 1px solid #ccc;
 }

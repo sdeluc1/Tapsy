@@ -14,7 +14,7 @@ const SessionReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_USER_LOGIN:
-      debugger
+
       newState = merge({}, state);
       newState.currentUser = action.user;
       newState.follows_arr = action.user.follows;
@@ -22,7 +22,6 @@ const SessionReducer = (state = defaultState, action) => {
       return newState;
 
     case RECEIVE_CURRENT_USER:
-    debugger
       newState = merge({}, state);
       newState.currentUser = action.currentUser;
       newState.follows_arr = newState.follows_arr || action.currentUser.follows;
@@ -42,14 +41,12 @@ const SessionReducer = (state = defaultState, action) => {
       return newState;
 
     case CREATE_FOLLOW:
-    debugger
       newState = merge({}, state);
       newState.follows_arr.push(action.follow.follow);
       newState.following = true;
       return newState;
 
     case DELETE_FOLLOW:
-    debugger
       newState = merge({}, state);
       let followIdx;
       for(let i = 0; i < newState.follows_arr.length; i++){
@@ -65,7 +62,6 @@ const SessionReducer = (state = defaultState, action) => {
       return newState;
 
     case RECEIVE_USER:
-    debugger
       newState = merge({}, state);
       newState.following = false;
       for(let i = 0; i < newState.follows_arr.length; i++){

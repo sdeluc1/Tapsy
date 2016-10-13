@@ -17,7 +17,7 @@ const ReviewFeedItem = (props) => {
       );
     }
   };
-  debugger 
+  
   return(
     <li className="main-review-item">
       <div id="review-user-pic"></div>

@@ -18,33 +18,43 @@ const ReviewDetail = (props) => {
               </div>
             </header>
 
-            <div id="review-detail-content">
-              <div id="content-top">
-                <div id="review-beer-icon"></div>
-                <div className="beer-brewery">
-                  <strong id="beer-name">{props.showReview.beer.name}</strong>
-                  <strong id="brewery-name">{props.showReview.brewery.name}</strong>
+            <div className="main-rev-detail-content">
+
+              <div id="review-detail-content">
+                <div id="content-top">
+                  <div id="review-beer-icon"></div>
+                  <div className="beer-brewery">
+                    <strong id="beer-name">{props.showReview.beer.name}</strong>
+                    <strong id="brewery-name">{props.showReview.brewery.name}</strong>
+                  </div>
                 </div>
+                <div id="content-bottom">
+                  <div id="review-detail-description">{props.showReview.description}</div>
+                  <div id="review-detail-rating">Rating: {props.showReview.rating}</div>
+                </div>
+                <footer className="group rev-content-footer">
+                  <span id="time-stamp">{props.showReview.created_at} ago</span>
+                </footer>
               </div>
-              <div id="content-bottom">
-                <div id="review-detail-description">{props.showReview.description}</div>
-                <div id="review-detail-rating">Rating: {props.showReview.rating}</div>
+              <div className="rev-detail-comments">
+                <ul className="detail-comment-list">
+                  {
+                    props.showReview.comments.map( (comment, idx) => {
+                      return <Comment key={idx} comment={comment} />;
+                    })
+                  }
+                </ul>
               </div>
-              <footer className="group rev-content-footer">
-                <span id="time-stamp">{props.showReview.created_at} ago</span>
-              </footer>
+
             </div>
-            <div className="rev-detail-comments">
-              <ul className="detail-comment-list">
-                {
-                  props.showReview.comments.map( (comment, idx) => {
-                    return <Comment key={idx} comment={comment} />;
-                  })
-                }
-              </ul>
-            </div>
+
             <div className="group rev-detail-comment-form">
-              <CommentForm reviewId={props.showReview.id} addComment={props.addComment} />
+              <CommentForm
+                reviewId={props.showReview.id}
+                addComment={props.addComment}
+                getComments={props.requestComments}
+                reloadReview={props.requestReview}
+              />
             </div>
           </div>
           <div className="review-pic">

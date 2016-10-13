@@ -1,0 +1,35 @@
+
+.rev-detail-comment-form {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-comment {
+  padding: 20px;
+}
+
+.add-comment #comment-body {
+  resize: none;
+  width: 96%;
+  height: 50px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.add-comment #submit-comment {
+  float: right;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px 0;
+  width: 20%;
+  border: 0;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  cursor: pointer;
+}

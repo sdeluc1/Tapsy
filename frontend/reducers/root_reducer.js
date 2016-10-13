@@ -5,6 +5,7 @@ import BreweryReducer from './brewery_reducer';
 import ReviewReducer from './review_reducer';
 import FollowReducer from './follow_reducer';
 import UserReducer from './user_reducer';
+import CommentReducer from './comment_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -12,7 +13,8 @@ const RootReducer = combineReducers({
   breweries: BreweryReducer,
   reviews: ReviewReducer,
   user: UserReducer,
-  follows: FollowReducer
+  follows: FollowReducer,
+  comments: CommentReducer
 });
 
 export default RootReducer;
