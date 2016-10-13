@@ -25,6 +25,24 @@ const ReviewFeed = (props) => {
       reviews = selectedReviews;
     }
 
+    const headerText = () => {
+      switch(props.feedType){
+        case "home":
+          return "Recent Followed Activity";
+        case "beer":
+          return "Recent Activity";
+        case "user":
+          return `${props.user.name}'s Recent Activity`;
+        case "brewery":
+          return "Recent Activity"
+        case "brews":
+          return "Recent Global Activity";
+        default:
+          return "";
+      }
+
+    };
+
     const compare = (a, b) => {
       if(a.id < b.id){
         return -1;
@@ -39,7 +57,7 @@ const ReviewFeed = (props) => {
 
     return(
       <div className="review-feed">
-        <header id="review-feed-header">Recent Activity</header>
+        <header id="review-feed-header">{headerText()}</header>
         <ul className="review-feed-list">
           {
             reviews.map( (review, idx) => {

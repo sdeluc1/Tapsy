@@ -117,4 +117,31 @@
   max-width: 300px;
   max-height: 600px;
   padding: 20px 40px;
+
+}
+
+.rev-detail-comment-form {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.add-comment {
+  padding: 20px;
+}
+
+.add-comment #comment-body {
+  resize: none;
+  width: 99%;
+  height: 50px;
+  font-size: 14px;
+}
+
+.add-comment #submit-comment {
+  float: right;
+  border-radius: 5px;
+  font-size: 14px;
+  margin: 10px 0;
+  width: 20%;
 }
