@@ -38,9 +38,10 @@ export const updateBeer = (beerId, newBeer) => ({
   newBeer
 });
 
-export const createBeer = (beer) => ({
+export const createBeer = (beer, callback) => ({
   type: CREATE_BEER,
-  beer
+  beer,
+  callback
 });
 
 export const receiveErrors = (errors) => ({

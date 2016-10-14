@@ -32,7 +32,10 @@ export default ({ getState, dispatch }) => next => action => {
       breweryAPI.updateBrewery(action.breweryId, action.newBrewery, successBreweries, errorCallback);
       break;
     case CREATE_BREWERY:
-      breweryAPI.createBrewery(action.brewery, successBrewery, errorCallback);
+      breweryAPI.createBrewery(action.brewery, (data) => {
+        successBrewery(data);
+        action.callback(data.id);
+      }, errorCallback);
       break;
     default:
       return next(action);

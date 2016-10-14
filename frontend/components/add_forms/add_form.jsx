@@ -33,11 +33,15 @@ class AddForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger 
+    debugger
     if(this.props.formType === 'beer') {
-      this.props.processForm({ beer: this.state.beer }, "beer");
+      this.props.processForm({ beer: this.state.beer }, "beer", (id) => {
+        this.props.router.push(`/beer/${id}`);
+      });
     } else {
-      this.props.processForm({ brewery: this.state.brewery }, "brewery");
+      this.props.processForm({ brewery: this.state.brewery }, "brewery", (id) => {
+        this.props.router.push(`/brewery/${id}`);
+      });
     }
     this.closeForm();
   }

@@ -12,7 +12,7 @@ class Api::BreweriesController < ApplicationController
   def create
     @brewery = Brewery.new(brewery_params)
     if @brewery.save
-      render json: @brewery
+      render :show
     else
       render json: @brewery.errors.full_messages, status: 422
     end
@@ -21,7 +21,7 @@ class Api::BreweriesController < ApplicationController
   def update
     @brewery = Brewery.find(params[:id])
     if @brewery.update(brewery_params)
-      render json: @brewery
+      render :show
     else
       render json: @brewery.errors.full_messages, status: 422
     end

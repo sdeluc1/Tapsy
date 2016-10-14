@@ -39,9 +39,10 @@ export const updateBrewery = (breweryId, newBrewery) => ({
   newBrewery
 });
 
-export const createBrewery = (brewery) => ({
+export const createBrewery = (brewery, callback) => ({
   type: CREATE_BREWERY,
-  brewery
+  brewery,
+  callback
 });
 
 export const receiveErrors = (errors) => ({

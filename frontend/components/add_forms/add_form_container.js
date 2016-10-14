@@ -12,11 +12,11 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   formType: ownProps.formType,
-  processForm: (data, formType) => {
+  processForm: (data, formType, callback) => {
     if (formType === 'beer') {
-      dispatch(createBeer(data));
+      dispatch(createBeer(data, callback));
     } else {
-      dispatch(createBrewery(data));
+      dispatch(createBrewery(data, callback));
     }
   }
 });

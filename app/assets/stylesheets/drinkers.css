@@ -42,3 +42,8 @@
   display: block;
   color: #ccc;
 }
+
+.no-drinkers {
+  padding: 10px 20px;
+  font-size: 18px;
+}

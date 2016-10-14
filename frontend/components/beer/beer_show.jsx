@@ -26,7 +26,9 @@ class BeerShow extends React.Component {
       this.setState({ modalDisplay: { display: 'none' } });
     });
   }
+
   render(){
+    debugger
     if (this.props.loadingBeer) {
       return(
         <div></div>

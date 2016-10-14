@@ -12,7 +12,7 @@ class Api::BeersController < ApplicationController
   def create
     @beer = Beer.new(beer_params)
     if @beer.save
-      render json: @beer
+      render :show
     else
       render json: @beer.errors.full_messages, status: 422
     end

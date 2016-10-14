@@ -14,6 +14,11 @@ class CommentForm extends React.Component {
 
   updateBody() {
     return e => {
+      if(e.currentTarget.value === ""){
+        $('#submit-comment').css("background-color", "#ccc");
+      } else {
+        $('#submit-comment').css("background-color", "#ffcc00");
+      }
       this.setState({ body: e.currentTarget.value });
     };
   }
@@ -23,6 +28,7 @@ class CommentForm extends React.Component {
     this.props.addComment({ comment: this.state });
     this.props.getComments(this.props.reviewId);
     this.props.reloadReview(this.props.reviewId);
+    $('#submit-comment').css("background-color", "#ccc");
     this.setState({ body: "" });
   }
 

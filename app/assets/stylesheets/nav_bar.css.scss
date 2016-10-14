@@ -106,6 +106,7 @@ a {
   left: -80px;
   z-index: 8;
   width: 200px;
+  border: 2px solid #feb800;
 }
 
 .dropdown-content:hover .hidden-list {
@@ -122,6 +123,6 @@ a {
 }
 
 .hidden-list li:hover {
-  background-color: #f4b800;
+  background-color: rgb(237, 129, 28);
   color: #000;
 }

@@ -3,7 +3,7 @@ import ReviewFeedItem from './review_feed_item';
 
 const ReviewFeed = (props) => {
     let reviews = props.reviews;
-
+    debugger
     if(props.user === null || typeof props.reviews === "undefined"){
       return <div className="review-feed"></div>;
     }

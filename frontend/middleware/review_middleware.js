@@ -29,7 +29,6 @@ export default ({ getState, dispatch }) => next => action => {
       break;
 
     case REQUEST_BEER_REVIEWS:
-    debugger 
       reviewAPI.getBeerReviews(action.beerId, (data) => {
         successReviews(data);
         action.callback();
