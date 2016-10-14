@@ -1,7 +1,6 @@
 import React from 'react';
 
 const BeerHeader = (props) => {
-    debugger 
     return(
       <header className="group beer-header">
         <div className="beer-icon"></div>

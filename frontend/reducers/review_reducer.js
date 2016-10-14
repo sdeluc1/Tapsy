@@ -24,7 +24,15 @@ const ReviewReducer = (state = defaultState, action) => {
       return {list: action.reviews, loadingAll: false, loadingOne: true};
 
     case RECEIVE_REVIEW:
-      newState = merge({}, state, {showReview: action.review, loadingOne: false, loadingAll: true});
+      newState = Object.assign({}, state, {
+        showReview: action.review,
+        loadingOne: false,
+        loadingAll: true,
+        list: [
+          ...state.list,
+          action.review
+        ]
+      });
       return newState;
 
     case REVIEW_ERRORS:

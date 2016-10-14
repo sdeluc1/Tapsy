@@ -28,7 +28,6 @@ class BeerShow extends React.Component {
   }
 
   render(){
-    debugger
     if (this.props.loadingBeer) {
       return(
         <div></div>

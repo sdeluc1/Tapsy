@@ -62,7 +62,6 @@ class UserHeader extends React.Component {
   }
 
   render() {
-    debugger
     return(
       <header className="main-user-header">
         {this.followStatus()}

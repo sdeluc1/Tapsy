@@ -62,10 +62,14 @@
 
 
 .review-item-photo{
-  max-height: 240px;
-  width: 90%;
+  height: 240px;
+  width: 100%;
   overflow: hidden;
   margin-bottom: 12px;
   cursor: pointer;
 
+}
+
+.main-review-item #item-pic {
+  width: 100%;
 }

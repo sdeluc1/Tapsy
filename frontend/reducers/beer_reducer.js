@@ -22,7 +22,7 @@ const BeerReducer = (state = defaultState, action) => {
       return merge({}, state, {loadingAll: false}, action.beers);
 
     case RECEIVE_BEER:
-      newState = merge({}, state, {showBeer: action.beer, loadingOne: false});
+      newState = Object.assign({}, state, {showBeer: action.beer, loadingOne: false});
       return newState;
 
     case BEER_ERRORS:
@@ -37,7 +37,7 @@ const BeerReducer = (state = defaultState, action) => {
 
     case RESET_BEER:
       newState = merge({}, state);
-      newState.loading = true;
+      newState.loadingOne = true;
       return newState;
 
     default:

@@ -12,7 +12,6 @@ class UserStats extends React.Component {
   }
 
   render(){
-    debugger
     if(this.props.user === null){
       return <div className="group user-states-box"></div>;
     } else {

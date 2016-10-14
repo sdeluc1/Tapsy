@@ -57,7 +57,7 @@ boston = Brewery.create!(name: "Boston Beer Company", location: "Boston, MA",
 goose = Brewery.create!(name: "Goose Island Beer Co.", location: "Chicago, IL",
                         brewery_type: "Macro Brewery", description: "Goose Island Brewing Company began its operation in 1988 under the ownership of beer lover, John Hall. With a mission to prove the great ability of Midwesterners to produce great beers compared to the ones he has traveled to, John established the Goose Island Brewery")
 
-stone = Brewery.create!(name: "Stone Brewing Co.", location: "Escondido, CA",
+stone = Brewery.create!(name: "Stone Brewing", location: "Escondido, CA",
                         brewery_type: "Micro Brewery", description: "Founded by Greg Koch and Steve Wagner in 1996, San Diego-based Stone Brewing is the 9th largest craft brewer in the United States. Stone has been listed on the Inc. 500 | 5000 Fastest Growing Private Companies list 11 times, and has been called the “All-time Top Brewery on Planet Earth” by BeerAdvocate magazine twice.")
 
 dogfish = Brewery.create!(name: "Dogfish Head Craft Brewery", location: "Milton, DE",
@@ -86,28 +86,40 @@ bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv:
 bud_light = Beer.create!(name: "Bud Light", brewery_id: anh_b.id, style: "Lager", abv: 4.2, ibu: 27,
                    description: "This is The King of Light Beers... enough said.")
 
-sam_adams = Beer.create!(name: "Samuel Adams Boston Lager", brewery_id: boston.id, style: "Lager", abv: 4.9, ibu: 30,
+boston_lager = Beer.create!(name: "Samuel Adams Boston Lager", brewery_id: boston.id, style: "Lager", abv: 4.9, ibu: 30,
                    description: "Samuel Adams Boston Lager® is the best example of the fundamental characteristics of a great beer, offering a full, rich flavor that is both balanced and complex.")
 
-bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
-                   description: "This is The King of Beers... enough said.")
+rebel_ipa = Beer.create!(name: "Samuel Adams Rebel IPA", brewery_id: boston.id, style: "IPA", abv: 6.5, ibu: 45,
+                   description: "Brewed with 5 varieties of west coast hops cascade, simcoe, centennial, chinook & amarillo. Big citrus & grapefruit flavors with subtle pine notes for a flavorful refreshing brew. ")
 
-bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
-                   description: "This is The King of Beers... enough said.")
+honker = Beer.create!(name: "Honker's Ale", brewery_id: goose.id, style: "Strong Bitter", abv: 4.3, ibu: 30,
+                   description: "Inspired by visits to English country pubs, Honker’s Ale combines a fruity hop aroma with a rich malt middle to create a perfectly balanced beer.")
 
-bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
-                   description: "This is The King of Beers... enough said.")
+goose_ipa = Beer.create!(name: "Goose IPA", brewery_id: goose.id, style: "IPA", abv: 5.9, ibu: 55,
+                   description: "Goose IPA is a hop lover’s dream with a fruity aroma, set off by a dry malt middle, and long hop finish.")
 
-bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
-                   description: "This is The King of Beers... enough said.")
+stone_ipa = Beer.create!(name: "Stone IPA", brewery_id: stone.id, style: "IPA", abv: 6.9, ibu: 77,
+                   description: "This crisp, extra hoppy brew is hugely refreshing on a hot day, but will always deliver no matter when you choose to drink it.")
 
-bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
-                   description: "This is The King of Beers... enough said.")
+stone_coffee = Beer.create!(name: "Stone Coffee Milk Stout", brewery_id: stone.id, style: "Milk Stout", abv: 5.0, ibu: 40,
+                   description: "With Lactose and Coffee from ACME Coffee Roasting Co. Brian Gallagher put together a delicious stout that can be considered a hybrid between Irish, Sweet, and a Milk Stout.")
+
+smoked_porter = Beer.create!(name: "Stone Smoked Porter", brewery_id: stone.id, style: "Smoked Beer", abv: 5.9, ibu: 53,
+                   description: "Stone Smoked Porter is dark, rich and complicated. A porter is substantially darker than a pale ale, but not as black or opaque as a stout.")
+
+sixty_minute = Beer.create!(name: "60 Minute IPA", brewery_id: dogfish.id, style: "IPA", abv: 6.0, ibu: 60,
+                   description: "Our flagship beer. A session India Pale Ale brewed with Warrior, Amarillo & 'Mystery Hop X.' A powerful East Coast I.P.A. with a lot of citrusy hop character. THE session beer for beer geeks like us!")
+
+punkin = Beer.create!(name: "Punkin Ale", brewery_id: dogfish.id, style: "Pumpkin", abv: 7.0, ibu: 28,
+                   description: "A full-bodied brown ale with smooth hints of pumpkin and brown sugar. We brew our Punkin Ale with pumpkin meat, brown sugar and spices.")
+
+steve_ale = Beer.create!(name: "Awesome Ale", brewery_id: steve.id, style: "Ale", abv: 4.3, ibu: 22,
+                   description: "This is the real King of Beers... take that Budweiser.")
 
 Review.destroy_all
 
 review1 = Review.create!(rating: 4.25, description: "I loved this beer! It tastes good and gets you drunk fast!",
-                         author_id: user1.id, beer_id: bf_stout.id)
+                         author_id: user1.id, beer_id: bf_stout.id, image: open("https://s-media-cache-ak0.pinimg.com/originals/28/1d/d4/281dd423ddd5dbfa4f8f4ea28e00fbe3.jpg"))
 
 review2 = Review.create!(rating: 1.75, description: "This beer is terrible! What were they thinking when they made this?!",
                         author_id: user2.id, beer_id: bf_stout.id)
@@ -118,5 +130,113 @@ review3 = Review.create!(rating: 2.75, description: "The King of Beers? Yeah rig
 review4 = Review.create!(rating: 4.0, description: "Not an IPA fan, but this one was delicious!",
                          author_id: user2.id, beer_id: all_day_ipa.id)
 
-review5 = Review.create!(rating: 3.0, description: "Eh. Not impressed.",
+review5 = Review.create!(rating:4.25, description: "This is beer is a classic! I drink it everywhere I go!",
+                        author_id: user5.id, beer_id: boston_lager.id, image: open("http://beer-taster.com/wp-content/uploads/yapb_cache/samuel_adams_boston_lager.7r7ebnwshiwww844gsg0co8sw.6ylu316ao144c8c4woosog48w.th.jpeg"))
+
+review6 = Review.create!(rating: 3.0, description: "Eh. Not impressed.",
                         author_id: user3.id, beer_id: bf_stout.id)
+
+review7 = Review.create!(rating: 3.25, description: "A mediocre beer at best, but I do love geese.",
+                        author_id: user7.id, beer_id: honker.id)
+
+review8 = Review.create!(rating: 3.5, description: "What the heck is a milk stout? I don't know, but I enjoyed this beer.",
+                        author_id: user1.id, beer_id: stone_coffee.id)
+
+review9 = Review.create!(rating: 2.25, description: "Not a very good beer, but I'll drink almost anything.",
+                        author_id: user6.id, beer_id: rebel_ipa.id, image: open("http://3.bp.blogspot.com/-u8QVahqyR9c/UvJK3T3BE4I/AAAAAAAAIJ4/fN1KMnE5uSk/s1600/Samuel+Adams+Rebel+IPA.JPG"))
+
+review10 = Review.create!(rating: 4.5, description: "What a PUNderful beer!!!",
+                        author_id: user4.id, beer_id: punkin.id, image: open("http://northdelawhere.happeningmag.com/wp-content/uploads/dogfish-head-punkin-ale.jpg"))
+
+review11 = Review.create!(rating: 3.25, description: "Not my cup of tea... but it IS my cup of beer.",
+                        author_id: user8.id, beer_id: bf_stout.id, image: open("https://beermetaldude.files.wordpress.com/2015/01/breakfast.jpg"))
+
+review12 = Review.create!(rating: 2.0, description: "Why do I keep drinking this???!!!",
+                        author_id: user10.id, beer_id: bud_light.id)
+
+review13 = Review.create!(rating: 3.0, description: "I don't see the big deal... Not terrible though.",
+                        author_id: user1.id, beer_id: sixty_minute.id, image: open("http://www.brainardbrewing.com/blog/wp-content/uploads/2008/11/60_min_2shot.jpg"))
+
+review14 = Review.create!(rating: 1.25, description: "What were they thinking when they made this beer? Disgusting.",
+                        author_id: user8.id, beer_id: steve_ale.id)
+
+review15 = Review.create!(rating: 4.75, description: "THIS BEER IS MY CHAMPION",
+                        author_id: user7.id, beer_id: bud.id, image: open("https://hywelsbiglog.files.wordpress.com/2008/07/image31-b-bottle.jpg"))
+
+review16 = Review.create!(rating: 2.5, description: "This beer is way too fancy. Gimme some Miller Lite any day.",
+                        author_id: user7.id, beer_id: smoked_porter.id)
+
+review17 = Review.create!(rating: 3.0, description: "What does IPA even stand for? Decent beer.",
+                        author_id: user1.id, beer_id: all_day_ipa.id, image: open("http://www.keysbeerandbubblyfest.com/wp-content/uploads/2015/12/founders-all-day-ipa.jpg"))
+
+review18 = Review.create!(rating: 4.0, description: "Sam Adams is killin' it with this one. Keep 'em coming!",
+                        author_id: user2.id, beer_id: rebel_ipa.id)
+
+review19 = Review.create!(rating: 1.25, description: "Worst beer I've ever had. Hands down.",
+                        author_id: user5.id, beer_id: bf_stout.id, image: open("http://bigbeefandbeer.com/wp-content/uploads/2010/01/FoundersBreakfastStout.jpg"))
+
+review20 = Review.create!(rating: 4.0, description: "THE GOOSE IS LOOSE! Delicious beer!!!",
+                        author_id: user9.id, beer_id: honker.id, image: open("http://media.virbcdn.com/cdn_images/resize_1024x1024/e9/4981888eb6ffed6a-GooseIslandHonkerAle.jpeg"))
+
+
+Follow.destroy_all
+
+follow1 = Follow.create!(user_id: user1.id, follow_id: user8.id)
+
+follow2 = Follow.create!(user_id: user1.id, follow_id: user3.id)
+
+follow3 = Follow.create!(user_id: user1.id, follow_id: user4.id)
+
+follow4 = Follow.create!(user_id: user1.id, follow_id: user5.id)
+
+follow5 = Follow.create!(user_id: user1.id, follow_id: user6.id)
+
+follow6 = Follow.create!(user_id: user1.id, follow_id: user9.id)
+
+follow7 = Follow.create!(user_id: user2.id, follow_id: user1.id)
+
+follow8 = Follow.create!(user_id: user2.id, follow_id: user3.id)
+
+follow9 = Follow.create!(user_id: user2.id, follow_id: user4.id)
+
+follow10 = Follow.create!(user_id: user2.id, follow_id: user5.id)
+
+follow11 = Follow.create!(user_id: user2.id, follow_id: user6.id)
+
+follow12 = Follow.create!(user_id: user2.id, follow_id: user7.id)
+
+follow13 = Follow.create!(user_id: user3.id, follow_id: user1.id)
+
+follow14 = Follow.create!(user_id: user3.id, follow_id: user2.id)
+
+follow15 = Follow.create!(user_id: user3.id, follow_id: user8.id)
+
+follow16 = Follow.create!(user_id: user4.id, follow_id: user1.id)
+
+follow17 = Follow.create!(user_id: user4.id, follow_id: user9.id)
+
+follow18 = Follow.create!(user_id: user4.id, follow_id: user6.id)
+
+follow19 = Follow.create!(user_id: user4.id, follow_id: user2.id)
+
+follow20 = Follow.create!(user_id: user5.id, follow_id: user2.id)
+
+follow21= Follow.create!(user_id: user5.id, follow_id: user10.id)
+
+follow22 = Follow.create!(user_id: user6.id, follow_id: user9.id)
+
+follow23 = Follow.create!(user_id: user6.id, follow_id: user8.id)
+
+follow24 = Follow.create!(user_id: user6.id, follow_id: user4.id)
+
+follow25 = Follow.create!(user_id: user7.id, follow_id: user1.id)
+
+follow26 = Follow.create!(user_id: user7.id, follow_id: user5.id)
+
+follow27 = Follow.create!(user_id: user7.id, follow_id: user2.id)
+
+follow28 = Follow.create!(user_id: user8.id, follow_id: user4.id)
+
+follow29 = Follow.create!(user_id: user8.id, follow_id: user5.id)
+
+follow30 = Follow.create!(user_id: user8.id, follow_id: user6.id)

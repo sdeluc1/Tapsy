@@ -2,7 +2,6 @@ import React from 'react';
 import DrinkersItem from './drinkers_item';
 
 const Drinkers = (props) => {
-  debugger 
   const handleEmpty = () => {
     if($.isEmptyObject(props.drinkers)){
       return <li className="no-drinkers">No drinkers!</li>;

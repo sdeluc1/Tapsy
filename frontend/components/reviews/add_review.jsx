@@ -6,7 +6,6 @@ class AddReview extends React.Component {
     this.state = {
       description: "",
       rating: "0.0",
-      // beer_id: this.props.beerId,
       imageFile: null,
       imageUrl: null
     };
@@ -43,14 +42,14 @@ class AddReview extends React.Component {
       formData.append("review[image]", this.state.imageFile);
     }
     this.props.createReview(formData);
-    this.props.process();
+    // this.props.process();
+    this.closeForm();
   }
 
   closeForm() {
     this.setState({
       description: "",
       rating: "0.0",
-      // beer_id: this.props.beerId,
       imageFile: null,
       imageUrl: null
     });
