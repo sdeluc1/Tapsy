@@ -11,15 +11,6 @@ class UserStats extends React.Component {
     }
   }
 
-  // componentWillReceiveProps(){
-  //   this.setState({
-  //     total: this.props.user.rev_count,
-  //     unique: this.props.user.unique_count,
-  //     followers: this.props.user.followers,
-  //     followed: this.props.user.followed
-  //   });
-  // }
-
   render(){
     debugger
     if(this.props.user === null){

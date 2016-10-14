@@ -17,6 +17,32 @@ user2 = User.create!(username: "BeerLuVr12", password: "password",
 user3 = User.create!(username: "CraftBeard", password: "password",
                     email: "craft@aol.com", name: "Rusty Jones")
 
+user4 = User.create!(username: "NinjaTurtle85", password: "password",
+                    email: "ninja@turtle.com", name: "Donatello")
+
+user5 = User.create!(username: "IHeartBeer", password: "password",
+                    email: "beerguy@aol.com", name: "Mike Lowry")
+
+user6 = User.create!(username: "OneWhoKnocks", password: "password",
+                    email: "walter@gmail.com", name: "Walter White")
+
+user7 = User.create!(username: "AdMan62", password: "password",
+                    email: "DonDraper@gmail.com", name: "Don Draper")
+
+user8 = User.create!(username: "WithTheFishes", password: "password",
+                    email: "TonySoprano@aol.com", name: "Tony Soprano")
+
+user9 = User.create!(username: "FormerPrez42", password: "password",
+                    email: "WestWing@hotmail.com", name: "Josiah Bartlett")
+
+user10 = User.create!(username: "Admiral47", password: "password",
+                    email: "adama@hotmail.com", name: "William Adama")
+
+user11 = User.create!(username: "GuestUser", password: "password",
+                    email: "guest@tapsy.com", name: "Guest")
+
+
+
 Brewery.destroy_all
 
 founders = Brewery.create!(name: "Founders Brewing Co.", location: "Grand Rapids, MI",
@@ -24,6 +50,23 @@ founders = Brewery.create!(name: "Founders Brewing Co.", location: "Grand Rapids
 
 anh_b = Brewery.create!(name: "Anheuser-Busch", location: "St. Louis, MO",
                         brewery_type: "Macro Brewery", description: "The leading American brewer, bringing people together for more than 160 years.")
+
+boston = Brewery.create!(name: "Boston Beer Company", location: "Boston, MA",
+                        brewery_type: "Micro Brewery", description: "Jim Koch founded the Boston Beer Company back in 1984 after brewing the first batch of Samuel Adams Boston Lager in his kitchen. It was his mission to reshape the way American beer drinkers thought of American beer.")
+
+goose = Brewery.create!(name: "Goose Island Beer Co.", location: "Chicago, IL",
+                        brewery_type: "Macro Brewery", description: "Goose Island Brewing Company began its operation in 1988 under the ownership of beer lover, John Hall. With a mission to prove the great ability of Midwesterners to produce great beers compared to the ones he has traveled to, John established the Goose Island Brewery")
+
+stone = Brewery.create!(name: "Stone Brewing Co.", location: "Escondido, CA",
+                        brewery_type: "Micro Brewery", description: "Founded by Greg Koch and Steve Wagner in 1996, San Diego-based Stone Brewing is the 9th largest craft brewer in the United States. Stone has been listed on the Inc. 500 | 5000 Fastest Growing Private Companies list 11 times, and has been called the “All-time Top Brewery on Planet Earth” by BeerAdvocate magazine twice.")
+
+dogfish = Brewery.create!(name: "Dogfish Head Craft Brewery", location: "Milton, DE",
+                        brewery_type: "Micro Brewery", description: "Dogfish Head started in June 1995 when Dogfish Head Brewings & Eats was established in the beach community of Rehoboth Beach, Delaware. Dogfish Head was the first brewpub of the state.")
+
+steve = Brewery.create!(name: "Steve's Brewery", location: "Harrison, NY",
+                        brewery_type: "Micro Brewery", description: "Founded by world famous brewmaster Steve DeLuca in 2016. Steve's brewery specializes in every type of beer possible.")
+
+
 
 Beer.destroy_all
 
@@ -36,6 +79,27 @@ all_day_ipa = Beer.create!(name: "All Day IPA", brewery_id: founders.id, style: 
 porter = Beer.create!(name: "Porter", brewery_id: founders.id, style: "Porter",
                         abv: 6.5, ibu: 45,
                         description: "Pours silky black with a creamy tan head. The nose is sweet with strong chocolate and caramel malt presence. No absence of hops gives Founders' robust porter the full flavor you deserve and expect. Cozy like velvet. It’s a lover, not a fighter.")
+
+bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
+                   description: "This is The King of Beers... enough said.")
+
+bud_light = Beer.create!(name: "Bud Light", brewery_id: anh_b.id, style: "Lager", abv: 4.2, ibu: 27,
+                   description: "This is The King of Light Beers... enough said.")
+
+sam_adams = Beer.create!(name: "Samuel Adams Boston Lager", brewery_id: boston.id, style: "Lager", abv: 4.9, ibu: 30,
+                   description: "Samuel Adams Boston Lager® is the best example of the fundamental characteristics of a great beer, offering a full, rich flavor that is both balanced and complex.")
+
+bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
+                   description: "This is The King of Beers... enough said.")
+
+bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
+                   description: "This is The King of Beers... enough said.")
+
+bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
+                   description: "This is The King of Beers... enough said.")
+
+bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
+                   description: "This is The King of Beers... enough said.")
 
 bud = Beer.create!(name: "Budweiser", brewery_id: anh_b.id, style: "Lager", abv: 5.0, ibu: 12,
                    description: "This is The King of Beers... enough said.")
