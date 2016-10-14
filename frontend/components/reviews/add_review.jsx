@@ -34,7 +34,6 @@ class AddReview extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     const formData = new FormData();
     formData.append("review[description]", this.state.description);

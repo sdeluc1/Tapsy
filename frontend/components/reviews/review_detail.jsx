@@ -1,6 +1,7 @@
 import React from 'react';
 import Comment from '../comments/comment';
 import CommentForm from '../comments/comment_form';
+import { Link } from 'react-router';
 
 const ReviewDetail = (props) => {
   if(props.reviewLoading){
@@ -24,7 +25,9 @@ const ReviewDetail = (props) => {
                 <div id="content-top">
                   <div id="review-beer-icon"></div>
                   <div className="beer-brewery">
-                    <strong id="beer-name">{props.showReview.beer.name}</strong>
+                    <Link to={`/beer/${props.showReview.beer.id}`}>
+                      <strong id="beer-name">{props.showReview.beer.name}</strong>
+                    </Link>
                     <strong id="brewery-name">{props.showReview.brewery.name}</strong>
                   </div>
                 </div>

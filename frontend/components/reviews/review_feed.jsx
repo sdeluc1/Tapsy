@@ -2,10 +2,9 @@ import React from 'react';
 import ReviewFeedItem from './review_feed_item';
 
 const ReviewFeed = (props) => {
-
     let reviews = props.reviews;
 
-    if(props.user === null){
+    if(props.user === null || typeof props.reviews === "undefined"){
       return <div className="review-feed"></div>;
     }
 

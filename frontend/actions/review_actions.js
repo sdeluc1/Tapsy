@@ -41,7 +41,8 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const requestBeerReviews = (beerId) => ({
+export const requestBeerReviews = (beerId, callback) => ({
   type: REQUEST_BEER_REVIEWS,
-  beerId
+  beerId,
+  callback
 });

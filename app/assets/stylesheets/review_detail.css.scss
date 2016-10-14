@@ -78,6 +78,10 @@
   display: block;
 }
 
+.beer-brewery #beer-name:hover {
+  color: #feb800;
+}
+
 .beer-brewery #brewery-name {
   color: #666;
   font-size: 15px;

@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateReviews: (beerId) => dispatch(requestBeerReviews(beerId))
+  updateReviews: (beerId, callback) => dispatch(requestBeerReviews(beerId, callback))
 });
 
 export default connect(

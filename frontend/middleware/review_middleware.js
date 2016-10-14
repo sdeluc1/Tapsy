@@ -29,7 +29,11 @@ export default ({ getState, dispatch }) => next => action => {
       break;
 
     case REQUEST_BEER_REVIEWS:
-      reviewAPI.getBeerReviews(action.beerId, successReviews, errorCallback);
+    debugger 
+      reviewAPI.getBeerReviews(action.beerId, (data) => {
+        successReviews(data);
+        action.callback();
+      }, errorCallback);
       break;
 
     case CREATE_REVIEW:

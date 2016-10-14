@@ -33,12 +33,13 @@ class AddForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger 
     if(this.props.formType === 'beer') {
       this.props.processForm({ beer: this.state.beer }, "beer");
     } else {
       this.props.processForm({ brewery: this.state.brewery }, "brewery");
     }
-    this.props.close();
+    this.closeForm();
   }
 
   getErrors(){

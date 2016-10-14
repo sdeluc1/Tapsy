@@ -17,7 +17,7 @@ const ReviewFeedItem = (props) => {
       );
     }
   };
-  
+
   return(
     <li className="main-review-item">
       <div id="review-user-pic"></div>
@@ -39,8 +39,9 @@ const ReviewFeedItem = (props) => {
           <strong id="review-item-description">{props.review.description}</strong>
           <strong id="review-item-rating">Rating: {props.review.rating}</strong>
         </div>
-
-        {reviewPhoto()}
+        <div className="photo-container">
+          {reviewPhoto()}
+        </div>
 
         <footer className="review-item-time-detail">
           <strong id="created-at">{props.review.created_at} ago</strong>

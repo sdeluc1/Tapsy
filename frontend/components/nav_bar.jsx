@@ -66,7 +66,7 @@ class NavBar extends React.Component {
             <a onClick={this.openBreweryModal}><li>Add Brewery</li></a>
           </ul>
           <div className="nav-right">
-            <div className="dropdown-content">
+            <div className="group dropdown-content">
               <div className="nav-user-pic"></div>
               <ul className="hidden-list">
                 <Link to='/home'><li>Recent Activity</li></Link>

@@ -60,10 +60,12 @@
   font-size: 0.8em;
 }
 
+
 .review-item-photo{
-  height: 240px;
+  max-height: 240px;
   width: 90%;
   overflow: hidden;
   margin-bottom: 12px;
   cursor: pointer;
+
 }
