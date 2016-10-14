@@ -178,6 +178,25 @@ review19 = Review.create!(rating: 1.25, description: "Worst beer I've ever had. 
 review20 = Review.create!(rating: 4.0, description: "THE GOOSE IS LOOSE! Delicious beer!!!",
                         author_id: user9.id, beer_id: honker.id, image: open("http://media.virbcdn.com/cdn_images/resize_1024x1024/e9/4981888eb6ffed6a-GooseIslandHonkerAle.jpeg"))
 
+Comment.destroy_all
+
+comment1 = Comment.create!(body: "You're wrong. This beer is terrible!", user_id: user5.id, review_id: review20.id)
+
+comment2 = Comment.create!(body: "I agree!", user_id: user7.id, review_id: review19.id)
+comment3 = Comment.create!(body: "Well, I disagree", user_id: user6.id, review_id: review19.id)
+comment4 = Comment.create!(body: "Hmm... you've got a point there.", user_id: user7.id, review_id: review19.id)
+
+comment5 = Comment.create!(body: "That's a weird thing to say. Calm down.", user_id: user4.id, review_id: review15.id)
+
+comment6 = Comment.create!(body: "They weren't thinking... this beer is gross.", user_id: user5.id, review_id: review14.id)
+
+comment7 = Comment.create!(body: "I agree! Let's hang out sometime!", user_id: user9.id, review_id: review13.id)
+comment8 = Comment.create!(body: "No", user_id: user1.id, review_id: review13.id)
+
+comment9 = Comment.create!(body: "COME ON!!! THIS BEER IS GREAT!!!!!!", user_id: user8.id, review_id: review6.id)
+
+comment10 = Comment.create!(body: "Because you're drunk!", user_id: user1.id, review_id: review12.id)
+
 
 Follow.destroy_all
 

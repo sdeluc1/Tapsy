@@ -24,6 +24,7 @@ const ReviewReducer = (state = defaultState, action) => {
       return {list: action.reviews, loadingAll: false, loadingOne: true};
 
     case RECEIVE_REVIEW:
+      debugger 
       newState = Object.assign({}, state, {
         showReview: action.review,
         loadingOne: false,
@@ -46,6 +47,7 @@ const ReviewReducer = (state = defaultState, action) => {
       return newState;
 
     case RECEIVE_BEER:
+    debugger
       return {list: action.beer.reviews, loadingOne: true};
 
     case RECEIVE_USER:

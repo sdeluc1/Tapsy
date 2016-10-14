@@ -45,6 +45,7 @@ class BeerShow extends React.Component {
               feedType={this.props.feedType}
               reviews={this.props.reviews}
               beerId={this.props.showBeer.id}
+              loading={this.props.loadingReview}
               />
           </div>
         <div onClick={this.closeReviewModal} id="modal-overlay" style={this.state.modalDisplay}></div>

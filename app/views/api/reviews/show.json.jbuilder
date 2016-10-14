@@ -1,8 +1,9 @@
 
 json.extract! @review, :id, :description, :rating, :created_at, :beer_id
 json.beer(@review.beer, :name, :id, :brewery_id)
+json.beer_name @review.beer.name
 json.author(@review.author, :username, :id, :name)
-json.brewery(@review.beer.brewery, :name)
+json.brewery(@review.beer.brewery, :name, :id)
 json.created_at time_ago_in_words(@review.created_at)
 json.author_count @review.author.reviews.length
 json.image_url asset_url(@review.image.url)

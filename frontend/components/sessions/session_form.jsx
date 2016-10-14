@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -20,7 +21,7 @@ class SessionForm extends React.Component {
       user = {
         user: { username: this.state.username, password: this.state.password }
       };
-    } else {
+    } else if(this.props.formType === "signup") {
       user = {
         user: {
           username: this.state.username,
@@ -44,6 +45,16 @@ class SessionForm extends React.Component {
       hashHistory.push("/home");
     }
   }
+
+  guestLogin(){
+    const user = {
+      user: {
+        username: "DocWatson",
+        password: "password"
+      }
+    }
+    this.props.processForm(user, 'login');
+  };
 
   render() {
     let errors = this.props.errors;
@@ -94,9 +105,12 @@ class SessionForm extends React.Component {
             {logo}
             {errorList}
             {signInForm}
+            <div className="guest-login">
+              Log in as <strong onClick={this.guestLogin} id="guest">GUEST</strong>
+            </div>
             <footer className="foot-link">
               <h3>Not Registered?</h3>
-              <Link to="/signup">Sign Up</Link>
+              <Link id='registered-click' to="/signup">Sign Up</Link>
             </footer>
           </section>
         </main>
@@ -110,7 +124,7 @@ class SessionForm extends React.Component {
             {signUpForm}
             <footer className="foot-link">
               <h3>Already Registered?</h3>
-              <Link to="/login">Sign In</Link>
+              <Link id='registered-click' to="/login">Sign In</Link>
             </footer>
           </section>
         </main>

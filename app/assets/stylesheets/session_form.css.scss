@@ -22,7 +22,7 @@ section.session {
 }
 
 .session form {
-  padding: 20px 40px 40px 40px;
+  padding: 20px 40px 20px 40px;
 }
 
 .session form input {
@@ -70,6 +70,11 @@ section.session {
   padding: 6px 30px;
   font-weight: bold;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #feb800;
 }
 
 .session .foot-link {
@@ -83,4 +88,22 @@ section.session {
   font-weight: bold;
   padding-bottom: 5px;
 
+}
+
+.guest-login {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.guest-login #guest {
+  color: blue;
+  cursor: pointer;
+}
+
+.guest-login #guest:hover {
+  color: red;
+}
+
+#registered-click:hover {
+  color: red;
 }

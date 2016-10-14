@@ -22,7 +22,6 @@ const ReviewFeed = (props) => {
       });
       reviews = selectedReviews;
     } else if(props.feedType === "beer"){
-      debugger
       const selectedReviews =[];
       props.reviews.forEach( (review) => {
         if(review.beer_id === props.beerId){
