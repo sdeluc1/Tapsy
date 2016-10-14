@@ -18,7 +18,7 @@ const HomeIndex = (props) => {
           />
         </div>
         <div className="home-user-stats">
-          <UserStats reviews={props.reviews} user={props.user} />
+          <UserStats user={props.user} />
         </div>
       </main>
     );

@@ -10,7 +10,7 @@ import { requestBeer, requestBeers, resetBeer } from '../actions/beer_actions';
 import { requestReviews, requestReview } from '../actions/review_actions';
 import { requestUser, resetUser } from '../actions/user_actions';
 import { requestFollows } from '../actions/follow_actions';
-import { receiveCurrentUser } from '../actions/session_actions';
+import { receiveCurrentUser, requestCurrentUser } from '../actions/session_actions';
 import BeerContainer from './beer/beer_container';
 import UserContainer from './user/user_container';
 import BreweryContainer from './brewery/brewery_container';
@@ -38,7 +38,7 @@ const Root = ({ store }) => {
   const homeOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       const currentUser = store.getState().session.currentUser;
-      store.dispatch(receiveCurrentUser(currentUser));
+      store.dispatch(requestCurrentUser(currentUser.id));
       store.dispatch(requestReviews());
       store.dispatch(requestFollows());
       store.dispatch(requestBreweries());
