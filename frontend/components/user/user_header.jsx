@@ -4,7 +4,7 @@ import merge from 'lodash/merge';
 class UserHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {followed: this.props.following};
+    this.state = {followed: this.props.following, count: this.props.user.num_followers};
   }
 
   getFollow(followed_id){
@@ -20,13 +20,13 @@ class UserHeader extends React.Component {
   add(follow) {
     this.props.addFollow(follow);
     this.props.requestFollows();
-    this.setState({ followed: true });
+    this.setState({ followed: true, count: this.state.count + 1 });
   }
 
   remove(user) {
     this.props.removeFollow(user);
     this.props.requestFollows();
-    this.setState({ followed: false });
+    this.setState({ followed: false, count: this.state.count - 1 });
   }
 
   followStatus() {
@@ -62,6 +62,7 @@ class UserHeader extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <header className="main-user-header">
         {this.followStatus()}
@@ -87,7 +88,7 @@ class UserHeader extends React.Component {
               <strong className="count-type">FOLLOWING</strong>
             </p>
             <p>
-              <strong id="count">{this.props.user.num_followers}</strong>
+              <strong id="count">{this.state.count}</strong>
               <strong className="count-type">FOLLOWED BY</strong>
             </p>
           </div>
