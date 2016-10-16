@@ -49,9 +49,7 @@ const ReviewFeedItem = (props) => {
         </p>
         <div className="review-item-body">
           <strong id="review-item-description">{props.review.description}</strong>
-          <strong id="review-item-rating" style={ratingCaps}>
-
-          </strong>
+          <strong id="review-item-rating" style={ratingCaps}></strong>
         </div>
         <div className="photo-container">
           {reviewPhoto()}

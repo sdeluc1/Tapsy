@@ -105,15 +105,11 @@
 
 #review-detail-content #review-detail-rating {
 
-  background-color: #ffcc00;
   display: block;
-  padding: 5px;
-  color: #000;
-  max-width: 120px;
-  text-align: center;
-  text-shadow: 1px 1px 1px white;
-  letter-spacing: 2px;
-  border-radius: 5px;
+  height: 30px;
+  overflow: hidden;
+  border: 0;
+  background-repeat: no-repeat;
 }
 
 .rev-content-footer {

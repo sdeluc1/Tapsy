@@ -5,9 +5,23 @@ import { Link } from 'react-router';
 import Loader from 'react-loader';
 
 const ReviewDetail = (props) => {
+
   if(props.reviewLoading){
     return <div><Loader /></div>;
   } else {
+
+    const ratingVal = () => {
+      const percent = props.showReview.rating / 5;
+      const pixels = (percent * 20) * 30;
+      return pixels;
+    };
+
+    const ratingCaps = {
+      backgroundImage: "url('https://s3.amazonaws.com/tapsy-pro/reviews/images/ratings.png')",
+      backgroundPosition: `0 -${ratingVal()}px`,
+      backgroundSize: "149px 630px"
+    };
+
     return(
       <div className="main-review-detail">
         <div className="group main-review-content">
@@ -36,7 +50,7 @@ const ReviewDetail = (props) => {
                 </div>
                 <div id="content-bottom">
                   <div id="review-detail-description">{props.showReview.description}</div>
-                  <div id="review-detail-rating">Rating: {props.showReview.rating}</div>
+                  <div id="review-detail-rating" style={ratingCaps}></div>
                 </div>
                 <footer className="group rev-content-footer">
                   <span id="time-stamp">{props.showReview.created_at} ago</span>
