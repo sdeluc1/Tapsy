@@ -18,6 +18,18 @@ const ReviewFeedItem = (props) => {
     }
   };
 
+  const ratingVal = () => {
+    const percent = props.review.rating / 5;
+    const pixels = (percent * 20) * 30;
+    return pixels;
+  };
+
+  const ratingCaps = {
+    backgroundImage: "url('https://s3.amazonaws.com/tapsy-pro/reviews/images/ratings.png')",
+    backgroundPosition: `0 -${ratingVal()}px`,
+    backgroundSize: "149px 630px"
+  };
+
   return(
     <li className="main-review-item">
       <div id="review-user-pic"></div>
@@ -37,7 +49,9 @@ const ReviewFeedItem = (props) => {
         </p>
         <div className="review-item-body">
           <strong id="review-item-description">{props.review.description}</strong>
-          <strong id="review-item-rating">Rating: {props.review.rating}</strong>
+          <strong id="review-item-rating" style={ratingCaps}>
+
+          </strong>
         </div>
         <div className="photo-container">
           {reviewPhoto()}

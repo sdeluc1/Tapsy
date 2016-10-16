@@ -10,11 +10,6 @@ const mapStateToProps = (state, ownProps) => ({
   reviews: state.reviews.list
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  updateReviews: (beerId, callback) => dispatch(requestBeerReviews(beerId, callback))
-});
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(BeerShow);

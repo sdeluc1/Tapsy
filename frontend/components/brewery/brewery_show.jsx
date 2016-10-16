@@ -2,11 +2,14 @@ import React from 'react';
 import BreweryHeader from './brewery_header';
 import ReviewFeed from '../reviews/review_feed';
 import Drinkers from '../drinkers/drinkers';
+import Loader from 'react-loader';
 
 const BreweryShow = (props) => {
     if (props.loadingBrewery) {
       return(
-        <div></div>
+        <div>
+          <Loader />
+        </div>
       );
     } else {
       return(

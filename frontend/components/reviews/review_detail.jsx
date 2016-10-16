@@ -2,10 +2,11 @@ import React from 'react';
 import Comment from '../comments/comment';
 import CommentForm from '../comments/comment_form';
 import { Link } from 'react-router';
+import Loader from 'react-loader';
 
 const ReviewDetail = (props) => {
   if(props.reviewLoading){
-    return <div></div>;
+    return <div><Loader /></div>;
   } else {
     return(
       <div className="main-review-detail">
@@ -14,7 +15,9 @@ const ReviewDetail = (props) => {
             <header className="review-detail-user">
               <div id="user-avatar"></div>
               <div id="name-count">
-                <strong id="user-name">{props.showReview.author.name}</strong>
+                <Link to={`/user/${props.showReview.author.id}`}>
+                  <strong id="user-name">{props.showReview.author.name}</strong>
+                </Link>
                 <strong id="checkins">{props.showReview.author_count} Check-ins</strong>
               </div>
             </header>

@@ -20,3 +20,11 @@ end
 
 json.num_followed @user.num_followed
 json.num_followers @user.num_followers
+
+json.followed_reviews @user.followed_reviews do |review|
+  json.(review, :id, :rating, :description, :beer_id, :author_id)
+  json.created_at time_ago_in_words(review.created_at)
+  json.author_name @user.name
+  json.brewery review.beer.brewery, :id, :name
+  json.beer_name review.beer.name
+end 

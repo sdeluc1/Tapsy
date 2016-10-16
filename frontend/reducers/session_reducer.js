@@ -62,6 +62,7 @@ const SessionReducer = (state = defaultState, action) => {
       return newState;
 
     case RECEIVE_USER:
+      debugger
       newState = merge({}, state);
       newState.following = false;
       for(let i = 0; i < newState.follows_arr.length; i++){

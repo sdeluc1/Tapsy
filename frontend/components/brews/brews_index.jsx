@@ -1,10 +1,11 @@
 import React from 'react';
 import ReviewFeed from '../reviews/review_feed';
 import TopBeers from '../top_beers/top_beers';
+import Loader from 'react-loader';
 
 const BrewsIndex = (props) => {
   if(props.loadingReviews || props.loadingBeer){
-    return <div></div>;
+    return <div><Loader /></div>;
   } else {
     return(
       <div className="main-brews-page">

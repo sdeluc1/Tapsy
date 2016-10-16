@@ -6,6 +6,8 @@ export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const REQUEST_BEER_REVIEWS = "REQUEST_BEER_REVIEWS";
 export const CREATE_REVIEW = "CREATE_REVIEW";
 export const REVIEW_ERRORS = "REVIEW_ERRORS";
+export const REVIEWS_LOADING = "REVIEWS_LOADING";
+export const FOLLOWED_REVIEWS = "FOLLOWED_REVIEWS";
 
 export const requestReviews = () => ({
   type: REQUEST_REVIEWS
@@ -41,8 +43,11 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const requestBeerReviews = (beerId, callback) => ({
-  type: REQUEST_BEER_REVIEWS,
-  beerId,
-  callback
+export const reviewsLoading = () => ({
+  type: REVIEWS_LOADING
+});
+
+export const followedReviews = (user) => ({
+  type: FOLLOWED_REVIEWS,
+  user
 });

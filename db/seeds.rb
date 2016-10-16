@@ -66,6 +66,10 @@ dogfish = Brewery.create!(name: "Dogfish Head Craft Brewery", location: "Milton,
 steve = Brewery.create!(name: "Steve's Brewery", location: "Harrison, NY",
                         brewery_type: "Micro Brewery", description: "Founded by world famous brewmaster Steve DeLuca in 2016. Steve's brewery specializes in every type of beer possible.")
 
+bone = Brewery.create!(name: "Ken Bone's Brews", location: "New York, NY",
+                        brewery_type: "Micro Brewery", description: "Brewed with the finest of red sweaters and skinny mustaches.")
+
+
 
 
 Beer.destroy_all
@@ -115,6 +119,9 @@ punkin = Beer.create!(name: "Punkin Ale", brewery_id: dogfish.id, style: "Pumpki
 
 steve_ale = Beer.create!(name: "Awesome Ale", brewery_id: steve.id, style: "Ale", abv: 4.3, ibu: 22,
                    description: "This is the real King of Beers... take that Budweiser.")
+
+bone_beer = Beer.create!(name: "Red Sweater Ale", brewery_id: bone.id, style: "Ale", abv: 24.5, ibu: 88,
+                   description: "This beer will make you famous for being weird")
 
 Review.destroy_all
 
@@ -177,6 +184,9 @@ review19 = Review.create!(rating: 1.25, description: "Worst beer I've ever had. 
 
 review20 = Review.create!(rating: 4.0, description: "THE GOOSE IS LOOSE! Delicious beer!!!",
                         author_id: user9.id, beer_id: honker.id, image: open("http://media.virbcdn.com/cdn_images/resize_1024x1024/e9/4981888eb6ffed6a-GooseIslandHonkerAle.jpeg"))
+
+review21 = Review.create!(rating: 5.0, description: "I must say... this is the best beer ever made.",
+                        author_id: user3.id, beer_id: bone_beer.id)
 
 Comment.destroy_all
 

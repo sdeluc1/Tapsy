@@ -65,6 +65,14 @@ class User < ActiveRecord::Base
     count
   end
 
+  def followed_reviews
+    reviews = []
+    self.followings.each do |following|
+      reviews = reviews.concat(following.reviews)
+    end
+    reviews
+  end
+
   def top_checkins
     checkins = Hash.new({count: 0, beer_id: 0})
     self.reviews.each do |review|

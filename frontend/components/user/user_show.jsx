@@ -2,11 +2,12 @@ import React from 'react';
 import UserHeader from './user_header';
 import ReviewFeed from '../reviews/review_feed';
 import TopCheckins from '../top_checkins/top_checkins';
+import Loader from 'react-loader';
 
 const UserShow = (props) => {
-
+  debugger 
   if(props.user.loading) {
-    return <div></div>;
+    return <div><Loader /></div>;
   } else {
     return(
       <div className="main-user-show">

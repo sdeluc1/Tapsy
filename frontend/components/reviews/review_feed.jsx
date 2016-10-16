@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewFeedItem from './review_feed_item';
+import Loader from 'react-loader';
 
 const ReviewFeed = (props) => {
     let reviews = props.reviews;
@@ -21,15 +22,16 @@ const ReviewFeed = (props) => {
         }
       });
       reviews = selectedReviews;
-    } else if(props.feedType === "beer"){
-      const selectedReviews =[];
-      props.reviews.forEach( (review) => {
-        if(review.beer_id === props.beerId){
-          selectedReviews.push(review);
-        }
-      });
-      reviews = selectedReviews;
     }
+    //   else if(props.feedType === "beer"){
+    //   const selectedReviews =[];
+    //   props.reviews.forEach( (review) => {
+    //     if(review.beer_id === props.beerId){
+    //       selectedReviews.push(review);
+    //     }
+    //   });
+    //   reviews = selectedReviews;
+    // }
 
     const headerText = () => {
       switch(props.feedType){
@@ -66,18 +68,18 @@ const ReviewFeed = (props) => {
     reviews.sort( (a, b) => {
       return b.id - a.id;
     });
-
+    debugger
     return(
       <div className="review-feed">
         <header id="review-feed-header">{headerText()}</header>
-        <ul className="review-feed-list">
-          {
-            reviews.map( (review, idx) => {
-              return <ReviewFeedItem key={idx} review={review} />;
-            })
-          }
-          {handleEmpty()}
-        </ul>
+          <ul className="review-feed-list">
+            {
+              reviews.map( (review, idx) => {
+                return <ReviewFeedItem key={idx} review={review} />;
+              })
+            }
+            {handleEmpty()}
+          </ul>
       </div>
     );
 

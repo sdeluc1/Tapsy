@@ -7,7 +7,7 @@ import HomeContainer from './home/home_container';
 import AddFormContainer from './add_forms/add_form_container';
 import { requestBreweries, requestBrewery } from '../actions/brewery_actions';
 import { requestBeer, requestBeers, resetBeer } from '../actions/beer_actions';
-import { requestReviews, requestReview } from '../actions/review_actions';
+import { requestReviews, requestReview, reviewsLoading } from '../actions/review_actions';
 import { requestUser, resetUser } from '../actions/user_actions';
 import { requestFollows } from '../actions/follow_actions';
 import { receiveCurrentUser, requestCurrentUser } from '../actions/session_actions';
@@ -39,6 +39,7 @@ const Root = ({ store }) => {
     if(_ensureLoggedIn(nextState, replace)) {
       const currentUser = store.getState().session.currentUser;
       store.dispatch(requestCurrentUser(currentUser.id));
+      store.dispatch(reviewsLoading());
       store.dispatch(requestReviews());
       store.dispatch(requestFollows());
       store.dispatch(requestBreweries());
@@ -47,8 +48,6 @@ const Root = ({ store }) => {
 
   const beerOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
-      const currentUser = store.getState().session.currentUser;
-      store.dispatch(receiveCurrentUser(currentUser));
       store.dispatch(requestBeer(nextState.params.beerId));
     }
   }
@@ -56,7 +55,7 @@ const Root = ({ store }) => {
   const userOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       const currentUser = store.getState().session.currentUser;
-      store.dispatch(receiveCurrentUser(currentUser));
+      store.dispatch(requestCurrentUser(currentUser.id));
       store.dispatch(requestFollows());
       store.dispatch(requestUser(nextState.params.userId));
     }
@@ -64,8 +63,6 @@ const Root = ({ store }) => {
 
   const breweryOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
-      const currentUser = store.getState().session.currentUser;
-      store.dispatch(receiveCurrentUser(currentUser));
       store.dispatch(requestBrewery(nextState.params.breweryId));
     }
   }
@@ -73,15 +70,13 @@ const Root = ({ store }) => {
   const reviewOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       const currentUser = store.getState().session.currentUser;
-      store.dispatch(receiveCurrentUser(currentUser));
+      store.dispatch(reviewsLoading());
       store.dispatch(requestReview(nextState.params.reviewId));
     }
   }
 
   const brewsOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
-      const currentUser = store.getState().session.currentUser;
-      store.dispatch(receiveCurrentUser(currentUser));
       store.dispatch(requestReviews());
       store.dispatch(requestBeers());
     }

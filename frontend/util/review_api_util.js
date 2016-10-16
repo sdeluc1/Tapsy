@@ -36,13 +36,3 @@ export const removeReview = (reviewId, success, error) => {
     error
   });
 };
-
-export const getBeerReviews = (beerId, success, error) => {
-  $.ajax({
-    url: 'api/reviews',
-    method: 'GET',
-    data: {beer_id: beerId},
-    success,
-    error
-  });
-};

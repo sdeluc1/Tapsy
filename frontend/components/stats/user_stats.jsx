@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class UserStats extends React.Component {
   constructor(props){
@@ -20,7 +21,9 @@ class UserStats extends React.Component {
           <div className="group user-stats-top">
             <div id="stats-user-pic"></div>
             <div className="group stats-names">
-              <span id="stats-fullname">{this.props.user.name}</span>
+              <Link to={`/user/${this.props.user.id}`}>
+                <span id="stats-fullname">{this.props.user.name}</span>
+              </Link>
               <span id="stats-username">{this.props.user.username}</span>
             </div>
           </div>

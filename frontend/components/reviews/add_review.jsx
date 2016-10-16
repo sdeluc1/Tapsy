@@ -41,8 +41,8 @@ class AddReview extends React.Component {
     if(this.state.imageFile){
       formData.append("review[image]", this.state.imageFile);
     }
+    this.props.reviewsLoading();
     this.props.createReview(formData);
-    // this.props.process();
     this.closeForm();
   }
 
