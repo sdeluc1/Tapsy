@@ -10,7 +10,7 @@
   padding: 0 20px 16px 20px;
   font-size: 20px;
   border-bottom: 1px solid #ccc;
-  color: #cc6600;
+  color: #000;
 }
 
 .top-beers-item {
@@ -28,6 +28,7 @@
 .top-beers-item #top-beers-name {
   font-size: 18px;
   display: block;
+  color: #cc6600;
 }
 
 .top-beers-item #top-beers-name:hover {

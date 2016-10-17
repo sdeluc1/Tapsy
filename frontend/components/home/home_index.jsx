@@ -5,7 +5,7 @@ import UserStats from '../stats/user_stats';
 import Loader from 'react-loader';
 
 const HomeIndex = (props) => {
-  debugger
+  
   return (
     <main className="group home-index">
       <div className="home-review-feed">

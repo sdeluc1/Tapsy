@@ -3,7 +3,7 @@ import AddReview from './add_review';
 import { createReview, reviewsLoading } from '../../actions/review_actions';
 
 const mapStateToProps = ({ session }, ownProps) => ({
-  currUserId: session.currentUser.id,
+  currUserId: session.currentUser ? session.currentUser.id : {},
   beerId: ownProps.beerId,
   close: ownProps.close
 });

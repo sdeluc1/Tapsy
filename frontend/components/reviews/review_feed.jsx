@@ -68,7 +68,7 @@ const ReviewFeed = (props) => {
     reviews.sort( (a, b) => {
       return b.id - a.id;
     });
-    debugger
+  
     return(
       <div className="review-feed">
         <header id="review-feed-header">{headerText()}</header>

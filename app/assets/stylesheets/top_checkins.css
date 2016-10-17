@@ -9,7 +9,7 @@
   padding: 0 20px 16px 20px;
   font-size: 20px;
   border-bottom: 1px solid #ccc;
-  color: #cc6600;
+  color: #000;
 }
 
 .top-checkins-item {
@@ -27,6 +27,7 @@
 .top-checkins-item #top-checkins-name {
   font-size: 18px;
   display: block;
+  color: #cc6600;
 }
 
 .top-checkins-item #top-checkins-name:hover {

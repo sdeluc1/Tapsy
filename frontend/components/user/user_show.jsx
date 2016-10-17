@@ -5,7 +5,7 @@ import TopCheckins from '../top_checkins/top_checkins';
 import Loader from 'react-loader';
 
 const UserShow = (props) => {
-  debugger 
+  
   if(props.user.loading) {
     return <div><Loader /></div>;
   } else {
