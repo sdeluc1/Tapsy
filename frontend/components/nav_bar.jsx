@@ -2,7 +2,6 @@ import React from 'react';
 import AddFormContainer from './add_forms/add_form_container';
 import { Link } from 'react-router';
 
-
 class NavBar extends React.Component {
   constructor(props){
     super(props);
@@ -64,6 +63,7 @@ class NavBar extends React.Component {
             <a href="#/thebrews"><li>The Brews</li></a>
             <a onClick={this.openBeerModal}><li >Add Beer</li></a>
             <a onClick={this.openBreweryModal}><li>Add Brewery</li></a>
+            <a href="http://www.github.com/sdeluc1/Tapsy"><li>GitHub Repo</li></a>
           </ul>
           <div className="nav-right">
             <div className="group dropdown-content">
@@ -75,7 +75,7 @@ class NavBar extends React.Component {
               </ul>
             </div>
             <form className="search">
-              <input className="nav-search" type="text" placeholder="Find a beer or brewery..." />
+              <input className="nav-search" type="text" placeholder="COMING SOON..." />
             </form>
           </div>
           <div onClick={this.closeModal} id="modal-overlay" style={this.state.background} />
