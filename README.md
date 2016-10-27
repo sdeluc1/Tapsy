@@ -16,7 +16,7 @@ Users have the ability to add check-ins/reviews of various beers with ratings, d
 beer, selected user, followed users, brewery, or all users. Each review is rendered through a ReviewFeedItem component and
 has its own detail page where users can interact by leaving comments.
 
-![Review Feed](https://github.com/sdeluc1/Tapsy/blob/master/screencaps/tapsy_cap1.png "Review Feed")
+![Review Feed](https://github.com/sdeluc1/Tapsy/blob/master/screencaps/Tapsy_cap1.png "Review Feed")
 
 ### User Profiles
 
