@@ -75,7 +75,7 @@ class NavBar extends React.Component {
               </ul>
             </div>
             <form className="search">
-              <input className="nav-search" type="text" placeholder="COMING SOON..." />
+              <input className="nav-search" type="text" placeholder="Find Beer or Brewery..." />
             </form>
           </div>
           <div onClick={this.closeModal} id="modal-overlay" style={this.state.background} />

@@ -16,12 +16,16 @@ Users have the ability to add check-ins/reviews of various beers with ratings, d
 beer, selected user, followed users, brewery, or all users. Each review is rendered through a ReviewFeedItem component and
 has its own detail page where users can interact by leaving comments.
 
+![Review Feed](https://github.com/sdeluc1/Tapsy/blob/master/screencaps/tapsy_cap1.png "Review Feed")
+
 ### User Profiles
 
 Every user has their own profile/show-page where their statistics are displayed (# of reviews, followers, etc.), as well as a
 customized ReviewFeed of only that user's check-ins/reviews, and a TopCheckins component, which compiles a sorted list of
 beers that have been reviewed the most by that user. If the user is not 'currentUser', a button will be displayed to add or remove
 them as a follow, depending on the current status of their relationship.
+
+![User Page](https://github.com/sdeluc1/Tapsy/blob/master/screencaps/tapsy_cap2.png "User Page")
 
 ### Followers
 
@@ -36,3 +40,5 @@ Beers and breweries each have a unique show page with a customized ReviewFeed di
 The header for each beer/brewery contains information like an overall rating, # of reviews, etc. A Brewery maintains a 'has many' association
 with Beers. Additionally, users can add a new check-in from each Beer page, which prompts an immediate update to the page's
 ReviewFeed.
+
+![Beer Page](https://github.com/sdeluc1/Tapsy/blob/master/screencaps/tapsy_cap3.png "Beer Page")
