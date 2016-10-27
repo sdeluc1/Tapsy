@@ -1,8 +1,8 @@
 # Tapsy
 
-[Tapsy live][heroku]
+[Tapsy live][tapsy]
 
-[heroku]: https://tapsy.herokuapp.com
+[tapsy]: http://tapsy.co
 
 Tapsy is a full-stack web application inspired by Untappd, where users can check in and write reviews for various beers.
 It is built with Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the front end.
