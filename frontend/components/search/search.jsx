@@ -9,29 +9,23 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getSuggestionValue = this.getSuggestionValue.bind(this);
     this.renderSuggestion = this.renderSuggestion.bind(this);
-    this.clear = this.clear.bind(this);
   }
 
   getSuggestionValue() {
     return "";
   }
 
-  clear() {
-    // this.setState({ value: '' });
-    $(".react-autosuggest__input").val("");
-  }
-
   renderSuggestion(suggestion) {
     if(suggestion.location){
       return(
-        <Link to={`brewery/${suggestion.id}`} onClick={this.clear}>
+        <Link to={`brewery/${suggestion.id}`}>
           <strong>{suggestion.name}</strong>
           <strong id='search-sub'>{suggestion.location}</strong>
         </Link>
       );
     } else {
       return(
-        <Link to={`beer/${suggestion.id}`} onClick={this.clear}>
+        <Link to={`beer/${suggestion.id}`}>
           <strong>{suggestion.name}</strong>
           <strong id='search-sub'>{suggestion.brewery}</strong>
         </Link>

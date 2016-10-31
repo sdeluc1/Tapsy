@@ -7,7 +7,6 @@ import UserMiddleware from './user_middleware';
 import FollowMiddleware from './follow_middleware';
 import CommentMiddleware from './comment_middleware';
 import SearchMiddleware from './search_middleware';
-import createLogger from 'redux-logger';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
@@ -17,8 +16,7 @@ const RootMiddleware = applyMiddleware(
   FollowMiddleware,
   UserMiddleware,
   CommentMiddleware,
-  SearchMiddleware,
-  createLogger()
+  SearchMiddleware
 );
 
 export default RootMiddleware;
