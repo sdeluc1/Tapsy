@@ -8,16 +8,38 @@ class Search extends React.Component {
     this.state = { value: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.getSuggestionValue = this.getSuggestionValue.bind(this);
+    this.renderSuggestion = this.renderSuggestion.bind(this);
+    this.clear = this.clear.bind(this);
   }
 
-  getSuggestionValue(suggestion) {
-    this.suggestion = suggestion;
-    return suggestion.name;
+  getSuggestionValue() {
+    return "";
+  }
+
+  clear() {
+    // this.setState({ value: '' });
+    $(".react-autosuggest__input").val("");
   }
 
   renderSuggestion(suggestion) {
-    return <Link to={`/beer/${suggestion.id}`}>{suggestion.name}</Link>;
+    if(suggestion.location){
+      return(
+        <Link to={`brewery/${suggestion.id}`} onClick={this.clear}>
+          <strong>{suggestion.name}</strong>
+          <strong id='search-sub'>{suggestion.location}</strong>
+        </Link>
+      );
+    } else {
+      return(
+        <Link to={`beer/${suggestion.id}`} onClick={this.clear}>
+          <strong>{suggestion.name}</strong>
+          <strong id='search-sub'>{suggestion.brewery}</strong>
+        </Link>
+      );
+    }
   }
+
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -31,7 +53,6 @@ class Search extends React.Component {
 
     const value = this.state.value;
     const suggestions = this.props.beerSearch || [];
-    debugger
 
     const onChange = (event, { newValue }) => {
       this.setState({
@@ -48,11 +69,24 @@ class Search extends React.Component {
     }
 
     const shouldRenderSuggestions = function(value) {
-      return value.trim().length > 2;
+      return value.trim().length > 1;
     }
 
+    const renderSectionTitle = function(section) {
+      return <strong>{section.title}</strong>;
+    }
+
+    const getSectionSuggestions = function(section) {
+      if(section.beers.length > 0){
+        return section.beers;
+      } else {
+        return section.breweries;
+      }
+    }
+
+
     const inputProps = {
-      placeholder: 'Search for a beer...',
+      placeholder: 'Find a beer or brewery...',
       value,
       onChange: onChange
     };
@@ -62,9 +96,13 @@ class Search extends React.Component {
         <div className="nav-search">
           <Autosuggest
             suggestions={suggestions}
+            multiSection={true}
+            focusFirstSelection={true}
             onSuggestionsFetchRequested={onSuggestionsFetchRequested}
             onSuggestionsClearRequested={onSuggestionsClearRequested}
             shouldRenderSuggestions={shouldRenderSuggestions}
+            renderSectionTitle={renderSectionTitle}
+            getSectionSuggestions={getSectionSuggestions}
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
             inputProps={inputProps}
