@@ -57,18 +57,18 @@ const ReviewFeed = (props) => {
       }
     };
 
-    const compare = (a, b) => {
-      if(a.id < b.id){
-        return -1;
-      } else {
-        return 1;
-      }
-    };
-
-    reviews.sort( (a, b) => {
-      return b.id - a.id;
-    });
-  
+    // const compare = (a, b) => {
+    //   if(a.id < b.id){
+    //     return -1;
+    //   } else {
+    //     return 1;
+    //   }
+    // };
+    //
+    // reviews.sort( (a, b) => {
+    //   return b.id - a.id;
+    // });
+    //
     return(
       <div className="review-feed">
         <header id="review-feed-header">{headerText()}</header>

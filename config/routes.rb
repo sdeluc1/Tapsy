@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :show, :destroy]
     resources :follows, only: [:index, :create, :destroy]
     resources :comments, only: [:index, :show, :create, :destroy]
+    resources :search, only: [:index]
   end
 end

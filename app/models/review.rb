@@ -28,5 +28,7 @@ class Review < ActiveRecord::Base
 
   belongs_to :beer
   has_many :comments
+  has_one :brewery,
+    through: :beer
 
 end

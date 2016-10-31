@@ -3,12 +3,14 @@ import {
   RECEIVE_REVIEW,
   REMOVE_REVIEW,
   REVIEW_ERRORS,
-  REVIEWS_LOADING
+  REVIEWS_LOADING,
+  RECEIVE_REVIEW_DETAIL
 } from '../actions/review_actions';
 
 import { RECEIVE_BEER } from '../actions/beer_actions';
 import { RECEIVE_USER } from '../actions/user_actions';
 import { RECEIVE_BREWERY } from '../actions/brewery_actions';
+
 import merge from 'lodash/merge';
 
 const defaultState = {
@@ -45,21 +47,28 @@ const ReviewReducer = (state = defaultState, action) => {
       delete newState[action.reviewId];
       return newState;
 
-    case RECEIVE_BEER:
-      return {list: action.beer.reviews};
+    // case RECEIVE_BEER:
+    //   return {list: action.reviews};
 
-    case RECEIVE_USER:
-      return {list: action.user.reviews, loadingOne: true};
+    // case RECEIVE_USER:
+    //   return {list: action.user.reviews, loadingOne: true};
 
-    case RECEIVE_BREWERY:
-      const breweryReviews = [];
-      action.brewery.beers.forEach( (beer) => {
-        breweryReviews.push(...beer.reviews);
-      });
-      return { list: breweryReviews, loadingOne: true };
+    // case RECEIVE_BREWERY:
+    //   const breweryReviews = [];
+    //   action.brewery.beers.forEach( (beer) => {
+    //     breweryReviews.push(...beer.reviews);
+    //   });
+    //   return { list: breweryReviews, loadingOne: true };
 
     case REVIEWS_LOADING:
       newState = Object.assign({}, state, {loadingOne: true, loadingAll: true});
+      return newState;
+
+    case RECEIVE_REVIEW_DETAIL:
+      newState = Object.assign({}, state, {
+        showReview: action.review,
+        loadingOne: false
+      });
       return newState;
 
     default:

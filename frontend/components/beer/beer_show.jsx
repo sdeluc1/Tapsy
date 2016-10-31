@@ -18,7 +18,8 @@ class BeerShow extends React.Component {
   }
 
   closeReviewModal(){
-    this.props.getBeer(this.props.showBeer.id);
+    // this.props.getBeer(this.props.showBeer.id);
+    this.props.getReviews(this.props.showBeer.id);
     this.setState({ modalDisplay: { display: 'none' } });
   }
 

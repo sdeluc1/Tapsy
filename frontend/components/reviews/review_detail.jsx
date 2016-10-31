@@ -73,7 +73,7 @@ const ReviewDetail = (props) => {
                 reviewId={props.showReview.id}
                 addComment={props.addComment}
                 getComments={props.requestComments}
-                reloadReview={props.requestReview}
+                reloadReview={props.requestReviewDetail}
               />
             </div>
           </div>

@@ -80,20 +80,6 @@ a {
   cursor: pointer;
 }
 
-.nav-search {
-  float: left;
-  margin-top: 7px;
-  width: 202px;
-  border-radius: 4px;
-  padding: 9px 32px 8px 8px;
-  font-size: 15px;
-  border: 0;
-  background-image: image-url("mag_glass.png");
-  background-size: 18px 18px;
-  background-position: 96% center;
-  background-repeat: no-repeat;
-}
-
 .dropdown-content {
   position: relative;
 }
@@ -125,4 +111,36 @@ a {
 .hidden-list li:hover {
   background-color: rgb(237, 129, 28);
   color: #000;
+}
+
+.react-autosuggest__input {
+  float: left;
+  margin-top: 8px;
+  width: 202px;
+  border-radius: 4px;
+  padding: 9px 32px 8px 8px;
+  font-size: 15px;
+  border: 0;
+  background-image: image-url("mag_glass.png");
+  background-size: 18px 18px;
+  background-position: 96% center;
+  background-repeat: no-repeat;
+}
+
+.react-autosuggest__suggestions-container {
+  position: absolute;
+  background-color: white;
+  color: black;
+  width: 240px;
+  top: 44px;
+}
+
+.react-autosuggest__suggestion {
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-top: 0;
+}
+
+.react-autosuggest__suggestions-list {
+
 }

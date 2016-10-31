@@ -46,7 +46,7 @@ class Beer < ActiveRecord::Base
 
   def top_drinkers
     drinkers = Hash.new({count: 0, beer_id: 0})
-    self.reviews.each do |review|
+    self.reviews.includes(:author).each do |review|
       name = review.author.name
       drinkers[name] = {count: drinkers[name][:count] + 1, user_id: review.author.id}
     end
@@ -60,7 +60,7 @@ class Beer < ActiveRecord::Base
         count += 1
       end
     end
-    count 
+    count
   end
 
 end

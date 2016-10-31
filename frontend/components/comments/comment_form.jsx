@@ -26,7 +26,7 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.addComment({ comment: this.state });
-    this.props.getComments(this.props.reviewId);
+    // this.props.getComments(this.props.reviewId);
     this.props.reloadReview(this.props.reviewId);
     $('#submit-comment').css("background-color", "#ccc");
     this.setState({ body: "" });

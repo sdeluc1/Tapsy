@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {filteredReviews} from './util/review_api_util';
+import {fetchBeerReviews} from './util/review_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -20,6 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(<Root store={store} />, root);
 });
 
-window.filteredReviews = filteredReviews;
+window.fetchBeerReviews = fetchBeerReviews;
 
 window.success = (data) => console.log(data);

@@ -1,6 +1,7 @@
 import React from 'react';
 import AddFormContainer from './add_forms/add_form_container';
 import { Link } from 'react-router';
+import SearchContainer from './search/search_container';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -74,9 +75,7 @@ class NavBar extends React.Component {
                 <li onClick={this.handleLogout}>Log Out</li>
               </ul>
             </div>
-            <form className="search">
-              <input className="nav-search" type="text" placeholder="Find Beer or Brewery..." />
-            </form>
+            <SearchContainer />
           </div>
           <div onClick={this.closeModal} id="modal-overlay" style={this.state.background} />
           <div className="add-beer-modal" style={this.state.addBeer}>
@@ -93,3 +92,7 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
+// <form className="search">
+//   <input className="nav-search" type="text" placeholder="Find Beer or Brewery..." />
+// </form>

@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
 
   def top_checkins
     checkins = Hash.new({count: 0, beer_id: 0})
-    self.reviews.each do |review|
+    self.reviews.includes(:beer).each do |review|
       name = review.beer.name
       checkins[name] = {count: checkins[name][:count] + 1, beer_id: review.beer.id}
     end

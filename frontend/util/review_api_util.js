@@ -37,11 +37,42 @@ export const removeReview = (reviewId, success, error) => {
   });
 };
 
-export const filteredReviews = (beerId, success) => {
+export const fetchBeerReviews = (beerId, success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
     data: {beer_id: beerId},
-    success
+    success,
+    error
+  });
+};
+
+export const fetchBreweryReviews = (breweryId, success, error) => {
+  $.ajax({
+    url: 'api/reviews',
+    method: 'GET',
+    data: { brewery_id: breweryId },
+    success,
+    error
+  });
+};
+
+export const fetchUserReviews = (userId, success, error) => {
+  $.ajax({
+    url: 'api/reviews',
+    method: 'GET',
+    data: {author_id: userId},
+    success,
+    error
+  });
+};
+
+export const fetchFollowedReviews = (currUser, success, error) => {
+  $.ajax({
+    url: 'api/reviews',
+    method: 'GET',
+    data: {curr_user: currUser},
+    success,
+    error
   });
 };

@@ -2,10 +2,34 @@ class Api::ReviewsController < ApplicationController
 
   def index
     if params[:beer_id]
-      @reviews = Review.all.where(beer_id: params[:beer_id])
+      @reviews = Review.all
+        .includes(:comments, :author, :beer => :brewery)
+        .where(beer_id: params[:beer_id])
+        .order(id: :desc)
+        .limit(20)
+    elsif params[:author_id]
+      @reviews = Review.all
+        .includes(:comments, :author, :beer => :brewery)
+        .where(author_id: params[:author_id])
+        .order(id: :desc)
+        .limit(20)
+    elsif params[:brewery_id]
+      @reviews = Review.all
+        .includes(:comments, :author, :beer => :brewery)
+        .joins(:brewery)
+        .where("beers.brewery_id = #{params[:brewery_id]}")
+        .order(id: :desc)
+    elsif params[:curr_user]
+      @reviews = Review.all
+        .includes(:comments, :author, :beer => :brewery)
+        .where(:author_id => params[:curr_user])
+        .limit(20)
     else
-      @reviews = Review.all.includes(:author, :beer => :brewery)
-    end 
+      @reviews = Review.all
+        .includes(:comments, :author, :beer => :brewery)
+        .order(id: :desc)
+        .limit(20)
+    end
   end
 
   def show

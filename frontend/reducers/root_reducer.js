@@ -6,6 +6,7 @@ import ReviewReducer from './review_reducer';
 import FollowReducer from './follow_reducer';
 import UserReducer from './user_reducer';
 import CommentReducer from './comment_reducer';
+import SearchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ const RootReducer = combineReducers({
   reviews: ReviewReducer,
   user: UserReducer,
   follows: FollowReducer,
-  comments: CommentReducer
+  comments: CommentReducer,
+  search: SearchReducer 
 });
 
 export default RootReducer;

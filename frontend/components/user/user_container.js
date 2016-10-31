@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
   currUserId: state.session.currentUser ? state.session.currentUser.id : {},
   currFollow: state.session.following,
   follows: state.session.follows_arr,
-  allFollows: state.follows
+  allFollows: state.follows,
+  reviews: state.reviews
 });
 
 const mapDispatchToProps = (dispatch) => ({
