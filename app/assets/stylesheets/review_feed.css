@@ -12,3 +12,19 @@
   font-size: 1.4em;
   border-bottom: 1px solid #e5e5e5;
 }
+
+.review-feed .load-more {
+  width: 200px;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 223px;
+  cursor: pointer;
+  outline: none;
+}
+
+.review-feed .load-more:hover{
+  background-color: #feb800;
+}

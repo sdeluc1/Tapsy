@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
+  def current_user_follows
+    follows = []
+    Follow.all.each do |f|
+      follows << f[:follow_id] if f[:user_id] == current_user[:id]
+    end
+    follows
+  end
+
   def logged_in?
     !!current_user
   end

@@ -20,6 +20,7 @@ const BreweryShow = (props) => {
               feedType={props.feedType}
               reviews={props.reviews}
               breweryId={props.showBrewery.id}
+              moreReviews={props.moreReviews}
             />
           </div>
           <div className="top-drinkers">

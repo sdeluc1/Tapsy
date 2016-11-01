@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import BreweryShow from './brewery_show';
+import { requestBreweryReviews } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loadingBrewery: state.breweries.loading,
@@ -8,6 +9,11 @@ const mapStateToProps = (state, ownProps) => ({
   reviews: state.reviews.list
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  moreReviews: (breweryId, offset, appending) => dispatch(requestBreweryReviews(breweryId, offset, appending))
+});
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(BreweryShow);

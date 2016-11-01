@@ -19,7 +19,7 @@ class BeerShow extends React.Component {
 
   closeReviewModal(){
     // this.props.getBeer(this.props.showBeer.id);
-    this.props.getReviews(this.props.showBeer.id);
+    this.props.moreReviews(this.props.showBeer.id, 0, false);
     this.setState({ modalDisplay: { display: 'none' } });
   }
 
@@ -45,7 +45,9 @@ class BeerShow extends React.Component {
                 reviews={this.props.reviews}
                 beerId={this.props.showBeer.id}
                 loading={this.props.loadingReview}
-                />
+                moreReviews={this.props.moreReviews}
+                moreToAppend={this.props.moreToAppend}
+              />
             </Loader>
           </div>
         <div onClick={this.closeReviewModal} id="modal-overlay" style={this.state.modalDisplay}></div>

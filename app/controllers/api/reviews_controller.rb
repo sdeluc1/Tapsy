@@ -6,29 +6,30 @@ class Api::ReviewsController < ApplicationController
         .includes(:comments, :author, :beer => :brewery)
         .where(beer_id: params[:beer_id])
         .order(id: :desc)
-        .limit(20)
+        .limit(10).offset(params[:offset])
     elsif params[:author_id]
       @reviews = Review.all
         .includes(:comments, :author, :beer => :brewery)
         .where(author_id: params[:author_id])
         .order(id: :desc)
-        .limit(20)
+        .limit(10).offset(params[:offset])
     elsif params[:brewery_id]
       @reviews = Review.all
         .includes(:comments, :author, :beer => :brewery)
         .joins(:brewery)
         .where("beers.brewery_id = #{params[:brewery_id]}")
         .order(id: :desc)
+        .limit(10).offset(params[:offset])
     elsif params[:curr_user]
       @reviews = Review.all
         .includes(:comments, :author, :beer => :brewery)
-        .where(:author_id => params[:curr_user])
-        .limit(20)
+        .where(:author_id => current_user_follows)
+        .limit(10).offset(params[:offset])
     else
       @reviews = Review.all
         .includes(:comments, :author, :beer => :brewery)
         .order(id: :desc)
-        .limit(20)
+        .limit(10).offset(params[:offset])
     end
   end
 

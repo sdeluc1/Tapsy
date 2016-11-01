@@ -8,12 +8,13 @@ const mapStateToProps = (state, ownProps) => ({
   loadingReview: state.reviews.loadingOne,
   showBeer: state.beer.showBeer,
   feedType: ownProps.route.feedType,
-  reviews: state.reviews.list
+  reviews: state.reviews.list,
+  moreToAppend: state.reviews.moreToAppend
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getBeer: (beerId) => dispatch(requestBeer(beerId)),
-  getReviews: (beerId) => dispatch(requestBeerReviews(beerId))
+  moreReviews: (beerId, offset, appending) => dispatch(requestBeerReviews(beerId, offset, appending))
 });
 
 export default connect(

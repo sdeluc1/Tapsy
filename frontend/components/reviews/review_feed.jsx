@@ -4,44 +4,24 @@ import Loader from 'react-loader';
 
 const ReviewFeed = (props) => {
     let reviews = props.reviews;
+    let loadArg;
     if(props.user === null || typeof props.reviews === "undefined"){
       return <div className="review-feed"></div>;
     }
 
-    if(props.feedType === "home"){
-      const selectedReviews = [];
-      props.reviews.forEach( (review) => {
-        const followArr = [];
-        props.follows.forEach( (follow) => {
-          if(follow.user_id === props.user.id) {
-            followArr.push(follow.follow_id);
-          }
-        });
-        if(followArr.includes(review.author_id)){
-          selectedReviews.push(review);
-        }
-      });
-      reviews = selectedReviews;
-    }
-    //   else if(props.feedType === "beer"){
-    //   const selectedReviews =[];
-    //   props.reviews.forEach( (review) => {
-    //     if(review.beer_id === props.beerId){
-    //       selectedReviews.push(review);
-    //     }
-    //   });
-    //   reviews = selectedReviews;
-    // }
-
     const headerText = () => {
       switch(props.feedType){
         case "home":
+          loadArg = props.user.id;
           return "Recent Followed Activity";
         case "beer":
+          loadArg = props.beerId
           return "Recent Activity";
         case "user":
+          loadArg = props.user.id
           return `${props.user.name}'s Recent Activity`;
         case "brewery":
+          loadArg = props.breweryId;
           return "Recent Activity";
         case "brews":
           return "Recent Global Activity";
@@ -57,18 +37,23 @@ const ReviewFeed = (props) => {
       }
     };
 
-    // const compare = (a, b) => {
-    //   if(a.id < b.id){
-    //     return -1;
-    //   } else {
-    //     return 1;
-    //   }
-    // };
-    //
-    // reviews.sort( (a, b) => {
-    //   return b.id - a.id;
-    // });
-    //
+    const loadMore = () => {
+      if(props.feedType == 'brews'){
+        props.moreReviews(props.reviews.length, true);
+      } else {
+        props.moreReviews(loadArg, props.reviews.length, true);
+      }
+    }
+
+    const showButton = () => {
+      debugger
+      if(props.moreToAppend){
+        return <button className="load-more" onClick={loadMore}>Load More</button>;
+      } else {
+        return "";
+      }
+    }
+
     return(
       <div className="review-feed">
         <header id="review-feed-header">{headerText()}</header>
@@ -80,6 +65,7 @@ const ReviewFeed = (props) => {
             }
             {handleEmpty()}
           </ul>
+          {showButton()}
       </div>
     );
 

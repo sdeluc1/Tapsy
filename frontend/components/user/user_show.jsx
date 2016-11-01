@@ -22,7 +22,13 @@ const UserShow = (props) => {
             requestFollows={props.requestFollows}
             />
         <div className="left-content">
-          <ReviewFeed feedType="user" reviews={props.reviews.list} user={props.user} />
+          <ReviewFeed
+            feedType="user"
+            reviews={props.reviews.list}
+            user={props.user}
+            moreReviews={props.moreReviews}
+            moreToAppend={props.reviews.moreToAppend}
+          />
         </div>
         <div className="top-checkins">
           <TopCheckins topCheckins={props.user.top_checkins} />

@@ -4,7 +4,8 @@ import {
   REMOVE_REVIEW,
   REVIEW_ERRORS,
   REVIEWS_LOADING,
-  RECEIVE_REVIEW_DETAIL
+  RECEIVE_REVIEW_DETAIL,
+  APPEND_REVIEWS
 } from '../actions/review_actions';
 
 import { RECEIVE_BEER } from '../actions/beer_actions';
@@ -16,7 +17,8 @@ import merge from 'lodash/merge';
 const defaultState = {
   loadingAll: false,
   loadingOne: false,
-  list: []
+  list: [],
+  moreToAppend: true
 };
 
 const ReviewReducer = (state = defaultState, action) => {
@@ -24,7 +26,25 @@ const ReviewReducer = (state = defaultState, action) => {
   let newState;
   switch(action.type) {
     case RECEIVE_REVIEWS:
-      return {list: action.reviews, loadingAll: false};
+      newState = {list: action.reviews, loadingAll: false, moreToAppend: true};
+      if(action.reviews.length < 10){
+        newState.moreToAppend = false;
+      }
+      return newState;
+
+    case APPEND_REVIEWS:
+      newState = Object.assign({}, state, {
+        list: [
+          ...state.list,
+          ...action.reviews
+        ],
+        loadingAll: false,
+        moreToAppend: true
+      });
+      if(action.reviews.length < 10){
+        newState.moreToAppend = false;
+      }
+      return newState;
 
     case RECEIVE_REVIEW:
       newState = Object.assign({}, state, {

@@ -1,7 +1,8 @@
-export const fetchReviews = (success, error) => {
+export const fetchReviews = (offset, success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
+    data: { offset: offset },
     success,
     error
   });
@@ -37,41 +38,41 @@ export const removeReview = (reviewId, success, error) => {
   });
 };
 
-export const fetchBeerReviews = (beerId, success, error) => {
+export const fetchBeerReviews = (beerId, offset, success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
-    data: {beer_id: beerId},
+    data: {beer_id: beerId, offset: offset},
     success,
     error
   });
 };
 
-export const fetchBreweryReviews = (breweryId, success, error) => {
+export const fetchBreweryReviews = (breweryId, offset, success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
-    data: { brewery_id: breweryId },
+    data: { brewery_id: breweryId, offset: offset },
     success,
     error
   });
 };
 
-export const fetchUserReviews = (userId, success, error) => {
+export const fetchUserReviews = (userId, offset, success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
-    data: {author_id: userId},
+    data: {author_id: userId, offset: offset},
     success,
     error
   });
 };
 
-export const fetchFollowedReviews = (currUser, success, error) => {
+export const fetchFollowedReviews = (currUser, offset, success, error) => {
   $.ajax({
     url: 'api/reviews',
     method: 'GET',
-    data: {curr_user: currUser},
+    data: { curr_user: currUser, offset: offset },
     success,
     error
   });

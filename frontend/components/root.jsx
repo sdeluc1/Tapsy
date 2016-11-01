@@ -49,10 +49,7 @@ const Root = ({ store }) => {
       const currentUser = store.getState().session.currentUser;
       store.dispatch(requestCurrentUser(currentUser.id));
       store.dispatch(reviewsLoading());
-
-      store.dispatch(requestReviews());
-      store.dispatch(requestFollows());
-      // store.dispatch(requestFollowedReviews(currentUser));
+      store.dispatch(requestFollowedReviews(currentUser.id, 0, false));
       store.dispatch(requestBreweries());
     }
   }
@@ -61,7 +58,7 @@ const Root = ({ store }) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestBeer(nextState.params.beerId));
       store.dispatch(reviewsLoading());
-      store.dispatch(requestBeerReviews(nextState.params.beerId))
+      store.dispatch(requestBeerReviews(nextState.params.beerId, 0, false))
     }
   }
 
@@ -72,14 +69,14 @@ const Root = ({ store }) => {
       store.dispatch(requestCurrentUser(currentUser.id));
       store.dispatch(requestFollows());
       store.dispatch(requestUser(nextState.params.userId));
-      store.dispatch(requestUserReviews(nextState.params.userId));
+      store.dispatch(requestUserReviews(nextState.params.userId, 0, false));
     }
   }
 
   const breweryOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
       store.dispatch(requestBrewery(nextState.params.breweryId));
-      store.dispatch(requestBreweryReviews(nextState.params.breweryId));
+      store.dispatch(requestBreweryReviews(nextState.params.breweryId, 0, false));
     }
   }
 
@@ -93,7 +90,7 @@ const Root = ({ store }) => {
 
   const brewsOnEnter = (nextState, replace) => {
     if(_ensureLoggedIn(nextState, replace)) {
-      store.dispatch(requestReviews());
+      store.dispatch(requestReviews(0, false));
       store.dispatch(requestBeers());
     }
   }

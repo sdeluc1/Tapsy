@@ -13,10 +13,13 @@ export const REVIEWS_LOADING = "REVIEWS_LOADING";
 export const FOLLOWED_REVIEWS = "FOLLOWED_REVIEWS";
 export const REQUEST_REVIEW_DETAIL = "REQUEST_REVIEW_DETAIL";
 export const RECEIVE_REVIEW_DETAIL = "RECEIVE_REVIEW_DETAIL";
+export const APPEND_REVIEWS = "APPEND_REVIEWS";
 
 
-export const requestReviews = () => ({
-  type: REQUEST_REVIEWS
+export const requestReviews = (offset, appending) => ({
+  type: REQUEST_REVIEWS,
+  offset,
+  appending
 });
 
 export const requestReview = (reviewId) => ({
@@ -58,24 +61,32 @@ export const followedReviews = (user) => ({
   user
 });
 
-export const requestBeerReviews = (beerId) => ({
+export const requestBeerReviews = (beerId, offset, appending) => ({
   type: REQUEST_BEER_REVIEWS,
-  beerId
+  beerId,
+  offset,
+  appending
 });
 
-export const requestBreweryReviews = (breweryId) => ({
+export const requestBreweryReviews = (breweryId, offset, appending) => ({
   type: REQUEST_BREWERY_REVIEWS,
-  breweryId
+  breweryId,
+  offset,
+  appending
 });
 
-export const requestUserReviews = (userId) => ({
+export const requestUserReviews = (userId, offset, appending) => ({
   type: REQUEST_USER_REVIEWS,
-  userId
+  userId,
+  offset, 
+  appending
 });
 
-export const requestFollowedReviews = (currUser) => ({
+export const requestFollowedReviews = (currUser, offset, appending) => ({
   type: REQUEST_FOLLOWED_REVIEWS,
-  currUser
+  currUser,
+  offset,
+  appending
 });
 
 export const requestReviewDetail = (reviewId) => ({
@@ -86,4 +97,9 @@ export const requestReviewDetail = (reviewId) => ({
 export const receiveReviewDetail = (review) => ({
   type: RECEIVE_REVIEW_DETAIL,
   review
+});
+
+export const appendReviews = (reviews) => ({
+  type: APPEND_REVIEWS,
+  reviews
 });

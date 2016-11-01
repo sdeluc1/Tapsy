@@ -10,7 +10,13 @@ const BrewsIndex = (props) => {
     return(
       <div className="main-brews-page">
         <div className="left-content">
-          <ReviewFeed reviews={props.reviews} feedType={props.feedType} />
+          <ReviewFeed
+            reviews={props.reviews}
+            feedType={props.feedType}
+            moreReviews={props.moreReviews}
+            moreToAppend={props.moreToAppend}
+            currUserId={props.currUserId}
+          />
         </div>
         <div className="top-beers">
           <TopBeers topBeers={props.beers} />
