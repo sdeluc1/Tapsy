@@ -52,7 +52,8 @@
 }
 
 .review-item-time-detail #created-at,
-.review-item-time-detail #detail-link {
+.review-item-time-detail #detail-link,
+#feed-delete-review {
   display: inline-block;
   margin: 0 12px 16px 0;
   font-size: 0.8em;
@@ -70,4 +71,14 @@
 
 .main-review-item #item-pic {
   width: 100%;
+}
+
+#feed-delete-review {
+  float: right;
+  color: #cc6600;
+  cursor: pointer;
+}
+
+#feed-delete-review:hover {
+  color: #feb800;
 }

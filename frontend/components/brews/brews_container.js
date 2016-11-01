@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import BrewsIndex from './brews_index';
-import { requestReviews } from '../../actions/review_actions';
-import { removeReview } from '../../actions/review_actions';
+import { requestReviews, removeReview } from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   feedType: ownProps.route.feedType,
@@ -14,8 +13,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  moreReviews: (offset, appending) => dispatch(requestReviews(offset, appending))
-  removeReview: (id) => dispatch(removeReview(id));
+  moreReviews: (offset, appending) => dispatch(requestReviews(offset, appending)),
+  removeReview: (id) => dispatch(removeReview(id))
 });
 
 export default connect(

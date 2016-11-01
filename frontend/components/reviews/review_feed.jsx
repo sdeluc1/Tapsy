@@ -46,7 +46,6 @@ const ReviewFeed = (props) => {
     }
 
     const showButton = () => {
-      debugger
       if(props.moreToAppend){
         return <button className="load-more" onClick={loadMore}>Load More</button>;
       } else {
@@ -60,7 +59,7 @@ const ReviewFeed = (props) => {
           <ul className="review-feed-list">
             {
               reviews.map( (review, idx) => {
-                return <ReviewFeedItem key={idx} review={review} />;
+                return <ReviewFeedItem key={idx} review={review} currUserId={props.currUserId} removeReview={props.remove} />;
               })
             }
             {handleEmpty()}

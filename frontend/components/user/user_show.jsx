@@ -4,38 +4,53 @@ import ReviewFeed from '../reviews/review_feed';
 import TopCheckins from '../top_checkins/top_checkins';
 import Loader from 'react-loader';
 
-const UserShow = (props) => {
+class UserShow extends React.Component{
+  constructor(props){
+    super(props);
 
-  if(props.user.loading) {
-    return <div><Loader /></div>;
-  } else {
-    return(
-      <div className="main-user-show">
-          <UserHeader
-            user={props.user}
-            currUserId={props.currUserId}
-            follows={props.follows}
-            following={props.currFollow}
-            allFollows={props.allFollows}
-            addFollow={props.createFollow}
-            removeFollow={props.deleteFollow}
-            requestFollows={props.requestFollows}
-            />
-        <div className="left-content">
-          <ReviewFeed
-            feedType="user"
-            reviews={props.reviews.list}
-            user={props.user}
-            moreReviews={props.moreReviews}
-            moreToAppend={props.reviews.moreToAppend}
-          />
-        </div>
-        <div className="top-checkins">
-          <TopCheckins topCheckins={props.user.top_checkins} />
-        </div>
-      </div>
-    );
+    this.deleteReview = this.deleteReview.bind(this);
   }
-};
+
+  deleteReview(id) {
+    this.props.removeReview(id);
+    this.props.moreReviews(this.props.user.id, 0, false);
+    this.setState({});
+  }
+
+  render() {
+    if(this.props.user.loading) {
+      return <div><Loader /></div>;
+    } else {
+      return(
+        <div className="main-user-show">
+          <UserHeader
+            user={this.props.user}
+            currUserId={this.props.currUserId}
+            follows={this.props.follows}
+            following={this.props.currFollow}
+            allFollows={this.props.allFollows}
+            addFollow={this.props.createFollow}
+            removeFollow={this.props.deleteFollow}
+            requestFollows={this.props.requestFollows}
+            />
+          <div className="left-content">
+            <ReviewFeed
+              feedType="user"
+              reviews={this.props.reviews.list}
+              user={this.props.user}
+              moreReviews={this.props.moreReviews}
+              moreToAppend={this.props.reviews.moreToAppend}
+              currUserId={this.props.currUserId}
+              remove={this.deleteReview}
+            />
+          </div>
+          <div className="top-checkins">
+            <TopCheckins topCheckins={this.props.user.top_checkins} />
+          </div>
+        </div>
+      );
+    }
+  }
+}
 
 export default UserShow;

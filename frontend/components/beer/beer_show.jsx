@@ -11,6 +11,7 @@ class BeerShow extends React.Component {
     this.state = { modalDisplay: {display: 'none' }};
     this.openReviewModal = this.openReviewModal.bind(this);
     this.closeReviewModal = this.closeReviewModal.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
   }
 
   openReviewModal(){
@@ -18,9 +19,14 @@ class BeerShow extends React.Component {
   }
 
   closeReviewModal(){
-    // this.props.getBeer(this.props.showBeer.id);
     this.props.moreReviews(this.props.showBeer.id, 0, false);
     this.setState({ modalDisplay: { display: 'none' } });
+  }
+
+  deleteReview(id) {
+    this.props.removeReview(id);
+    this.props.moreReviews(this.props.showBeer.id, 0, false);
+    this.setState({});
   }
 
   render(){
@@ -47,6 +53,8 @@ class BeerShow extends React.Component {
                 loading={this.props.loadingReview}
                 moreReviews={this.props.moreReviews}
                 moreToAppend={this.props.moreToAppend}
+                currUserId={this.props.currUserId}
+                remove={this.deleteReview}
               />
             </Loader>
           </div>

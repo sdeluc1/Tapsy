@@ -4,8 +4,21 @@ import ReviewFeed from '../reviews/review_feed';
 import Drinkers from '../drinkers/drinkers';
 import Loader from 'react-loader';
 
-const BreweryShow = (props) => {
-    if (props.loadingBrewery) {
+class BreweryShow extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.deleteReview = this.deleteReview.bind(this);
+  }
+
+  deleteReview(id) {
+    this.props.removeReview(id);
+    this.props.moreReviews(this.props.showBrewery.id, 0, false);
+    this.setState({});
+  }
+
+  render() {
+    if (this.props.loadingBrewery) {
       return(
         <div>
           <Loader />
@@ -15,21 +28,24 @@ const BreweryShow = (props) => {
       return(
         <div className="main-show-brewery">
           <div className="left-content">
-            <BreweryHeader brewery={props.showBrewery} />
+            <BreweryHeader brewery={this.props.showBrewery} />
             <ReviewFeed
-              feedType={props.feedType}
-              reviews={props.reviews}
-              breweryId={props.showBrewery.id}
-              moreReviews={props.moreReviews}
+              feedType={this.props.feedType}
+              reviews={this.props.reviews}
+              breweryId={this.props.showBrewery.id}
+              moreReviews={this.props.moreReviews}
+              moreToAppend={this.props.moreToAppend}
+              currUserId={this.props.currUserId}
+              remove={this.deleteReview}
             />
           </div>
           <div className="top-drinkers">
-            <Drinkers drinkers={props.showBrewery.top_drinkers} />
+            <Drinkers drinkers={this.props.showBrewery.top_drinkers} />
           </div>
         </div>
       );
     }
-
-};
+  }
+}
 
 export default BreweryShow;

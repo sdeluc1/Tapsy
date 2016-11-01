@@ -30,11 +30,11 @@ const ReviewFeedItem = (props) => {
     backgroundSize: "149px 630px"
   };
 
-  // const removeIfCurrUser = () => {
-  //   if(props.currUserId == props.review.author_id){
-  //     return <strong id="delete-review" onClick={() => props.removeReview(props.review.id)}>Delete Check-in</strong>;
-  //   }
-  // }
+  const removeIfCurrUser = () => {
+    if(props.currUserId == props.review.author_id){
+      return <strong id="feed-delete-review" onClick={() => props.removeReview(props.review.id)}>Delete Check-in</strong>;
+    }
+  }
 
   return(
     <li className="main-review-item">
@@ -64,7 +64,7 @@ const ReviewFeedItem = (props) => {
         <footer className="review-item-time-detail">
           <strong id="created-at">{props.review.created_at} ago</strong>
           <Link to={`/reviews/${props.review.id}`}><strong id="detail-link">View Detailed Check-in</strong></Link>
-
+          {removeIfCurrUser()}
         </footer>
 
         <ul className="comment-list">

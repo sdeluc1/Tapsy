@@ -67,19 +67,6 @@ const ReviewReducer = (state = defaultState, action) => {
       delete newState[action.reviewId];
       return newState;
 
-    // case RECEIVE_BEER:
-    //   return {list: action.reviews};
-
-    // case RECEIVE_USER:
-    //   return {list: action.user.reviews, loadingOne: true};
-
-    // case RECEIVE_BREWERY:
-    //   const breweryReviews = [];
-    //   action.brewery.beers.forEach( (beer) => {
-    //     breweryReviews.push(...beer.reviews);
-    //   });
-    //   return { list: breweryReviews, loadingOne: true };
-
     case REVIEWS_LOADING:
       newState = Object.assign({}, state, {loadingOne: true, loadingAll: true});
       return newState;
