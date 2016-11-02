@@ -1,4 +1,7 @@
 json.extract! @user, :id, :username, :email, :name
+
+json.avatar asset_url(@user.image.url)
+
 json.reviews @user.reviews do |review|
   json.(review, :id, :rating, :description, :beer_id, :author_id)
   json.created_at time_ago_in_words(review.created_at)
@@ -27,4 +30,4 @@ json.followed_reviews @user.followed_reviews do |review|
   json.author_name @user.name
   json.brewery review.beer.brewery, :id, :name
   json.beer_name review.beer.name
-end 
+end

@@ -38,7 +38,7 @@ const ReviewFeedItem = (props) => {
 
   return(
     <li className="main-review-item">
-      <div id="review-user-pic"></div>
+      <img id="review-user-pic" src={props.review.author_avatar}/>
       <section className="review-item-info">
         <p className="review-item-is-drinking">
           <a href={`#/user/${props.review.author_id}`}>

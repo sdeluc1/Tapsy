@@ -66,7 +66,7 @@ class UserHeader extends React.Component {
       <header className="main-user-header">
         {this.followStatus()}
         <div className="user-pic-name">
-          <div id="user-header-profpic"></div>
+          <img id="user-header-profpic" src={this.props.user.avatar}/>
           <div className="user-header-names">
             <span id="user-fullname">{this.props.user.name}</span>
             <span id="username">{this.props.user.username}</span>

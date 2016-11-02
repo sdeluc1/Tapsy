@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates :username, :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/tapsy-pro/users/default_avatar.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   after_initialize :ensure_session_token
 
   attr_reader :password

@@ -9,34 +9,44 @@
 User.destroy_all
 
 user1 = User.create!(username: "DocWatson", password: "password",
-                     email: "doc@watson.com", name: "Doc Watson")
+                     email: "doc@watson.com", name: "Doc Watson",
+                     image: open("http://images4.mtv.com/uri/mgid:file:docroot:cmt.com:/sitewide/assets/img/artists/watson_doc/docwatson05-280x210.jpg"))
 
-user2 = User.create!(username: "BeerLuVr12", password: "password",
-                     email: "beer@drunk.com", name: "Daniel Plainview")
+user2 = User.create!(username: "OilMan12", password: "password",
+                     email: "beer@milkshake.com", name: "Daniel Plainview",
+                     image: open("http://designerswap.ca/wp-content/uploads/2013/10/Daniel-Plainview.jpg"))
 
 user3 = User.create!(username: "CraftBeard", password: "password",
-                    email: "craft@aol.com", name: "Rusty Jones")
+                    email: "craft@aol.com", name: "Rusty Jones",
+                    image: open("http://scaredmonkeys.com/wp-content/uploads/2016/01/dan_haggerty.jpeg"))
 
 user4 = User.create!(username: "NinjaTurtle85", password: "password",
-                    email: "ninja@turtle.com", name: "Donatello")
+                    email: "ninja@turtle.com", name: "Donatello",
+                    image: open("https://images-na.ssl-images-amazon.com/images/I/419SXkzvhIL._SX355_.jpg"))
 
 user5 = User.create!(username: "IHeartBeer", password: "password",
-                    email: "beerguy@aol.com", name: "Mike Lowry")
+                    email: "beerguy@aol.com", name: "Mike Lowry",
+                    image: open("http://www.celebritycarsblog.com/wp-content/uploads/Will-Smith.jpg"))
 
 user6 = User.create!(username: "OneWhoKnocks", password: "password",
-                    email: "walter@gmail.com", name: "Walter White")
+                    email: "walter@gmail.com", name: "Walter White",
+                    image: open("http://media1.s-nbcnews.com/i/streams/2013/August/130808/6C8558749-130808-walter-white-tease.jpg"))
 
 user7 = User.create!(username: "AdMan62", password: "password",
-                    email: "DonDraper@gmail.com", name: "Don Draper")
+                    email: "DonDraper@gmail.com", name: "Don Draper",
+                    image: open("http://cdn.theatlantic.com/static/mt/assets/culture_test/don%20draper%20thumb%201970s.jpg"))
 
 user8 = User.create!(username: "WithTheFishes", password: "password",
-                    email: "TonySoprano@aol.com", name: "Tony Soprano")
+                    email: "TonySoprano@aol.com", name: "Tony Soprano",
+                    image: open("https://s-media-cache-ak0.pinimg.com/originals/ce/f6/04/cef60468bbc5f774a6a48678972062cc.jpg"))
 
 user9 = User.create!(username: "FormerPrez42", password: "password",
-                    email: "WestWing@hotmail.com", name: "Josiah Bartlett")
+                    email: "WestWing@hotmail.com", name: "Josiah Bartlett",
+                    image: open("http://martinsheen.net/tww/potusheadshot.jpg"))
 
 user10 = User.create!(username: "Admiral47", password: "password",
-                    email: "adama@hotmail.com", name: "William Adama")
+                    email: "adama@hotmail.com", name: "William Adama",
+                    image: open("http://www.paperspencils.com/wp-content/uploads/2012/04/0002zc7q.jpeg"))
 
 user11 = User.create!(username: "GuestUser", password: "password",
                     email: "guest@tapsy.com", name: "Guest")

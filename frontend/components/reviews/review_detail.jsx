@@ -21,13 +21,13 @@ const ReviewDetail = (props) => {
       backgroundPosition: `0 -${ratingVal()}px`,
       backgroundSize: "149px 630px"
     };
-
+    debugger
     return(
       <div className="main-review-detail">
         <div className="group main-review-content">
           <div className="review-box">
             <header className="review-detail-user">
-              <div id="user-avatar"></div>
+              <img id="user-avatar" src={props.showReview.author_avatar}/>
               <div id="name-count">
                 <Link to={`/user/${props.showReview.author.id}`}>
                   <strong id="user-name">{props.showReview.author.name}</strong>

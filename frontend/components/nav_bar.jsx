@@ -68,7 +68,7 @@ class NavBar extends React.Component {
           </ul>
           <div className="nav-right">
             <div className="group dropdown-content">
-              <div className="nav-user-pic"></div>
+              <img className="nav-user-pic" src={currUser.avatar}/>
               <ul className="hidden-list">
                 <Link to='/home'><li>Recent Activity</li></Link>
                 <Link to={`/user/${currUser.id}`}><li>My Profile</li></Link>
