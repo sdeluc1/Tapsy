@@ -20,12 +20,14 @@ class BeerShow extends React.Component {
 
   closeReviewModal(){
     this.props.moreReviews(this.props.showBeer.id, 0, false);
+    this.props.getBeer(this.props.showBeer.id);
     this.setState({ modalDisplay: { display: 'none' } });
   }
 
   deleteReview(id) {
     this.props.removeReview(id);
     this.props.moreReviews(this.props.showBeer.id, 0, false);
+    this.props.getBeer(this.props.showBeer.id);
     this.setState({});
   }
 

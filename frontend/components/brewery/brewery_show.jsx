@@ -14,6 +14,7 @@ class BreweryShow extends React.Component{
   deleteReview(id) {
     this.props.removeReview(id);
     this.props.moreReviews(this.props.showBrewery.id, 0, false);
+    this.props.requestBrewery(this.props.showBrewery.id);
     this.setState({});
   }
 

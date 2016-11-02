@@ -45,7 +45,9 @@ const ReviewDetail = (props) => {
                     <Link to={`/beer/${props.showReview.beer.id}`}>
                       <strong id="beer-name">{props.showReview.beer.name}</strong>
                     </Link>
-                    <strong id="brewery-name">{props.showReview.brewery.name}</strong>
+                    <Link to={`/brewery/${props.showReview.brewery.id}`}>
+                      <strong id="brewery-name">{props.showReview.brewery.name}</strong>
+                    </Link>
                   </div>
                 </div>
                 <div id="content-bottom">

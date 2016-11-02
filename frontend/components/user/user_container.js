@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
 import { createFollow, deleteFollow, requestFollows } from '../../actions/follow_actions';
-import { receiveCurrentUser } from '../../actions/session_actions';
 import { requestUserReviews, removeReview } from '../../actions/review_actions';
+import { requestUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -18,7 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
   deleteFollow: (follow) => dispatch(deleteFollow(follow)),
   requestFollows: () => dispatch(requestFollows()),
   moreReviews: (userId, offset, appending) => dispatch(requestUserReviews(userId, offset, appending)),
-  removeReview: (id) => dispatch(removeReview(id))
+  removeReview: (id) => dispatch(removeReview(id)),
+  requestUser: (id) => dispatch(requestUser(id))
 });
 
 export default connect(

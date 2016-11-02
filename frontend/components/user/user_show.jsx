@@ -14,6 +14,7 @@ class UserShow extends React.Component{
   deleteReview(id) {
     this.props.removeReview(id);
     this.props.moreReviews(this.props.user.id, 0, false);
+    this.props.requestUser(this.props.user.id);
     this.setState({});
   }
 

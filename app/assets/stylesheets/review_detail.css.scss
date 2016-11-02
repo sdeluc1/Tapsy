@@ -92,6 +92,10 @@
   display: block;
 }
 
+.beer-brewery #brewery-name:hover {
+  color: #feb800;
+}
+
 #review-detail-content #content-bottom {
   padding: 10px 60px;
   border-bottom: 1px solid #eee;
