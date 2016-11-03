@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
   beers: state.beer.top_beers,
   loadingReviews: state.reviews.loading,
   loadingBeer: state.beer.loadingAll,
-  currUserId: state.session.currentUser.id
+  currUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

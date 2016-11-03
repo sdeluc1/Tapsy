@@ -19,7 +19,9 @@ class UserStats extends React.Component {
       return(
         <div className="group user-stats-box">
           <div className="group user-stats-top">
-            <img id="stats-user-pic" src={this.props.user.avatar}/>
+            <Link to={`/user/${this.props.user.id}`}>
+              <img id="stats-user-pic" src={this.props.user.avatar}/>            
+            </Link>
             <div className="group stats-names">
               <Link to={`/user/${this.props.user.id}`}>
                 <span id="stats-fullname">{this.props.user.name}</span>

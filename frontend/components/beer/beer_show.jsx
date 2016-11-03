@@ -32,7 +32,7 @@ class BeerShow extends React.Component {
   }
 
   render(){
-    if (this.props.loadingBeer) {
+    if (this.props.loadingBeer || this.props.currUser === null) {
       return(
         <div>
           <Loader />
@@ -55,7 +55,7 @@ class BeerShow extends React.Component {
                 loading={this.props.loadingReview}
                 moreReviews={this.props.moreReviews}
                 moreToAppend={this.props.moreToAppend}
-                currUserId={this.props.currUserId}
+                currUserId={this.props.currUser.id}
                 remove={this.deleteReview}
               />
             </Loader>

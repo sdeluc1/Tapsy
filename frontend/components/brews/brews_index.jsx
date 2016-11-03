@@ -17,7 +17,7 @@ class BrewsIndex extends React.Component {
   }
 
   render() {
-    if(this.props.loadingReviews || this.props.loadingBeer){
+    if(this.props.loadingReviews || this.props.loadingBeer || this.props.currUser === null){
       return <div><Loader /></div>;
     } else {
       return(
@@ -28,7 +28,7 @@ class BrewsIndex extends React.Component {
               feedType={this.props.feedType}
               moreReviews={this.props.moreReviews}
               moreToAppend={this.props.moreToAppend}
-              currUserId={this.props.currUserId}
+              currUserId={this.props.currUser.id}
               remove={this.deleteReview}
             />
           </div>

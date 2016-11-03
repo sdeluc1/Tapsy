@@ -19,7 +19,7 @@ class BreweryShow extends React.Component{
   }
 
   render() {
-    if (this.props.loadingBrewery) {
+    if (this.props.loadingBrewery || this.props.currUser === null) {
       return(
         <div>
           <Loader />
@@ -36,7 +36,7 @@ class BreweryShow extends React.Component{
               breweryId={this.props.showBrewery.id}
               moreReviews={this.props.moreReviews}
               moreToAppend={this.props.moreToAppend}
-              currUserId={this.props.currUserId}
+              currUserId={this.props.currUser.id}
               remove={this.deleteReview}
             />
           </div>

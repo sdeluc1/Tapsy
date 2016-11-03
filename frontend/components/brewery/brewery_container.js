@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
   feedType: ownProps.route.feedType,
   reviews: state.reviews.list,
   moreToAppend: state.reviews.moreToAppend,
-  currUserId: state.session.currentUser.id
+  currUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

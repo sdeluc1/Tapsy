@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Comment = (props) => {
-  debugger
   return(
     <li className="group comment">
       <div className="main-body">
