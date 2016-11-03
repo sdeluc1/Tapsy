@@ -27,7 +27,9 @@ const ReviewDetail = (props) => {
         <div className="group main-review-content">
           <div className="review-box">
             <header className="review-detail-user">
-              <img id="user-avatar" src={props.showReview.author_avatar}/>
+              <Link to={`/user/${props.showReview.author.id}`}>
+                <img id="user-avatar" src={props.showReview.author_avatar}/>
+              </Link>
               <div id="name-count">
                 <Link to={`/user/${props.showReview.author.id}`}>
                   <strong id="user-name">{props.showReview.author.name}</strong>

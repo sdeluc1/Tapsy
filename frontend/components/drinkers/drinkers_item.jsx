@@ -5,7 +5,9 @@ const DrinkersItem = (props) => {
   debugger
   return(
     <li className="drinkers-item">
-      <img id="user-avatar" src={props.avatar}/>
+      <Link to={`/user/${props.userId}`}>
+        <img id="user-avatar" src={props.avatar}/>
+      </Link>
       <Link to={`/user/${props.userId}`}>
         <strong id="drinker-name">{props.drinker}</strong>
       </Link>

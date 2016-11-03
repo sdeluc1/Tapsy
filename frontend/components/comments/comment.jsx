@@ -6,8 +6,8 @@ const Comment = (props) => {
   return(
     <li className="group comment">
       <div className="main-body">
-        <img id="comment-avatar" src={props.comment.avatar}/>
         <Link to={`/user/${props.comment.user_id}`}>
+          <img id="comment-avatar" src={props.comment.avatar}/>
           <strong id="comment-name">{props.comment.username}: </strong>
         </Link>
         <p id="comment-body">{props.comment.body}</p>
