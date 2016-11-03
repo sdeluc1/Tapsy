@@ -17,6 +17,8 @@ json.array!(@reviews) do |review|
     json.review_id comment.review_id
     json.username comment.user.username
     json.created_at time_ago_in_words(comment.created_at)
+    json.avatar asset_url(comment.user.image.url)
+
   end
 
 end

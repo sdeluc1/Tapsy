@@ -21,7 +21,7 @@ const ReviewDetail = (props) => {
       backgroundPosition: `0 -${ratingVal()}px`,
       backgroundSize: "149px 630px"
     };
-    debugger
+
     return(
       <div className="main-review-detail">
         <div className="group main-review-content">

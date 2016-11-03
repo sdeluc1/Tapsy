@@ -37,5 +37,16 @@
   font-size: 12px;
   color: #000;
   display: block;
-  margin-top: 5px;
+  /*margin-top: 5px;*/
+  margin-left: 32px;
+}
+
+#comment-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 18px;
+  background-size: cover;
+  cursor: pointer;
+  float: left;
+  margin-right: 8px;
 }
