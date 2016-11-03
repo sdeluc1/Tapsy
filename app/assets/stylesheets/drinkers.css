@@ -48,3 +48,13 @@
   padding: 10px 20px;
   font-size: 18px;
 }
+
+.drinkers-item #user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-size: cover;
+  cursor: pointer;
+  float: left;
+  margin-right: 10px;
+}

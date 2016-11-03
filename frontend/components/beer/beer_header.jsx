@@ -1,6 +1,21 @@
 import React from 'react';
 
 const BeerHeader = (props) => {
+
+
+    const ratingVal = () => {
+      debugger
+      const percent = Math.round(props.beer.avg_rating * 4) / 4 / 5;
+      const pixels = (percent * 20) * 26;
+      return pixels;
+    };
+
+    const ratingCaps = {
+      backgroundImage: "url('https://s3.amazonaws.com/tapsy-pro/reviews/images/ratings.png')",
+      backgroundPosition: `0 -${ratingVal()}px`,
+      backgroundSize: "129px 546px"
+    };
+
     return(
       <header className="group beer-header">
         <div className="beer-icon"></div>
@@ -24,7 +39,7 @@ const BeerHeader = (props) => {
         <div className="info-bar">
           <strong id="abv" className="beer-bar-item">{props.beer.abv}% ABV</strong>
           <strong id="ibu"className="beer-bar-item">{props.beer.ibu} IBU</strong>
-          <strong id="rating" className="beer-bar-item">Avg Rating: {props.beer.avg_rating}</strong>
+          <strong id="rating" className="rating-caps beer-bar-item" style={ratingCaps}></strong>
           <strong id="num-ratings" className="beer-bar-item">{props.beer.rev_count} total</strong>
           <strong id="date-added" className="beer-bar-item">Added {props.beer.created_at} ago</strong>
         </div>

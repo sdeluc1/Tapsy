@@ -48,7 +48,7 @@ class Beer < ActiveRecord::Base
     drinkers = Hash.new({count: 0, beer_id: 0})
     self.reviews.includes(:author).each do |review|
       name = review.author.name
-      drinkers[name] = {count: drinkers[name][:count] + 1, user_id: review.author.id}
+      drinkers[name] = {count: drinkers[name][:count] + 1, user_id: review.author.id, avatar: review.author.image.url}
     end
     drinkers.sort_by {|k, v| v[:count]}.reverse.take(20).to_h
   end
