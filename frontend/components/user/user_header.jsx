@@ -4,7 +4,12 @@ import merge from 'lodash/merge';
 class UserHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {followed: this.props.following, count: this.props.user.num_followers};
+    this.state = {
+      followed: this.props.following,
+      count: this.props.user.num_followers,
+      imageFile: null,
+      imageUrl: null
+    };
   }
 
   getFollow(followed_id){

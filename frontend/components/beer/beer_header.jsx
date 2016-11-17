@@ -4,7 +4,6 @@ const BeerHeader = (props) => {
 
 
     const ratingVal = () => {
-      debugger
       const percent = Math.round(props.beer.avg_rating * 4) / 4 / 5;
       const pixels = (percent * 20) * 26;
       return pixels;
