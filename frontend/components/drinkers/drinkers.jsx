@@ -7,7 +7,6 @@ const Drinkers = (props) => {
       return <li className="no-drinkers">No drinkers!</li>;
     }
   };
-   debugger
   return(
     <div className="group main-drinkers">
       <header className="drinkers-header">

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const DrinkersItem = (props) => {
-  debugger
   return(
     <li className="drinkers-item">
       <Link to={`/user/${props.userId}`}>

@@ -2,6 +2,7 @@ class Api::BeersController < ApplicationController
 
   def index
     @top_beers = Beer.top_rated_beers
+    @beers = Beer.all
   end
 
   def show

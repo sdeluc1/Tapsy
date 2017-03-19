@@ -3,7 +3,6 @@ import React from 'react';
 const BreweryHeader = (props) => {
 
   const ratingVal = () => {
-    debugger
     const percent = Math.round(props.brewery.overall_rating * 4) / 4 / 5;
     const pixels = (percent * 20) * 26;
     return pixels;
